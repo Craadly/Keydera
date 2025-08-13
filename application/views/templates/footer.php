@@ -1,5 +1,5 @@
 ﻿<div class="content has-text-centered">
-  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app" target="_blank" rel="noopener">CodeMonks</a>, All rights reserved.</p>
+  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.craadly.com" target="_blank" rel="noopener">Craadly</a>, All rights reserved.</p>
 </div>
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/BulmaTagsInput/js/bulma-tagsinput.min.js"></script>
