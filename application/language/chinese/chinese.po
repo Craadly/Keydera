@@ -1,0 +1,486 @@
+# This file is distributed under the same license as the LicenseBox package.
+msgid ""
+msgstr ""
+"Project-Id-Version: LicenseBox v1.6.4\n"
+"POT-Creation-Date: 2021-04-24 21:49+0530\n"
+"PO-Revision-Date: 2023-01-15 11:20+0530\n"
+"Last-Translator: \n"
+"Language-Team: Chen Tobi, https://licensebox.app\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: libraries/REST_Controller.php\n"
+"X-Poedit-SearchPath-1: controllers/Api_external.php\n"
+"X-Poedit-SearchPath-2: controllers/Api_internal.php\n"
+"X-Poedit-SearchPath-3: controllers/Generate_helpers.php\n"
+
+#: controllers/Api_external.php:70 controllers/Api_external.php:78
+#: controllers/Api_internal.php:70 controllers/Api_internal.php:78
+msgid "Required request headers are invalid or missing, please recheck."
+msgstr "必需的请求标头无效或丢失，请重新检查。"
+
+#: controllers/Api_external.php:103 controllers/Api_internal.php:108
+msgid "Your IP is blacklisted."
+msgstr "您的IP已被列入黑名单。"
+
+#: controllers/Api_external.php:113 controllers/Api_internal.php:118
+msgid "Your Domain is blacklisted."
+msgstr "您的域名已被列入黑名单。"
+
+#: controllers/Api_external.php:123
+msgid "Method not allowed or is invalid."
+msgstr "请求方法不允许或无效。"
+
+#: controllers/Api_external.php:130 controllers/Api_internal.php:128
+msgid "Connection successful."
+msgstr "连接成功。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the version name.
+#: controllers/Api_external.php:145
+#, php-format
+msgid "Latest version of %s is %s"
+msgstr "%s 的最新版本是 %s"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:155 controllers/Api_external.php:207
+#, php-format
+msgid "%s has no versions yet."
+msgstr "%s 尚无更新。"
+
+#: controllers/Api_external.php:165 controllers/Api_external.php:430
+msgid "Product ID specified is invalid or the product is inactive."
+msgstr "指定的产品ID无效或产品无效。"
+
+#: controllers/Api_external.php:175 controllers/Api_external.php:253
+#: controllers/Api_external.php:814 controllers/Api_external.php:974
+#: controllers/Api_external.php:1065 controllers/Api_internal.php:284
+#: controllers/Api_internal.php:532 controllers/Api_internal.php:581
+#: controllers/Api_internal.php:629 controllers/Api_internal.php:706
+#: controllers/Api_internal.php:743 controllers/Api_internal.php:862
+#: controllers/Api_internal.php:896 controllers/Api_internal.php:933
+#: controllers/Api_internal.php:970 controllers/Api_internal.php:1007
+msgid "Incorrect method or missing values, please check."
+msgstr "请求方法不正确或缺少值，请检查。"
+
+#: controllers/Api_external.php:194
+msgid "Product not found or is inactive, please contact support!"
+msgstr "找不到产品或产品无效，请联系支持！"
+
+#. TRANSLATORS: First %s will be replaced with the version name.
+#. Second %s will be replaced with the product name.
+#: controllers/Api_external.php:229
+#, php-format
+msgid "New version (%s) available for %s!"
+msgstr "%s有新版本 (%s) 可用 !"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:241
+#, php-format
+msgid "You have the latest version of %s."
+msgstr "您安装的是最新版本 %s."
+
+#: controllers/Api_external.php:459
+msgid ""
+"Envato purchase code is invalid or is not of the specified product, please "
+"contact support!"
+msgstr "Envato购买代码无效或不是指定产品的购买代码，请联系支持！"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:505 controllers/Api_external.php:784
+#, php-format
+msgid "Activated! Thanks for purchasing %s."
+msgstr "激活成功！感谢购买%s."
+
+#: controllers/Api_external.php:527
+msgid "Envato purchase code is invalid, please contact support!"
+msgstr "Envato购买代码无效，请联系支持！"
+
+#: controllers/Api_external.php:560 controllers/Api_external.php:868
+#: controllers/Api_external.php:1023
+msgid ""
+"License is incorrect or it is not licensed for your domain, please contact "
+"support!"
+msgstr "许可证不正确或您的域名未授权，请联系支持！"
+
+#: controllers/Api_external.php:586 controllers/Api_external.php:878
+#: controllers/Api_external.php:1033
+msgid ""
+"License is incorrect or it is not licensed for your IP, please contact "
+"support!"
+msgstr "许可证不正确或您IP的未授权，请联系支持！"
+
+#: controllers/Api_external.php:617 controllers/Api_external.php:644
+#: controllers/Api_external.php:893 controllers/Api_external.php:904
+msgid ""
+"License is incorrect or this license has expired, please contact support!"
+msgstr "许可证不正确或该许可证已过期，请联系支持！"
+
+#: controllers/Api_external.php:669 controllers/Api_external.php:847
+#: controllers/Api_external.php:1004
+msgid ""
+"License is incorrect or this license is not assigned to you, please contact "
+"support!"
+msgstr "许可证不正确或未分配此许可证，请联系支持！"
+
+#: controllers/Api_external.php:692 controllers/Api_external.php:854
+#: controllers/Api_external.php:1010
+msgid "License is blocked, please contact support!"
+msgstr "许可证被暂停，请联系支持！"
+
+#: controllers/Api_external.php:720 controllers/Api_external.php:926
+msgid "License use limit reached, please contact support!"
+msgstr "已达到许可证使用次数限制，请联系支持！"
+
+#: controllers/Api_external.php:750 controllers/Api_external.php:941
+msgid ""
+"License is already active on maximum allowed product instances, please "
+"deactivate this license from active instance(s) and try again!"
+msgstr ""
+"许可证已在最大允许的产品实例上处于活动状态，请从活动实例停用此许可证，然后重"
+"试！"
+
+#: controllers/Api_external.php:806
+msgid ""
+"License code specified is incorrect or is of a different product, please "
+"recheck!"
+msgstr "指定的授权码不正确或属于其他产品，请重新检查！"
+
+#: controllers/Api_external.php:913 controllers/Api_external.php:1041
+msgid "Activation not recognized or is inactive, please contact support!"
+msgstr "无法识别激活或激活无效，请联系支持！"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:961
+#, php-format
+msgid "Verified! Thanks for purchasing %s."
+msgstr "已验证！感谢购买%s."
+
+#: controllers/Api_external.php:967 controllers/Api_external.php:1059
+msgid "License code specified is incorrect, please recheck!"
+msgstr "指定的许可证代码不正确，请重新检查！"
+
+#: controllers/Api_external.php:1048
+msgid "License was not deactivated, please contact support!"
+msgstr "许可证未停用，请联系支持！"
+
+#: controllers/Api_external.php:1054
+msgid "License was deactivated successfully."
+msgstr "许可证已成功停用。"
+
+#: controllers/Api_internal.php:148
+msgid "Provided license code already exists, please recheck."
+msgstr "提供的许可证代码已存在，请重新检查。"
+
+#: controllers/Api_internal.php:159 controllers/Api_internal.php:345
+msgid "Provided client email address is incorrect, please check."
+msgstr "提供的客户电子邮件地址不正确，请检查。"
+
+#: controllers/Api_internal.php:171 controllers/Api_internal.php:371
+msgid "Provided licensed IPs are incorrect, please check."
+msgstr "提供的许可证授权IP不正确，请检查。"
+
+#: controllers/Api_internal.php:182 controllers/Api_internal.php:389
+msgid "Provided licensed domains are incorrect, please check."
+msgstr "提供的许可证授权域名不正确，请检查。"
+
+#: controllers/Api_internal.php:191 controllers/Api_internal.php:405
+msgid "Provided license support end date is incorrect, please check."
+msgstr "提供的许可证支持结束日期不正确，请检查。"
+
+#: controllers/Api_internal.php:200 controllers/Api_internal.php:421
+msgid "Provided license updates end date is incorrect, please check."
+msgstr "提供的许可证更新结束日期不正确，请检查。"
+
+#: controllers/Api_internal.php:209 controllers/Api_internal.php:437
+msgid "Provided license expiration date is incorrect, please check."
+msgstr "提供的许可证到期日期不正确，请检查。"
+
+#: controllers/Api_internal.php:218 controllers/Api_internal.php:453
+msgid "Provided license expiration days is incorrect, please check."
+msgstr "提供的许可证有效期限不正确，请检查。"
+
+#: controllers/Api_internal.php:227 controllers/Api_internal.php:469
+msgid "Provided license use limit is incorrect, please check."
+msgstr "提供的许可证使用限制不正确，请检查。"
+
+#: controllers/Api_internal.php:236 controllers/Api_internal.php:485
+msgid "Provided license parallel use limit is incorrect, please check."
+msgstr "提供的许可证并行使用限制不正确，请检查。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:266
+#, php-format
+msgid "New %s license %s was successfully added."
+msgstr "新的 %s 许可证 %s 已成功添加。"
+
+#: controllers/Api_internal.php:272
+msgid "An error occured, license was not added."
+msgstr "发生错误，未添加许可证。"
+
+#: controllers/Api_internal.php:278 controllers/Api_internal.php:305
+#: controllers/Api_internal.php:623 controllers/Api_internal.php:700
+#: controllers/Api_internal.php:737
+msgid "Product ID specified is incorrect, please recheck."
+msgstr "指定的产品ID不正确，请重新检查。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:514
+#, php-format
+msgid "License %s was successfully edited."
+msgstr "许可证 %s 已成功修改。"
+
+#: controllers/Api_internal.php:520
+msgid "An error occured, license was not edited."
+msgstr "发生错误，许可证未修改。"
+
+#: controllers/Api_internal.php:526
+msgid "Provided license does not exist, please recheck."
+msgstr "提供的许可证不存在，请重新检查。"
+
+#: controllers/Api_internal.php:550
+msgid "Provided product ID already exists, please recheck."
+msgstr "提供的产品ID已经存在，请重新检查。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the product ID.
+#: controllers/Api_internal.php:569
+#, php-format
+msgid "New product %s having ID %s was successfully added."
+msgstr "新的产品 %s ID %s 已添加。"
+
+#: controllers/Api_internal.php:575
+msgid "An error occured, product was not added."
+msgstr "发生错误，未添加产品。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:688
+#, php-format
+msgid "Product %s marked as active."
+msgstr "产品 %s 已启用。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:694
+#, php-format
+msgid "Product %s is already active."
+msgstr "产品 %s 已处于启用状态。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:725
+#, php-format
+msgid "Product %s marked as inactive."
+msgstr "产品 %s已停用。"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:731
+#, php-format
+msgid "Product %s is already inactive."
+msgstr "产品 %s 已处于停用状态。"
+
+#: controllers/Api_internal.php:856 controllers/Api_internal.php:890
+#: controllers/Api_internal.php:927 controllers/Api_internal.php:964
+#: controllers/Api_internal.php:1001
+msgid "License code specified is incorrect, please recheck."
+msgstr "指定的许可证代码不正确，请重新检查。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:878
+#, php-format
+msgid "License %s was successfully deleted."
+msgstr "已成功删除许可证 %s。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:884
+#, php-format
+msgid "License %s was not deleted, please recheck."
+msgstr "许可证 %s 未被删除，请重新检查。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:915
+#, php-format
+msgid "License %s was successfully deactivated."
+msgstr "许可证 %s 已成功修改。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:921
+#, php-format
+msgid "License %s is already deactivated."
+msgstr "许可证%s已停用。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:952
+#, php-format
+msgid "License %s was successfully blocked."
+msgstr "许可证%s 已暂停。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:958
+#, php-format
+msgid "License %s is already blocked."
+msgstr "许可证%s 已处于暂停状态。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:989
+#, php-format
+msgid "License %s was successfully unblocked."
+msgstr "许可证 %s 已启用。"
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:995
+#, php-format
+msgid "License %s is already unblocked."
+msgstr "许可证 %s 已处于激活状态。"
+
+#: controllers/Generate_helpers.php:80 controllers/Generate_helpers.php:155
+msgid "Server is unavailable at the moment, please try again."
+msgstr "服务器目前无法使用，请重试。"
+
+#: controllers/Generate_helpers.php:81 controllers/Generate_helpers.php:156
+msgid "Server returned an invalid response, please contact support."
+msgstr "服务器返回无效响应，请联系支持。"
+
+#: controllers/Generate_helpers.php:82
+msgid "Verified! Thanks for purchasing."
+msgstr "已验证！感谢您的购买。"
+
+#: controllers/Generate_helpers.php:83
+msgid "Preparing to download main update..."
+msgstr "正在准备下载主要更新..."
+
+#: controllers/Generate_helpers.php:84
+msgid "Main Update size:"
+msgstr "更新包大小："
+
+#: controllers/Generate_helpers.php:85
+msgid "(Please do not refresh the page)."
+msgstr "（请不要刷新页面）。"
+
+#: controllers/Generate_helpers.php:86
+msgid "Downloading main update..."
+msgstr "正在下载更新包..."
+
+#: controllers/Generate_helpers.php:87
+msgid ""
+"Your update period has ended or your license is invalid, please contact "
+"support."
+msgstr "您的更新期限已结束或许可证无效，请联系支持。"
+
+#: controllers/Generate_helpers.php:88
+msgid ""
+"Folder does not have write permission or the update file path could not be "
+"resolved, please contact support."
+msgstr "文件夹没有读写权限或更新文件路径无法解析，请联系支持。"
+
+#: controllers/Generate_helpers.php:89
+msgid "Main update files downloaded and extracted."
+msgstr "下载并解压了更新包。"
+
+#: controllers/Generate_helpers.php:90
+msgid "Update zip extraction failed."
+msgstr "更新zip提取失败。"
+
+#: controllers/Generate_helpers.php:91
+msgid "Preparing to download SQL update..."
+msgstr "正在准备下载SQL更新..."
+
+#: controllers/Generate_helpers.php:92
+msgid "SQL Update size:"
+msgstr "SQL更新大小："
+
+#: controllers/Generate_helpers.php:93
+msgid "Downloading SQL update..."
+msgstr "正在下载SQL更新..."
+
+#: controllers/Generate_helpers.php:94
+msgid "SQL update files downloaded."
+msgstr "SQL更新文件已下载。"
+
+#: controllers/Generate_helpers.php:95
+msgid ""
+"Application was successfully updated but automatic SQL importing failed, "
+"please import the downloaded SQL file in your database manually."
+msgstr ""
+"应用程序已成功更新，但自动 SQL 导入失败，请手动在数据库中导入下载的 SQL 文"
+"件。"
+
+#: controllers/Generate_helpers.php:96
+msgid ""
+"Application was successfully updated and SQL file was automatically imported."
+msgstr "已成功更新应用程序并自动导入 SQL 文件。"
+
+#: controllers/Generate_helpers.php:97
+msgid ""
+"Application was successfully updated, please import the downloaded SQL file "
+"in your database manually."
+msgstr "应用程序已成功更新，请手动将下载的 SQL 文件导入数据库。"
+
+#: controllers/Generate_helpers.php:98
+msgid "Application was successfully updated, there were no SQL updates."
+msgstr "应用程序已成功更新，没有 SQL 更新。"
+
+#: libraries/REST_Controller.php:589
+msgid "Only AJAX requests are allowed."
+msgstr "仅允许AJAX请求。"
+
+#: libraries/REST_Controller.php:695
+msgid "Unsupported protocol"
+msgstr "不支持的通讯协议"
+
+#: libraries/REST_Controller.php:732
+msgid "Provided API key is invalid."
+msgstr "提供的API密钥无效。"
+
+#: libraries/REST_Controller.php:748
+msgid "This API key does not have access to the requested resource."
+msgstr "此API密钥无权访问所请求的资源。"
+
+#: libraries/REST_Controller.php:759
+msgid "Unknown method"
+msgstr "未知的请求方法"
+
+#: libraries/REST_Controller.php:771
+msgid ""
+"This API key has reached its maximum requests per hour limit, try again "
+"later."
+msgstr "此API密钥已达到每小时最大请求数限制，请稍后再试。"
+
+#: libraries/REST_Controller.php:771
+msgid ""
+"This IP Address has reached its maximum requests per hour limit, try again "
+"later."
+msgstr "此IP地址已达到其每小时最大请求数限制，请稍后再试。"
+
+#: libraries/REST_Controller.php:790
+msgid "This API key does not have enough permissions."
+msgstr "此API密钥没有足够的权限。"
+
+#: libraries/REST_Controller.php:800
+msgid "This IP Address has reached the time limit for this method."
+msgstr "此IP地址已达到此请求方法的时间限制。"
+
+#: libraries/REST_Controller.php:2007 libraries/REST_Controller.php:2193
+msgid "Unauthorized"
+msgstr "未授权"
+
+#: libraries/REST_Controller.php:2105
+msgid "Invalid credentials"
+msgstr "无效凭证"
+
+#: libraries/REST_Controller.php:2127
+msgid "IP denied"
+msgstr "IP被拒绝"
+
+#: libraries/REST_Controller.php:2155
+msgid "IP unauthorized"
+msgstr "IP未授权"
+
+#~ msgid ""
+#~ "Update successful, there were no SQL updates. So you can run the updated "
+#~ "application directly."
+#~ msgstr "更新成功，没有SQL更新。因此，您可以直接运行更新的应用程序。"

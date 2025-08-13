@@ -1,0 +1,138 @@
+<?php
+goto tzjgN5Rc;
+lc80tQUi:xxz6nsbg:goto Lau0aiOZ;
+CeduJxgx:exit("No direct script access allowed");
+goto lc80tQUi;
+Lau0aiOZ:function load_init_configs($mOZuUw7M = false, $qz5yW25N = false, $uMGw_Hog = false)
+{
+	goto H_cOeF6Q;
+	gF7LenK_:define("LICENSEBOX_THEME", "material");
+	goto wAD0P2ai;
+	AuI29t0_:tca0wErL:goto SQ447Nby;
+	HSmXIcGm:$Ri1RHJ3o = floor($J_6EaHye / 60);
+	goto uNJ_FGkn;
+	iz3LEBhG:exit;
+	goto a7TgVJM8;
+	R3a3ftoM:
+	if (empty($xodymP2x)) {
+		goto UFp7Bdug;
+	}
+	goto HMsICJkA;
+	QfjlfTkb:$SIWr9rc8 = $J_6EaHye < 0 ? -1 : 1;
+	goto I1EdeWnk;
+	AhSysr_t:$CI->db->simple_query("SET time_zone='{$sjmEWQUJ}';");
+	goto S2WGY5yQ;
+	ctSw_9TR:
+	if (!(headers_sent() === false && ($CI->router->fetch_class() != "pages" || $CI->router->fetch_method() != "verify_license"))) {
+		goto cgeWJXX_;
+	}
+	goto V1li4X20;
+	ufJq2IQS:define("LICENSEBOX_THEME", strtolower(strip_tags(trim((string)$hNtbTQ_l))));
+	goto eOF1R3m6;
+	oj07KqzA:$eQPVlgMJ = $toU1OsmN->v3r1phy_l1c3n53(true);
+	goto v8PbVNOx;
+	uNJ_FGkn:$J_6EaHye -= $Ri1RHJ3o * 60;
+	goto pmihh7Wv;
+	S2WGY5yQ:UFp7Bdug:goto lxDBW5Uo;
+	akH2hc6g:
+	if (!empty($hNtbTQ_l)) {
+		goto I1T92ZCB;
+	}
+	goto gF7LenK_;
+	eOF1R3m6:cf1Fx8Og:goto XRGnx1J9;
+	pmihh7Wv:$sjmEWQUJ = sprintf("%+d:(2d", $Ri1RHJ3o * $SIWr9rc8, $J_6EaHye);
+	goto AhSysr_t;
+	wAD0P2ai:goto cf1Fx8Og;
+	goto RQfGjWtU;
+	v8PbVNOx:
+	if (!($eQPVlgMJ["status"] != true)) {
+		goto tca0wErL;
+	}
+	goto ctSw_9TR;
+	I1EdeWnk:$J_6EaHye = abs($J_6EaHye);
+	goto HSmXIcGm;
+	RtIB_Rb0:$hNtbTQ_l = $CI->user_model->get_config_from_db("licensebox_theme");
+	goto akH2hc6g;
+	HMsICJkA:date_default_timezone_set(trim(strip_tags($xodymP2x)));
+	goto a2jOu13Q;
+	iwliST3W:$zgpcq6Ph = array(
+		"api_external", "api_internal",
+		"cron"
+	);
+	goto bb6NnOJV;
+	SQ447Nby:Pr3luggS:goto RtIB_Rb0;
+	AfGHsCra:$J_6EaHye = $U7WB7sHg->getOffset() / 60;
+	goto QfjlfTkb;
+	L4PME3kA:$vFiLhJqc = $CI->router->fetch_class();
+	goto iwliST3W;
+	bb6NnOJV:
+	if (in_array($vFiLhJqc, $zgpcq6Ph)) {
+		goto Pr3luggS;
+	}
+	goto FHwHE530;
+	a7TgVJM8:cgeWJXX_:goto AuI29t0_;
+	V1li4X20:redirect("verify_license");
+	goto iz3LEBhG;
+	FHwHE530:$toU1OsmN = new L1c3n5380x4P1();
+	goto oj07KqzA;
+	RQfGjWtU:I1T92ZCB:goto ufJq2IQS;
+	XRGnx1J9:$xodymP2x = $CI->user_model->get_config_from_db("server_timezone");
+	goto R3a3ftoM;
+	H_cOeF6Q:$CI = &get_instance();
+	goto L4PME3kA;
+	a2jOu13Q:$U7WB7sHg = new DateTime();
+	goto AfGHsCra;
+	lxDBW5Uo:
+}
+goto gGnCp7MF;
+tzjgN5Rc:
+if (defined("BASEPATH")) {
+	goto xxz6nsbg;
+}
+goto CeduJxgx;
+gGnCp7MF:function force_ssl()
+{
+	goto IbsqyHxU;
+	ATgMs0Mq:
+	if (!$CI->config->config["force_ssl"]) {
+		goto gdi6_j3y;
+	}
+	goto U9uODnor;
+	c9WmrOGf:gz3NSsbn:goto cahzrrga;
+	easjQO12:redirect("https://{$D3wguJLG}{$H8LG2Uxx}");
+	goto z1Knbkob;
+	IbsqyHxU:$CI = &get_instance();
+	goto hSyxFqwN;
+	hSyxFqwN:$vFiLhJqc = $CI->router->fetch_class();
+	goto t5GpP2KU;
+	lRPgCgsE:$D3wguJLG = $_SERVER["SERVER_NAME"];
+	goto QwpCQIb4;
+	z1Knbkob:exit;
+	goto c9WmrOGf;
+	kUrIM8fE:
+	if (is_https()) {
+		goto gz3NSsbn;
+	}
+	goto easjQO12;
+	U9uODnor:
+	if (in_array($vFiLhJqc, $zgpcq6Ph)) {
+		goto Q4K8j7ns;
+	}
+	goto lRPgCgsE;
+	t5GpP2KU:$zgpcq6Ph = array(
+		"api_external", "api_internal",
+		"cron"
+	);
+	goto ATgMs0Mq;
+	cahzrrga:Q4K8j7ns:goto O_2qTrrq;
+	bfyc2n50:$CI->config->config["base_url"] = str_replace(
+		"http://",
+		"https://",
+		$CI->config->config["base_url"]
+	);
+	goto kUrIM8fE;
+	O_2qTrrq:gdi6_j3y:goto OQAgWHRP;
+	QwpCQIb4:$H8LG2Uxx = $_SERVER["REQUEST_URI"];
+	goto bfyc2n50;
+	OQAgWHRP:
+}
