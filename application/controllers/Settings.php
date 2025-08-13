@@ -6,12 +6,10 @@
  * Keydera is a full-fledged licenser and updates manager.
  *
  * @package Keydera
- * @author CodeMonks
- * @see https://keydera.app
- * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
- * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
- * @version 1.6.4
+ * @author Craadly
+ * @see https://craadly.com
+ * @copyright Copyright (c) 2025, Craadly. (https://www.craadly.com)
+ * @version 1.0.0
  */
 
 use PHPMailer\PHPMailer\Exception;
@@ -385,7 +383,7 @@ class Settings extends CI_Controller
 							<br>
 							<center><small>This is a system generated email.</small></center>
 							<br>
-							<center>Copyright {[year]} <a style='color:#aaaaaa;text-decoration:none;' href='https://www.keydera.app'>CodeMonks</a>, All Rights Reserved.</center>
+							<center>Copyright {[year]} <a style='color:#aaaaaa;text-decoration:none;' href='https://www.craadly.com'>Craadly</a>, All Rights Reserved.</center>
 							<br>
 							<br>
 						</td>

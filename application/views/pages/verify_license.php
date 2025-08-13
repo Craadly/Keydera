@@ -31,13 +31,13 @@
       </div>
       <?php } ?>
       <center>
-      <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $lb_version;?>&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help?</a>
+      <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@craadly.com help with Keydera <?php echo $lb_version;?>&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help?</a>
       </center>
     </div>
   </div>
 </div>
 <div class="content has-text-centered">
-  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app">CodeMonks</a>, All rights reserved.</p>
+  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.craadly.com">Craadly</a>, All rights reserved.</p>
 </div>
 </body>
 </html>
