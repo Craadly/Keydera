@@ -8,9 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @package Keydera
  * @author Craadly
- * @see https://keydera.app
- * @copyright Copyright (c) 2025, Craadly. (https://www.keydera.app)
- * @version 1.6.4 
+ * @see https://craadly.com
+ * @copyright Copyright (c) 2025, Craadly. (https://www.craadly.com)
+ * @version 1.0.0
  */
 
 $active_group = 'default';
