@@ -137,7 +137,7 @@ if(!file_exists($htaccess_file)){
 ?>
 <div class="columns is-mobile is-centered is-vcentered">
   <div class="column">
-    <p class='help has-text-grey p-t-xs has-text-centered'>By clicking "Next", you agree to our <a class="has-text-grey" href="https://www.keydera.app">Terms & Privacy Policy</a>.</p>
+    <p class='help has-text-grey p-t-xs has-text-centered'>By clicking "Next", you agree to our <a class="has-text-grey" href="https://www.craadly.com">Terms & Privacy Policy</a>.</p>
   </div>
   <div class="column is-narrow">
     <div style='text-align: right;'>
@@ -196,7 +196,7 @@ if(!empty($_POST['license'])&&!empty($_POST['client'])&&!empty($_POST['email']))
    <form action="index.php?step=0" method="POST">
    <div class="notification is-danger"><?php echo ucfirst($msg); ?></div>
   <div class="field">
-    <label class="label">Purchase code <small class="has-text-weight-normal has-text-grey"> <a style="color:red;" href="https://doniaweb.com" target="_blank">Licensed By DoniaWeB</a></small></label>
+    <label class="label">Purchase code</a></small></label>
     <div class="control">
       <input class="input" type="text" placeholder="Enter your purchase code" name="license" required>
     </div>
@@ -240,7 +240,7 @@ if(!empty($_POST['license'])&&!empty($_POST['client'])&&!empty($_POST['email']))
 }else{  ?>
   <form action="index.php?step=0" method="POST">
     <div class="field">
-      <label class="label">Purchase code <small class="has-text-weight-normal has-text-grey"> (<a style="color:red;" href="https://doniaweb.com" target="_blank">Licensed By DoniaWeB</a>)</small></label>
+      <label class="label">Purchase code</label>
       <div class="control">
         <input class="input" type="text" placeholder="Enter random purchase code" name="license" required>
       </div>
@@ -590,7 +590,7 @@ if($_POST&&(isset($_POST["prc4"]))){
     <div class='notification is-danger'>Installation file was not removed, you should delete the (<strong><?php echo $installFile; ?></strong>) file to lock the installer.</div>
   <?php }?>
 <center><p><strong>Keydera is successfully installed.</strong></p><br>
-<p>You can now login using your email or username: <strong>Mahmoud</strong> and default password: <strong>doniaweb.com</strong></p><br><strong>
+<p>You can now login using your email or username: <strong>Craadly</strong> and default password: <strong>doniaweb.com</strong></p><br><strong>
 <p><a class='button is-link' href='../'>Login</a></p></strong>
 <br>
 <p class='help has-text-grey'>The first thing you should do is change your account details.</p>
@@ -605,7 +605,7 @@ else { ?>
     </div>
     <center>
     <p class="has-text-grey p-b-sm"><small>You are installing Keydera <?php echo $api->get_current_version();?></small></p>
-    <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $api->get_current_version();?> Installation&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help <i class="fas fa-question-circle"></i></a>
+    <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@craadly.com help with Keydera <?php echo $api->get_current_version();?> Installation&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help <i class="fas fa-question-circle"></i></a>
     </center>
     </div>
   </div> 

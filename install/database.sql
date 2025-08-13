@@ -147,7 +147,7 @@ CREATE TABLE `auth_users` (
 -- --------------------------------------------------------
 
 INSERT INTO `auth_users` (`au_id`, `au_uid`, `au_username`, `au_password`, `au_email`, `au_name`, `au_date_created`, `au_reset_key`, `au_reset_exp`) VALUES
-(1, 'lbgstyu7g12', 'Mahmoud', '$2y$10$iZo1naAkQVU0CI1/B5dPNuzazTEwHpFFWB41Th8GjVt3HUZFAo41e', 'admin@example.com', 'Administrator', '2019-02-13', '$2y$10$YhAg6pMz67Mg0z2xZt60bexJJjFoP20zYgRcGyzJDIut/6pyJbxrm', '2022-06-24 15:20:29');
+(1, 'lbgstyu7g12', 'Keydera', '$2y$10$iZo1naAkQVU0CI1/B5dPNuzazTEwHpFFWB41Th8GjVt3HUZFAo41e', 'admin@example.com', 'Administrator', '2025-08-13', '$2y$10$YhAg6pMz67Mg0z2xZt60bexJJjFoP20zYgRcGyzJDIut/6pyJbxrm', '2022-06-24 15:20:29');
 
 --
 -- Table structure for table `cron_mails`

@@ -7,12 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Keydera is a full-fledged licenser and updates manager.
  *
  * @package Keydera
- * @author CodeMonks
+ * @author Craadly
  * @see https://keydera.app
- * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
- * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
- * @version 1.6.4
+ * @copyright Copyright (c) 2025, Craadly. (https://www.keydera.app)
+ * @version 1.6.4 
  */
 
 $active_group = 'default';

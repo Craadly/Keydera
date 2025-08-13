@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16"/>
 </head>
 <body>
-  <?php 
+  <?php
     require "install.php";
   ?>
  <div class="content has-text-centered p-b-sm">
   <p>
-   Copyright <?php echo date('Y'); ?> <a href="https://www.keydera.app" style="color: inherit;" target="_blank" rel="noopener">CodeMonks</a>, All rights reserved.
+   Copyright <?php echo date('Y'); ?> <a href="https://www.craadly.com" style="color: inherit;" target="_blank" rel="noopener">Craadly</a>, All rights reserved.
   </p>
  </div>
 </body>
