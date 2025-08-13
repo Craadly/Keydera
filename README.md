@@ -7,16 +7,12 @@
 ## Why Keydera?
 
 - Clean, **developer-friendly** admin—get in, ship, repeat.  
-  _Reference: CodeCanyon_
+
 
 - Runs on **minimal server resources** (shared/VPS friendly).  
-  _Reference: DoniaWeB_
-
 - **Built-in PHP obfuscation/encoding** to protect distributed code.  
-  _Reference: CodeCanyon_
-
 - **Examples + helper generator** for fast integration.  
-  _References: code.market, DoniaWeB_
+
 
 ---
 
