@@ -2,48 +2,37 @@
 
 DirectoryIndex index.php index.html
 
-RewriteEngine on
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # RewriteBase /
 
-# Uncomment the lines below to Force-HTTPS, if you wish you can also Force-HTTPS from config.php.
-# RewriteCond %{HTTPS} !on
-# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+  # --- Optional: Force HTTPS ---
+  # RewriteCond %{HTTPS} !=on
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Must have security headers when using HTTPS
-# <IfModule mod_headers.c>
-# 	Header always set Strict-Transport-Security "max-age=31536000;includeSubDomains"
-# 	Header always edit Set-Cookie ^(.*)$ $1;SameSite=None;Secure
-# </IfModule>
+  # Bypass real files/dirs and public asset folders
+  RewriteRule ^(index\.php|favicon\.png|assets/|images/|js/|css/|vendor/) - [L]
 
-# Uncomment to add trailing slash in URL.
-# RewriteCond %{REQUEST_URI} /+[^\.]+$
-# RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
 
-# Uncomment to remove extra trailing slash from URL.
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_URI} (.+)/$
-# RewriteRule ^ %1 [R=301,L]
-
-# Useful security headers
-<IfModule mod_headers.c>
-	Header set X-XSS-Protection "1; mode=block"
-	Header always append X-Frame-Options SAMEORIGIN
-	Header set X-Content-Type-Options nosniff
+  # Front controller (CodeIgniter-style routing)
+  RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+  # Alternative (PATH_INFO style):
+  # RewriteRule ^ index.php [L,QSA]
 </IfModule>
 
-<FilesMatch ".(svg|jpg|jpeg|png|ico|js|css)$">
-	# Header set Cache-Control "max-age=84600, public"
+# Useful security headers (only if mod_headers is available)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # X-XSS-Protection is deprecated, keep only if you want legacy behavior:
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Static files caching (optional)
+<FilesMatch "\.(svg|jpg|jpeg|png|ico|js|css)$">
+  # Header set Cache-Control "max-age=84600, public"
 </FilesMatch>
-
-# On some servers the default rewrite rule may not work, in that case, you can try this.
-# RewriteCond $1 !^(index\.php|assets|images|js|css|vendor|favicon.png)
-# RewriteCond %(REQUEST_FILENAME) !-f
-# RewriteCond %(REQUEST_FILENAME) !-d
-# RewriteRule ^(.*)$ ./index.php/$1 [L]
-
-# Default URL rewrite rules.
-RewriteCond $1 !^(index\.php|assets|images|js|css|vendor|favicon.png)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./index.php?/$1 [L,QSA]
 
 # END Keydera
