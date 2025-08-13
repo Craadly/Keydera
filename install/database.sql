@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
@@ -93,9 +93,9 @@ CREATE TABLE `app_settings` (
 
 INSERT INTO `app_settings` (`as_id`, `as_name`, `as_value`) VALUES
 (1, 'license_code_format', '{[Z]}{[Z]}{[Z]}{[Z]}{[X]} -{[Z]}{[Z]}{[Z]}{[Z]}{[X]} -{[Z]}{[Z]}{[Z]}{[Z]}{[X]} -{[Z]}{[Z]}{[Z]}{[Z]}{[X]}'),
-(2, 'licensebox_theme', 'material'),
+(2, 'keydera_theme', 'material'),
 (3, 'envato_api_token', NULL),
-(4, 'server_email', 'lb@licensebox.app'),
+(4, 'server_email', 'lb@keydera.app'),
 (5, 'blacklisted_ips', NULL),
 (6, 'blacklisted_domains', NULL),
 (7, 'api_rate_limit_method', 'ip_address'),
@@ -404,3 +404,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

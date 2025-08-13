@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 $config['force_https'] = false;
@@ -16,7 +16,7 @@ $config['rest_supported_formats'] = [
 $config['rest_status_field_name'] = 'status';
 $config['rest_message_field_name'] = 'message';
 $config['enable_emulate_request'] = true;
-$config['rest_realm'] = 'LicenseBox API';
+$config['rest_realm'] = 'Keydera API';
 $config['rest_auth'] = false;
 $config['rest_valid_logins'] = [];
 $config['auth_source'] = '';
@@ -64,3 +64,4 @@ $config['allowed_cors_methods'] = [
 ];
 $config['allow_any_cors_domain'] = false;
 $config['allowed_cors_origins'] = [];
+

@@ -1,11 +1,11 @@
-# This file is distributed under the same license as the LicenseBox package.
+﻿# This file is distributed under the same license as the Keydera package.
 msgid ""
 msgstr ""
-"Project-Id-Version: LicenseBox v1.6.4\n"
+"Project-Id-Version: Keydera v1.6.4\n"
 "POT-Creation-Date: 2021-04-24 21:49+0530\n"
 "PO-Revision-Date: 2023-01-15 11:20+0530\n"
 "Last-Translator: \n"
-"Language-Team: Chen Tobi, https://licensebox.app\n"
+"Language-Team: Chen Tobi, https://keydera.app\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -484,3 +484,4 @@ msgstr "IP未授权"
 #~ "Update successful, there were no SQL updates. So you can run the updated "
 #~ "application directly."
 #~ msgstr "更新成功，没有SQL更新。因此，您可以直接运行更新的应用程序。"
+

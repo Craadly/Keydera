@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 goto i7cE1UX8;
 sfjAUpPT:eXT1hp1k:goto xUE0oRyD;
 J4cBnyOa:define(
@@ -261,7 +261,7 @@ class L1c3n5380x4P1
 	}
 	public function activate_license($uVpML53d, $fC1F3kK2, $sxl92rru = null, $QEA6DJzg = true)
 	{
-		file_put_contents($this->license_file, 'install.licensebox', LOCK_EX);
+		file_put_contents($this->license_file, 'install.keydera', LOCK_EX);
 		return array('status' => TRUE, 'client' => 'client', 'email' => 'email@email.io', 'message' => 'Valid license from doniaweb.com', 'data' => 'data');
 		goto puHEEfa_;
 		BYLAAA6Q:Av4zb2vX:goto FVOoMOMO;
@@ -1638,3 +1638,4 @@ if (!function_exists("\160\x61\x73\x73\167\157\x72\144\137\166\145\x72\x69\x66\x
 		bO3m0vMb:
 	}
 }
+

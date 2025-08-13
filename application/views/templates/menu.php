@@ -1,11 +1,11 @@
-<?php $coreApp = new L1c3n5380x4P1();
+﻿<?php $coreApp = new L1c3n5380x4P1();
 $system_info = get_system_info($coreApp->check_local_license_exist());
 ?>
-<nav id="navbar" class="navbar <?php echo (strtolower(LICENSEBOX_THEME)=="classic")?"is-link has-border2":"is-primary"; ?> is-spaced">
+<nav id="navbar" class="navbar <?php echo (strtolower(KEYDERA_THEME)=="classic")?"is-link has-border2":"is-primary"; ?> is-spaced">
   <div class="container is-fluid menu-container">
     <div class="navbar-brand">
       <a class="navbar-item" href="<?php echo base_url(); ?>" style="max-width: 200px;">
-        <img src="<?php echo base_url(); ?>assets/images/logo-white.svg" alt="LicenseBox" class="noselect">
+        <img src="<?php echo base_url(); ?>assets/images/logo-white.svg" alt="Keydera" class="noselect">
       </a>
       <div id="navbarBurger" class="navbar-burger burger" data-target="navBarLB">
         <span></span>
@@ -129,13 +129,13 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
           <i class="fas fa-info-circle p-r-xs"></i> Help
         </a>
         <div id="moreDropdown" class="navbar-dropdown">
-          <a class="navbar-item" href="https://licensebox.app/documentation/swagger/" target="_blank" title="Check LicenseBox API documentation">
+          <a class="navbar-item" href="https://keydera.app/documentation/swagger/" target="_blank" title="Check Keydera API documentation">
             <span>
               <strong><i class="fa-solid fa-arrow-up-right-from-square p-r-xs"></i> API Documentation</strong>
             </span>
           </a>
           <hr class="navbar-divider">
-          <a class="navbar-item" href="mailto:support@licensebox.app?subject=Need help with LicenseBox <?php echo $coreApp->get_current_version();?>&body=LicenseBox System Information: %0D%0A<?php echo urlencode($system_info); ?>%0D%0A%0D%0A(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)%0D%0A" title="Contact LicenseBox Support">
+          <a class="navbar-item" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $coreApp->get_current_version();?>&body=Keydera System Information: %0D%0A<?php echo urlencode($system_info); ?>%0D%0A%0D%0A(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)%0D%0A" title="Contact Keydera Support">
             <span>
               <strong><i class="fa-solid fa-headset p-r-xs"></i> Contact Support</strong>
             </span>
@@ -151,7 +151,7 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
             <span>
               <strong>About</strong>
               <br>
-              LicenseBox is a full-fledged <br> licenser and updates solution
+              Keydera is a full-fledged <br> licenser and updates solution
             </span>
           </p>
           <hr class="navbar-divider">
@@ -170,7 +170,7 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
            <span class="logged-in-text">&nbsp;<?php echo ucfirst($this->session->userdata('fullname')); ?></span>
         </a>
         <div id="moreDropdown" class="navbar-dropdown">    
-          <a class="navbar-item " href="<?php echo base_url(); ?>logout" title="Log out of LicenseBox">
+          <a class="navbar-item " href="<?php echo base_url(); ?>logout" title="Log out of Keydera">
             <span>
               <strong><i class="fas fa-sign-out-alt"></i> Logout</strong>
             </span>
@@ -181,3 +181,4 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
   </div>
 </div>
 </nav>
+

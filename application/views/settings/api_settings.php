@@ -1,4 +1,4 @@
-<div class="container is-fluid main_body">
+﻿<div class="container is-fluid main_body">
   <div class="section">
     <h1 class="title">
       <?php echo $title; ?>
@@ -18,7 +18,7 @@
       <div class="columns">
         <div class="column">
           <div class="field">
-            <label class="label">Blacklist domain after how many failed attempts? <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If the specified number of failed activation and update download attempts are reached, the user's domain will be blacklisted automatically. (Note: This feature will only work if the LicenseBox Cron is set up correctly and the option to 'add entries for failed activation and download attempts' is enabled.)" style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">Blacklist domain after how many failed attempts? <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If the specified number of failed activation and update download attempts are reached, the user's domain will be blacklisted automatically. (Note: This feature will only work if the Keydera Cron is set up correctly and the option to 'add entries for failed activation and download attempts' is enabled.)" style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="number" name="auto_domain_blacklist" value="<?php echo $auto_domain_blacklist; ?>" placeholder="Number of failed attempts for auto domain blacklisting." min="1" tabindex="1">
             </div>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="field" style="margin-top: 1rem!important;">
-            <label class="label">API Blacklisted Domains <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If specified, access to the LicenseBox API will be blocked for these domains." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">API Blacklisted Domains <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If specified, access to the Keydera API will be blocked for these domains." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="tags" name="api_blacklisted_domains" value="<?php
                 if(!empty(set_value('api_blacklisted_domains'))) {
@@ -55,7 +55,7 @@
         </div>
         <div class="column">
           <div class="field">
-            <label class="label">Blacklist IP after how many failed attempts? <small class="tooltip is-tooltip-multiline is-tooltip-left" data-tooltip="If the specified number of failed activation and update download attempts are reached, the user's IP will be automatically blacklisted. (Note: This will only work if the LicenseBox Cron is set up correctly and entries for failed activation and download attempts are allowed.)" style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">Blacklist IP after how many failed attempts? <small class="tooltip is-tooltip-multiline is-tooltip-left" data-tooltip="If the specified number of failed activation and update download attempts are reached, the user's IP will be automatically blacklisted. (Note: This will only work if the Keydera Cron is set up correctly and entries for failed activation and download attempts are allowed.)" style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="number" name="auto_ip_blacklist" value="<?php echo $auto_ip_blacklist; ?>" placeholder="Number of failed attempts for auto IP blacklisting." min="1" tabindex="2">
             </div>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">API Blacklisted IPs <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If supplied, access to the LicenseBox API will be blocked for these IP addresses." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">API Blacklisted IPs <small class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="If supplied, access to the Keydera API will be blocked for these IP addresses." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="tags" name="api_blacklisted_ips" value="<?php
                 if(!empty(set_value('api_blacklisted_ips'))) {
@@ -177,7 +177,7 @@
           </div>
           <div class="field p-t-xs">
             <input class="is-checkradio is-success" type="checkbox" name="ignore_limits" id="ignore_limits">
-            <label for="ignore_limits" style="margin-left: 0px !important;">Give special permission? <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choosing this option will grant this API key special access to the LicenseBox API, bypassing any established API limitations, such as rate limits, domain blacklists, and IP blacklists. This can be useful if you do not want your personal API keys to be restricted." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+            <label for="ignore_limits" style="margin-left: 0px !important;">Give special permission? <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choosing this option will grant this API key special access to the Keydera API, bypassing any established API limitations, such as rate limits, domain blacklists, and IP blacklists. This can be useful if you do not want your personal API keys to be restricted." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
           </div>
           <div class="field is-grouped p-t-xs">
             <div class="control">

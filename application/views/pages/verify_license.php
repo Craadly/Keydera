@@ -1,8 +1,8 @@
-<div class="container main_body"> 
+﻿<div class="container main_body"> 
   <div class="section" >
     <div class="column is-three-fifths is-offset-one-fifth">
      <center><h1 class="title p-t-xl p-b-lg">
-      Verify License - LicenseBox
+      Verify License - Keydera
       </h1></center>
       <?php if($lb_status!=True){ ?>
       <?php if(!empty($lb_msg)){?>
@@ -31,13 +31,13 @@
       </div>
       <?php } ?>
       <center>
-      <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@licensebox.app?subject=Need help with LicenseBox <?php echo $lb_version;?>&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help?</a>
+      <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $lb_version;?>&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help?</a>
       </center>
     </div>
   </div>
 </div>
 <div class="content has-text-centered">
-  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.licensebox.app">CodeMonks</a>, All rights reserved.</p>
+  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app">CodeMonks</a>, All rights reserved.</p>
 </div>
 </body>
 </html>

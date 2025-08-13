@@ -1,4 +1,4 @@
-<div class="container is-fluid main_body">
+﻿<div class="container is-fluid main_body">
   <div class="section">
     <h1 class="title">
       <?php echo $title; ?>
@@ -20,15 +20,15 @@
           <div class="columns" style="margin-bottom: 0px;">
             <div class="column is-one-third">
               <div class="field">
-                <label class="label">LicenseBox Theme</label>
+                <label class="label">Keydera Theme</label>
                 <div class="control">
                   <div class="select" style="width:100%;">
-                    <select name="licensebox_theme" style="width:100%;" required>
-                      <?php if($licensebox_theme=="classic"):?>
+                    <select name="keydera_theme" style="width:100%;" required>
+                      <?php if($keydera_theme=="classic"):?>
                       <option value="classic" selected>Classic</option>
                       <option value="flat">Flat</option>
                       <option value="material">Material</option>
-                      <?php elseif($licensebox_theme=="flat"): ?>
+                      <?php elseif($keydera_theme=="flat"): ?>
                       <option value="classic">Classic</option>
                       <option value="flat" selected>Flat</option>
                       <option value="material">Material</option>
@@ -155,14 +155,14 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Default Envato License Uses Limit <small class="tooltip is-tooltip-multiline is-tooltip-left" style="font-weight: 400;" data-tooltip="​Enter the default license uses limit which will be added to all newly added Envato purchase codes in LicenseBox. Leave it empty to allow unlimited usage by default.​"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">Default Envato License Uses Limit <small class="tooltip is-tooltip-multiline is-tooltip-left" style="font-weight: 400;" data-tooltip="​Enter the default license uses limit which will be added to all newly added Envato purchase codes in Keydera. Leave it empty to allow unlimited usage by default.​"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="number" min="1" step="1" id="envato_use_limit" name="envato_use_limit" value="<?php echo $envato_use_limit; ?>" placeholder="Enter default license uses for Envato purchase codes" tabindex="3">
             </div>
             <?php echo form_error('envato_use_limit', '<p class="help is-danger">', '</p>'); ?>
           </div>
           <div class="field">
-            <label class="label">Default Envato Parallel Uses Limit <small class="tooltip is-tooltip-multiline is-tooltip-left" style="font-weight: 400;" data-tooltip="​Enter the default parallel uses limit which will be added to all newly added Envato purchase codes in LicenseBox. Leave it empty to allow unlimited parallel usage by default.​"><i class="fas fa-question-circle"></i></small></label>
+            <label class="label">Default Envato Parallel Uses Limit <small class="tooltip is-tooltip-multiline is-tooltip-left" style="font-weight: 400;" data-tooltip="​Enter the default parallel uses limit which will be added to all newly added Envato purchase codes in Keydera. Leave it empty to allow unlimited parallel usage by default.​"><i class="fas fa-question-circle"></i></small></label>
             <div class="control">
               <input class="input" type="number" min="1" step="1" id="envato_parallel_use_limit" name="envato_parallel_use_limit" value="<?php echo $envato_parallel_use_limit; ?>" placeholder="Enter default parallel uses for Envato purchase codes" tabindex="3">
             </div>

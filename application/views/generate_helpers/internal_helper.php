@@ -1,4 +1,4 @@
-<div class="container is-fluid main_body"> 
+﻿<div class="container is-fluid main_body"> 
 <div class="section">
   <h1 class="title">
     <?php echo $title; ?>
@@ -25,7 +25,7 @@
           <?php echo form_error('key', '<p class="help is-danger">', '</p>'); ?>
         </div>
         <div class="field">
-          <label class="label">API Language <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choose the language in which you wish the LicenseBox API to respond, useful if you are using LicenseBox in an application which is in a different language (e.g German)." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+          <label class="label">API Language <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choose the language in which you wish the Keydera API to respond, useful if you are using Keydera in an application which is in a different language (e.g German)." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
           <div class="control is-expanded">
             <select name="language" class="is-select2" style="width: 100%" value="<?php echo set_value('language'); ?>" required>
               <option disabled="" selected="">Select API Language</option>

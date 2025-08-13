@@ -1,11 +1,11 @@
-# This file is distributed under the same license as the LicenseBox package.
+﻿# This file is distributed under the same license as the Keydera package.
 msgid ""
 msgstr ""
-"Project-Id-Version: LicenseBox v1.6.4\n"
+"Project-Id-Version: Keydera v1.6.4\n"
 "POT-Creation-Date: 2021-04-24 21:49+0530\n"
 "PO-Revision-Date: 2023-01-15 11:20+0530\n"
 "Last-Translator: \n"
-"Language-Team: https://licensebox.app\n"
+"Language-Team: https://keydera.app\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -475,3 +475,4 @@ msgstr ""
 #: libraries/REST_Controller.php:2155
 msgid "IP unauthorized"
 msgstr ""
+

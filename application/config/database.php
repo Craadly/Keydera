@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -18,15 +18,15 @@ $active_group = 'default';
 $query_builder = true;
 
 // DB_HOST : MySQL hostname
-// DB_NAME : The name of the database for LicenseBox
+// DB_NAME : The name of the database for Keydera
 // DB_USER : MySQL database username
 // DB_PASS : MySQL database password
 $db['default'] = array(
-    'dsn' => 'mysql:host=localhost;dbname=licensebox',
+    'dsn' => 'mysql:host=localhost;dbname=keydera',
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => '',
-    'database' => 'licensebox',
+    'database' => 'keydera',
     'dbdriver' => 'pdo',
     'dbprefix' => '',
     'pconnect' => false,
@@ -46,3 +46,4 @@ $db['default'] = array(
 //$db['default']['port'] = 3306;
 
 /* Cheers! */
+

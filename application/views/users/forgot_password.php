@@ -1,9 +1,9 @@
-<div class="container">  
+﻿<div class="container">  
 <section class="hero is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="column is-4 is-offset-4">
-                <img src="<?php echo base_url(); ?>assets/images/logo-dark.svg" width="270" alt="LicenseBox" class="noselect">
+                <img src="<?php echo base_url(); ?>assets/images/logo-dark.svg" width="270" alt="Keydera" class="noselect">
                 <p class="subtitle is-6 p-t-xs p-b-xs">Let's reset your password.</p>
                 <?php if($this->session->flashdata('login_status')): ?>
                     <?php $flash = $this->session->flashdata('login_status');

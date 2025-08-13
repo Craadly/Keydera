@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -107,7 +107,7 @@ class Activations extends CI_Controller
                 $nestedData[] = "<center><span class='tag is-" . $is_valid_typ . " is-small is-rounded tooltip' data-tooltip='" . $is_valid_tooltip . "'>" . $is_valid . "</span></center>";
 
                 $form_buttons = "<div class='buttons is-centered'>";
-                $title_or_tooltip = (strtolower(LICENSEBOX_THEME) == "material") ? "title" : "data-tooltip";
+                $title_or_tooltip = (strtolower(KEYDERA_THEME) == "material") ? "title" : "data-tooltip";
 
                 if (($post->pi_isactive != 0) && ($post->pi_isvalid != 0)) {
                     $hidden = array('iid' => $post->pi_iid);
@@ -219,3 +219,4 @@ class Activations extends CI_Controller
         }
     }
 }
+

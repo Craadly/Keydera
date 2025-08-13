@@ -1,9 +1,9 @@
-<div class="container is-fluid main_body"> 
+﻿<div class="container is-fluid main_body"> 
 <div class="section">
   <?php 
     $hidden = array('mail_type' => 'send_email_to_admin'); 
     echo form_open('/send_test_email','id="test_email_form" style="margin-bottom: 1.5rem;"',$hidden); 
-    $title_or_tooltip = (strtolower(LICENSEBOX_THEME)=="material")?"title":"data-tooltip"; 
+    $title_or_tooltip = (strtolower(KEYDERA_THEME)=="material")?"title":"data-tooltip"; 
   ?>
   <h1 class="title">
     <?php 
@@ -25,7 +25,7 @@ echo form_open('email_settings', array('id' => 'email_settings_form')); ?>
 <div class="columns" style="margin-bottom: 0px;">
 <div class="column">
   <div class="field">
-    <label class="label">Email Method <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choose the email method LicenseBox will use for sending automated emails to clients." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
+    <label class="label">Email Method <small class="tooltip is-tooltip-multiline is-tooltip-right " data-tooltip="Choose the email method Keydera will use for sending automated emails to clients." style="font-weight: 400;"><i class="fas fa-question-circle"></i></small></label>
     <div class="control is-expanded">
       <div class="select is-fullwidth">
         <select id="email_method" name="email_method" required>

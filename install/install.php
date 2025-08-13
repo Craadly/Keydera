@@ -1,6 +1,6 @@
-<?php 
+﻿<?php 
 require_once('../application/core/core_init.php');
-$installFile = "install.licensebox";
+$installFile = "install.keydera";
 
 if (is_file($installFile)) {
   $api = new L1c3n5380x4P1();
@@ -31,7 +31,7 @@ if (is_file($installFile)) {
 <div class="section">
   <div class="column is-three-fifths is-offset-one-fifth">
     <center>
-      <img class="p-t-lg m-t-sm" src="../assets/images/logo-dark.svg" width="250" alt="LicenseBox">
+      <img class="p-t-lg m-t-sm" src="../assets/images/logo-dark.svg" width="250" alt="Keydera">
       <h4 class="title is-4 p-t-md p-b-md" style="margin-right: -5px;margin-left: -5px;">
       Welcome to the installation wizard!
     </h4></center>
@@ -43,7 +43,7 @@ if (is_file($installFile)) {
       if(!empty($update_data['latest_version'])&&(version_compare($update_data['latest_version'],  $api->get_current_version())>0)){ ?>
       <center><article class="message is-warning">
       <div class="message-body">
-       New LicenseBox version <?php echo $update_data['latest_version']; ?> available, <a href="https://codecanyon.net/downloads" target="_blank" rel="noopener noreferrer">download now</a>!
+       New Keydera version <?php echo $update_data['latest_version']; ?> available, <a href="https://codecanyon.net/downloads" target="_blank" rel="noopener noreferrer">download now</a>!
       </div>
     </article></center><br>
     <?php }
@@ -137,7 +137,7 @@ if(!file_exists($htaccess_file)){
 ?>
 <div class="columns is-mobile is-centered is-vcentered">
   <div class="column">
-    <p class='help has-text-grey p-t-xs has-text-centered'>By clicking "Next", you agree to our <a class="has-text-grey" href="https://www.licensebox.app">Terms & Privacy Policy</a>.</p>
+    <p class='help has-text-grey p-t-xs has-text-centered'>By clicking "Next", you agree to our <a class="has-text-grey" href="https://www.keydera.app">Terms & Privacy Policy</a>.</p>
   </div>
   <div class="column is-narrow">
     <div style='text-align: right;'>
@@ -351,7 +351,7 @@ if (!is_file($htaccess_file)) {
   if(is_writeable($htaccess_file))
   {
     $htaccess_raw = <<<'RAW'
-# BEGIN LicenseBox
+# BEGIN Keydera
 
 DirectoryIndex index.php index.html
 
@@ -399,7 +399,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ ./index.php?/$1 [L,QSA]
 
-# END LicenseBox
+# END Keydera
 
 RAW;
     @file_put_contents($htaccess_file,$htaccess_raw);
@@ -589,7 +589,7 @@ if($_POST&&(isset($_POST["prc4"]))){
   else{ ?>
     <div class='notification is-danger'>Installation file was not removed, you should delete the (<strong><?php echo $installFile; ?></strong>) file to lock the installer.</div>
   <?php }?>
-<center><p><strong>LicenseBox is successfully installed.</strong></p><br>
+<center><p><strong>Keydera is successfully installed.</strong></p><br>
 <p>You can now login using your email or username: <strong>Mahmoud</strong> and default password: <strong>doniaweb.com</strong></p><br><strong>
 <p><a class='button is-link' href='../'>Login</a></p></strong>
 <br>
@@ -604,8 +604,8 @@ else { ?>
   ?>    
     </div>
     <center>
-    <p class="has-text-grey p-b-sm"><small>You are installing LicenseBox <?php echo $api->get_current_version();?></small></p>
-    <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@licensebox.app?subject=Need help with LicenseBox <?php echo $api->get_current_version();?> Installation&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help <i class="fas fa-question-circle"></i></a>
+    <p class="has-text-grey p-b-sm"><small>You are installing Keydera <?php echo $api->get_current_version();?></small></p>
+    <a class="has-text-grey-darker has-text-weight-semibold" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $api->get_current_version();?> Installation&body=(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)">Need Help <i class="fas fa-question-circle"></i></a>
     </center>
     </div>
   </div> 
@@ -615,9 +615,10 @@ else { ?>
   <div class="section" >
     <center>
       <h1 class="title p-t-xxl m-t-xl">
-        LicenseBox installer is locked, check documentation.
+        Keydera installer is locked, check documentation.
       </h1>
     </center>
   </div>
 </div>
 <?php } ?>
+

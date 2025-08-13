@@ -1,21 +1,21 @@
-<?php
+﻿<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
-$config['base_url'] = 'http://localhost/lb/licensebox';
+$config['base_url'] = 'http://localhost/lb/keydera';
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';
@@ -71,3 +71,4 @@ $config['datetime_format_table'] = "j M, Y, g:i a";
 $config['date_format'] = "j F, Y";
 
 /* Cheers! */
+

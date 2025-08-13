@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -302,7 +302,7 @@ class Cron extends CI_Controller
         } else {
             $cr_response = null;
         }
-        $cr_response .= "LicenseBox Cron (" . date('j F Y, g:i A') . ") execution complete, brief summary: " . $this->new_line . " ";
+        $cr_response .= "Keydera Cron (" . date('j F Y, g:i A') . ") execution complete, brief summary: " . $this->new_line . " ";
         if (!$envato_api_not_set) {
             if ($has_envato_licenses) {
                 $cr_response .= "Envato license sync was skipped due to invalid token permissions or your token/domain may be rate limited.";
@@ -580,3 +580,4 @@ MAIL;
         return $is_mail_sent;
     }
 }
+

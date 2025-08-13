@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 goto tzjgN5Rc;
 lc80tQUi:xxz6nsbg:goto Lau0aiOZ;
 CeduJxgx:exit("No direct script access allowed");
@@ -6,7 +6,7 @@ goto lc80tQUi;
 Lau0aiOZ:function load_init_configs($mOZuUw7M = false, $qz5yW25N = false, $uMGw_Hog = false)
 {
 	goto H_cOeF6Q;
-	gF7LenK_:define("LICENSEBOX_THEME", "material");
+	gF7LenK_:define("KEYDERA_THEME", "material");
 	goto wAD0P2ai;
 	AuI29t0_:tca0wErL:goto SQ447Nby;
 	HSmXIcGm:$Ri1RHJ3o = floor($J_6EaHye / 60);
@@ -27,7 +27,7 @@ Lau0aiOZ:function load_init_configs($mOZuUw7M = false, $qz5yW25N = false, $uMGw_
 		goto cgeWJXX_;
 	}
 	goto V1li4X20;
-	ufJq2IQS:define("LICENSEBOX_THEME", strtolower(strip_tags(trim((string)$hNtbTQ_l))));
+	ufJq2IQS:define("KEYDERA_THEME", strtolower(strip_tags(trim((string)$hNtbTQ_l))));
 	goto eOF1R3m6;
 	oj07KqzA:$eQPVlgMJ = $toU1OsmN->v3r1phy_l1c3n53(true);
 	goto v8PbVNOx;
@@ -51,7 +51,7 @@ Lau0aiOZ:function load_init_configs($mOZuUw7M = false, $qz5yW25N = false, $uMGw_
 	goto ctSw_9TR;
 	I1EdeWnk:$J_6EaHye = abs($J_6EaHye);
 	goto HSmXIcGm;
-	RtIB_Rb0:$hNtbTQ_l = $CI->user_model->get_config_from_db("licensebox_theme");
+	RtIB_Rb0:$hNtbTQ_l = $CI->user_model->get_config_from_db("keydera_theme");
 	goto akH2hc6g;
 	HMsICJkA:date_default_timezone_set(trim(strip_tags($xodymP2x)));
 	goto a2jOu13Q;

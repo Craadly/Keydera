@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -83,12 +83,12 @@ class User_model extends CI_Model
         $this->db->where('as_name', 'license_code_format');
         $this->db->update('app_settings', $data);
         $lb_themes = array("classic", "flat", "material");
-        $lb_current_theme = strtolower(strip_tags(trim((string) $this->input->post('licensebox_theme'))));
+        $lb_current_theme = strtolower(strip_tags(trim((string) $this->input->post('keydera_theme'))));
         if (!in_array($lb_current_theme, $lb_themes)) {
             $lb_current_theme = "material";
         }
         $data = array('as_value' => $lb_current_theme);
-        $this->db->where('as_name', 'licensebox_theme');
+        $this->db->where('as_name', 'keydera_theme');
         $this->db->update('app_settings', $data);
         $envato_token = strip_tags(trim((string) $this->input->post('envato_api_token')));
         $data = array('as_value' => (!empty($envato_token)) ? $this->encryption->encrypt($envato_token) : null);
@@ -463,3 +463,4 @@ class User_model extends CI_Model
         return $this->db->affected_rows();
     }
 }
+

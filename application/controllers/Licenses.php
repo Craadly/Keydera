@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -172,11 +172,11 @@ class Licenses extends CI_Controller
                 if ($has_activations) {
                     $size_activations = sizeof($has_activations);
                     $is_activated = "Active";
-                    $is_activated_typ = (strtolower(LICENSEBOX_THEME) == "flat") ? "info" : "link";
+                    $is_activated_typ = (strtolower(KEYDERA_THEME) == "flat") ? "info" : "link";
                     $is_activated_tooltip = "License is currently active on " . $size_activations . " domain(s).";
                 } else {
                     $is_activated = "Inactive";
-                    $is_activated_typ = (strtolower(LICENSEBOX_THEME) == "material") ? "info" : ((strtolower(LICENSEBOX_THEME) == "flat") ? "link" : "primary");
+                    $is_activated_typ = (strtolower(KEYDERA_THEME) == "material") ? "info" : ((strtolower(KEYDERA_THEME) == "flat") ? "link" : "primary");
                     $is_activated_tooltip = "License is currently not active on any domain.";
                 }
                 $nestedData[] = "<center><input class='is-checkradio is-cr-t delete_license_checkbox is-danger is-small' type='checkbox' id='licenses_cr_t_" . $post->id . "' value=" . urlencode($post->license_code) . "><label for='licenses_cr_t_" . $post->id . "'></label></center>";
@@ -189,7 +189,7 @@ class Licenses extends CI_Controller
                 $nestedData[] = "<center><span class='tag is-" . $is_valid_typ . " is-small is-rounded tooltip' data-tooltip='" . $is_valid_tooltip . "'>" . $is_valid . "</span></center>";
 
                 $form_buttons = "<div class='buttons is-centered'>";
-                $title_or_tooltip = (strtolower(LICENSEBOX_THEME) == "material") ? "title" : "data-tooltip";
+                $title_or_tooltip = (strtolower(KEYDERA_THEME) == "material") ? "title" : "data-tooltip";
 
                 if ($post->validity != 0) {
                     $hidden = array('license' => $post->license_code);
@@ -646,3 +646,4 @@ MAIL;
         }
     }
 }
+

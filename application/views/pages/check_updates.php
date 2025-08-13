@@ -1,4 +1,4 @@
-<div class="container is-fluid main_body"> 
+﻿<div class="container is-fluid main_body"> 
 <div class="section" >
   <h1 class="title">
     <?php echo $title; ?>
@@ -7,7 +7,7 @@
 <div class="columns">
   <div class="column">
     <div class="box has-text-centered">
-    <h5 class="title is-5 p-t-md" style="margin-bottom: 15px;"><?php echo ($update_data['status'])?$update_data['message']:'Cheers! LicenseBox is up to date.'; ?></h5>
+    <h5 class="title is-5 p-t-md" style="margin-bottom: 15px;"><?php echo ($update_data['status'])?$update_data['message']:'Cheers! Keydera is up to date.'; ?></h5>
     <?php if(!$update_data['status']){ ?>
       <p class="p-b-md">It looks like there are no new updates available at the moment.</p>
     <?php } ?>
@@ -55,3 +55,4 @@
 </div>
 </div>
 </div>
+

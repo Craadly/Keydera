@@ -1,4 +1,4 @@
-<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
+﻿<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
 
 define("LB_API_DEBUG", false);
 
@@ -15,7 +15,7 @@ if((@ini_get('max_execution_time')!=='0')&&(@ini_get('max_execution_time'))<600)
 @ini_set('memory_limit', '256M');
 
 
-class LicenseBoxInternalAPI{
+class KeyderaInternalAPI{
 
 	private $api_url;
 	private $api_key;
@@ -303,3 +303,4 @@ class LicenseBoxInternalAPI{
 		return $response;
 	}
 }
+

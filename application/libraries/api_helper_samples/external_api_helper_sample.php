@@ -1,4 +1,4 @@
-<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
+﻿<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
 
 define("LB_API_DEBUG", false);
 define("LB_SHOW_UPDATE_PROGRESS", true);
@@ -32,7 +32,7 @@ if((@ini_get('max_execution_time')!=='0')&&(@ini_get('max_execution_time'))<600)
 }
 @ini_set('memory_limit', '256M');
 
-class LicenseBoxExternalAPI{
+class KeyderaExternalAPI{
 
 	private $product_id;
 	private $api_url;
@@ -587,3 +587,4 @@ class LicenseBoxExternalAPI{
 		}
 	}
 }
+

@@ -1,4 +1,4 @@
-<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
+﻿<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
 
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 
@@ -22,7 +22,7 @@ define("LB_TEXT_SQL_UPDATE_DONE", '{[TEXT_SQL_UPDATE_DONE]}');
 define("LB_TEXT_UPDATE_WITH_SQL_DONE", '{[TEXT_UPDATE_WITH_SQL_DONE]}');
 define("LB_TEXT_UPDATE_WITHOUT_SQL_DONE", '{[TEXT_UPDATE_WITHOUT_SQL_DONE]}');
 
-class LicenseBoxExternalAPI{
+class KeyderaExternalAPI{
 
 	private $product_id;
 	private $api_url;
@@ -472,3 +472,4 @@ class LicenseBoxExternalAPI{
 		}
 	}
 }
+

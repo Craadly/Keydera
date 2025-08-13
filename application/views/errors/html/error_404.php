@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $base_url = load_class('Config')->config['base_url'];
 ?>
@@ -6,7 +6,7 @@ $base_url = load_class('Config')->config['base_url'];
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Page not found - LicenseBox</title>
+	<title>Page not found - Keydera</title>
 	<link rel="stylesheet" href="<?php echo $base_url; ?>/assets/css/material.css" />
 	<link rel="stylesheet" href="<?php echo $base_url; ?>/assets/css/custom.css" />
 </head>

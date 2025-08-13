@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package LicenseBox
+ * @package Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version 1.6.4
  */
 
@@ -113,7 +113,7 @@ class Settings extends CI_Controller
         $data['title'] = 'General Settings';
         $data['server_timezone'] = $this->user_model->get_config_from_db('server_timezone');
         $data['license_format'] = $this->user_model->get_config_from_db('license_code_format');
-        $data['licensebox_theme'] = LICENSEBOX_THEME;
+        $data['keydera_theme'] = KEYDERA_THEME;
         $data['envato_api_token'] = $this->user_model->get_config_from_db('envato_api_token', true);
         $data['whitelist_ips'] = $this->user_model->get_config_from_db('whitelist_ips');
         $data['envato_use_limit'] = $this->user_model->get_config_from_db('envato_use_limit');
@@ -278,7 +278,7 @@ class Settings extends CI_Controller
             $mail->addAddress($email, ucwords($user_name));
 
             $mail->isHTML(true);
-            $mail->Subject = 'Test Mail - LicenseBox';
+            $mail->Subject = 'Test Mail - Keydera';
             $trans = array(
                 "{[year]}" => date('Y'),
             );
@@ -292,7 +292,7 @@ class Settings extends CI_Controller
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='format-detection' content='date=no'>
 	<meta name='format-detection' content='telephone=no'>
-	<title>Test Mail - LicenseBox</title>
+	<title>Test Mail - Keydera</title>
 	<style type='text/css'>
 		body {
 			margin: 0;
@@ -367,14 +367,14 @@ class Settings extends CI_Controller
 				<br>
 				<table border='0' width='600' cellpadding='0' cellspacing='0' class='container' style='width:600px;max-width:600px'>
 					<tr>
-						<td class='container-padding header' align='left' style='font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;padding-bottom:18px;color:#DF4726;padding-left:24px;padding-right:24px'>Test Mail - LicenseBox</td>
+						<td class='container-padding header' align='left' style='font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;padding-bottom:18px;color:#DF4726;padding-left:24px;padding-right:24px'>Test Mail - Keydera</td>
 					</tr>
 					<tr>
 						<td class='container-padding content' align='left' style='padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;background-color:#ffffff'>
 							<br>
 							<div class='body-text' style='font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333'>
 								<p>Hi there,&nbsp;</p>
-								<p><b>Congratulations!</b> Your LicenseBox email settings are set up correctly.</p>
+								<p><b>Congratulations!</b> Your Keydera email settings are set up correctly.</p>
 								<p>Regards</p>
 								<br>
 							</div>
@@ -385,7 +385,7 @@ class Settings extends CI_Controller
 							<br>
 							<center><small>This is a system generated email.</small></center>
 							<br>
-							<center>Copyright {[year]} <a style='color:#aaaaaa;text-decoration:none;' href='https://www.licensebox.app'>CodeMonks</a>, All Rights Reserved.</center>
+							<center>Copyright {[year]} <a style='color:#aaaaaa;text-decoration:none;' href='https://www.keydera.app'>CodeMonks</a>, All Rights Reserved.</center>
 							<br>
 							<br>
 						</td>
@@ -398,7 +398,7 @@ class Settings extends CI_Controller
 </html>
 MAIL;
             $mail->Body = strtr($mail_template_raw, $trans);
-            $mail->AltBody = strtr("Congratulations! Your LicenseBox email settings are set up correctly.", $trans);
+            $mail->AltBody = strtr("Congratulations! Your Keydera email settings are set up correctly.", $trans);
             if (!$mail->send()) {
                 $this->session->set_flashdata('email_settings_status', array(
                     'type' => "danger",
@@ -549,3 +549,4 @@ MAIL;
         }
     }
 }
+

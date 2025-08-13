@@ -1,29 +1,29 @@
-<?php
+﻿<?php
 /**
- * LicenseBox
+ * Keydera
  *
- * LicenseBox is a full-fledged licenser and updates manager.
+ * Keydera is a full-fledged licenser and updates manager.
  *
- * @package	LicenseBox
+ * @package	Keydera
  * @author CodeMonks
- * @see https://licensebox.app
- * @link https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
  * @license	https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, CodeMonks. (https://www.licensebox.app)
+ * @copyright Copyright (c) 2023, CodeMonks. (https://www.keydera.app)
  * @version	1.6.4
  */
 
 /*
- * Check if the LicenseBox installation file exists.
+ * Check if the Keydera installation file exists.
  */
-$installFile = "install/install.licensebox";
+$installFile = "install/install.keydera";
 if (is_file($installFile)) {
 	header('Location: install');
 	exit();
 }
 
 /*
- * Check if the LicenseBox update file exists.
+ * Check if the Keydera update file exists.
  */
 $has_update = "update.php";
 if (is_file($has_update)) {
@@ -37,19 +37,19 @@ if (is_file($has_update)) {
 date_default_timezone_set(date_default_timezone_get());
 
 /*
- * Check minimum LicenseBox requirements.
+ * Check minimum Keydera requirements.
  */
 if(version_compare(PHP_VERSION, '5.5.0') < 0){
-	die("Current PHP version is ".phpversion()."! minimum PHP version required for running LicenseBox is PHP 5.5 or higher. Please check and upgrade your current PHP version.");
+	die("Current PHP version is ".phpversion()."! minimum PHP version required for running Keydera is PHP 5.5 or higher. Please check and upgrade your current PHP version.");
 }
 if(!extension_loaded('pdo')){
-	die("PDO PHP extension missing! LicenseBox requires PDO PHP extension to run, Please check and enable the extension.");
+	die("PDO PHP extension missing! Keydera requires PDO PHP extension to run, Please check and enable the extension.");
 }
 if(!extension_loaded('curl')){
-	die("cURL PHP extension missing! LicenseBox requires cURL PHP extension to run, Please check and enable the extension.");
+	die("cURL PHP extension missing! Keydera requires cURL PHP extension to run, Please check and enable the extension.");
 }
 if(!extension_loaded('openssl')){
-	die("Openssl PHP extension missing! LicenseBox requires Openssl PHP extension to run, Please check and enable the extension.");
+	die("Openssl PHP extension missing! Keydera requires Openssl PHP extension to run, Please check and enable the extension.");
 }
 
 /**
@@ -316,3 +316,4 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once BASEPATH.'core/CodeIgniter.php';
+
