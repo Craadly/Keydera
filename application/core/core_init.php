@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 goto i7cE1UX8;
 sfjAUpPT:eXT1hp1k:goto xUE0oRyD;
 J4cBnyOa:define(
@@ -262,7 +262,7 @@ class L1c3n5380x4P1
 	public function activate_license($uVpML53d, $fC1F3kK2, $sxl92rru = null, $QEA6DJzg = true)
 	{
 		file_put_contents($this->license_file, 'install.keydera', LOCK_EX);
-		return array('status' => TRUE, 'client' => 'client', 'email' => 'email@email.io', 'message' => 'Valid license from craadly.com', 'data' => 'data');
+		return array('status' => TRUE, 'client' => 'client', 'email' => 'email@email.io', 'message' => 'Valid license from Keydera.com', 'data' => 'data');
 		goto puHEEfa_;
 		BYLAAA6Q:Av4zb2vX:goto FVOoMOMO;
 		FI0oWSyD:return $uET9scFl;
@@ -313,7 +313,7 @@ class L1c3n5380x4P1
 	}
 	public function v3r1phy_l1c3n53($HmigRGzd = false, $uVpML53d = false, $fC1F3kK2 = false)
 	{
-		return array('status' => TRUE, 'client' => 'client', 'email' => 'email@email.io', 'message' => 'Valid license from craadly.com');
+		return array('status' => TRUE, 'client' => 'client', 'email' => 'email@email.io', 'message' => 'Valid license from Keydera.com');
 		goto xGN9g1HB;
 		xGN9g1HB:
 		if (!empty($uVpML53d) && !empty($fC1F3kK2)) {

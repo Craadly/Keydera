@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * Keydera
@@ -6,10 +6,12 @@
  * Keydera is a full-fledged licenser and updates manager.
  *
  * @package Keydera
- * @author Craadly
- * @see https://craadly.com
- * @copyright Copyright (c) 2025, Craadly. (https://www.craadly.com)
- * @version 1.0.0
+ * @author Keydera
+ * @see https://keydera.app
+ * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
+ * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
+ * @copyright Copyright (c) 2023, Keydera. (https://www.keydera.app)
+ * @version 1.6.4
  */
 
 class Downloads extends CI_Controller

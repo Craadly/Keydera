@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 goto tzjgN5Rc;
 lc80tQUi:xxz6nsbg:goto Lau0aiOZ;
 CeduJxgx:exit("No direct script access allowed");

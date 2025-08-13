@@ -1,4 +1,4 @@
-﻿<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
+<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
 
 define("LB_API_DEBUG", false);
 define("LB_SHOW_UPDATE_PROGRESS", true);

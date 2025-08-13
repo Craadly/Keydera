@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $base_url = load_class('Config')->config['base_url'];
 ?>

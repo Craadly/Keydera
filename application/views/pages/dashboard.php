@@ -1,4 +1,4 @@
-﻿<div class="container is-fluid main_body">  
+<div class="container is-fluid main_body">  
 <div class="section">
   <div class="columns is-multiline">
     <div class="column">

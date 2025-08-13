@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 require_once('../application/core/core_init.php');
 $installFile = "install.keydera";
 
@@ -590,7 +590,7 @@ if($_POST&&(isset($_POST["prc4"]))){
     <div class='notification is-danger'>Installation file was not removed, you should delete the (<strong><?php echo $installFile; ?></strong>) file to lock the installer.</div>
   <?php }?>
 <center><p><strong>Keydera is successfully installed.</strong></p><br>
-<p>You can now login using your email or username: <strong>Craadly</strong> and default password: <strong>doniaweb.com</strong></p><br><strong>
+<p>You can now login using your email or username: <strong>Craadly</strong> and default password: <strong>Keydera.com</strong></p><br><strong>
 <p><a class='button is-link' href='../'>Login</a></p></strong>
 <br>
 <p class='help has-text-grey'>The first thing you should do is change your account details.</p>

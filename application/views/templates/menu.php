@@ -1,4 +1,4 @@
-﻿<?php $coreApp = new L1c3n5380x4P1();
+<?php $coreApp = new L1c3n5380x4P1();
 $system_info = get_system_info($coreApp->check_local_license_exist());
 ?>
 <nav id="navbar" class="navbar <?php echo (strtolower(KEYDERA_THEME)=="classic")?"is-link has-border2":"is-primary"; ?> is-spaced">

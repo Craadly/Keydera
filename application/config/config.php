@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
@@ -69,3 +69,4 @@ $config['datetime_format_table'] = "j M, Y, g:i a";
 $config['date_format'] = "j F, Y";
 
 /* Cheers! */
+

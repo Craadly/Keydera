@@ -1,4 +1,4 @@
-﻿<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
+<?php if(count(get_included_files()) == 1) exit("No direct script access allowed");
 
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 
