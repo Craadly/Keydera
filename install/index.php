@@ -14,10 +14,5 @@
   <?php
     require "install.php";
   ?>
- <div class="content has-text-centered p-b-sm">
-  <p>
-   Copyright <?php echo date('Y'); ?> <a href="https://www.craadly.com" style="color: inherit;" target="_blank" rel="noopener">Craadly</a>, All rights reserved.
-  </p>
- </div>
 </body>
 </html>
