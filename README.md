@@ -108,6 +108,7 @@ unzip keydera.zip -d /var/www/html/keydera/
 ---
 
 ## Quick Start
+<<<<<<< HEAD
 
 ### Creating Your First Product
 1. Log into the admin dashboard
@@ -245,3 +246,142 @@ Enable debug mode by setting `ENVIRONMENT = 'development'` in `index.php` for de
 - **API Examples**: Sample implementations in `application/libraries/api_helper_samples/`
 - **Community**: Visit our support forums
 - **Commercial Support**: Available for enterprise customers
+=======
+
+### Creating Your First Product
+1. Log into the admin dashboard
+2. Navigate to **Products** > **Add New**
+3. Enter product details (name, version, description)
+4. Set licensing parameters
+5. Upload your PHP files for obfuscation (optional)
+
+### Generating Integration Code
+1. Go to **Generate Helpers** section
+2. Select your target platform (PHP, WordPress, OpenCart)
+3. Configure API endpoints and validation rules
+4. Download the generated helper files
+5. Integrate into your application
+
+### Managing Licenses
+1. Navigate to **Licenses** section
+2. Create new licenses for your products
+3. Set expiration dates, domain restrictions, or feature limits
+4. Monitor activations and usage statistics
+
+---
+
+## Integration Examples
+
+### PHP Application
+```php
+require_once 'keydera_helper.php';
+
+$license = new KeyderaLicense('your-product-key');
+if ($license->validate()) {
+    // Your protected code here
+    echo "License valid - full functionality enabled";
+} else {
+    echo "Invalid license - please contact support";
+}
+```
+
+### WordPress Plugin
+```php
+// In your main plugin file
+if (!class_exists('KeyderaWP')) {
+    require_once plugin_dir_path(__FILE__) . 'includes/keydera-wp.php';
+}
+
+$keydera = new KeyderaWP('your-product-slug');
+if ($keydera->is_valid()) {
+    // Plugin functionality
+}
+```
+
+---
+
+## API Reference
+
+### License Verification
+```
+POST /api/verify-license
+```
+**Parameters:**
+- `product_key` - Your product identifier
+- `license_key` - Customer's license key  
+- `domain` - Customer's domain (for domain-locked licenses)
+
+**Response:**
+```json
+{
+    "status": "valid",
+    "expires": "2024-12-31",
+    "features": ["feature1", "feature2"]
+}
+```
+
+### Update Check
+```
+GET /api/check-updates/{product_key}/{current_version}
+```
+
+### Download Update
+```
+GET /api/download-update/{product_key}/{license_key}
+```
+
+---
+
+## Configuration
+
+### Environment Settings
+Key configuration files:
+- `application/config/config.php` - General application settings
+- `application/config/database.php` - Database connection
+- `application/config/lb_config.php` - License server configuration
+
+### Email Configuration
+Configure SMTP settings in `Settings > Email Settings`:
+- SMTP host and port
+- Authentication credentials
+- Email templates for notifications
+
+### Security Settings
+- Enable/disable features per user role
+- Set API rate limits
+- Configure encryption keys
+- Manage trusted domains
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+**License validation fails**
+- Check server connectivity
+- Verify API endpoints are accessible
+- Ensure proper SSL/TLS configuration
+
+**Updates not working**
+- Confirm download permissions
+- Check file system write access
+- Verify update server connectivity
+
+**Performance issues**
+- Enable caching in configuration
+- Optimize database queries
+- Consider server resource allocation
+
+### Debug Mode
+Enable debug mode by setting `ENVIRONMENT = 'development'` in `index.php` for detailed error logging.
+
+---
+
+## Support
+
+- **Documentation**: Full documentation available in the `/docs` directory
+- **API Examples**: Sample implementations in `application/libraries/api_helper_samples/`
+- **Community**: Visit our support forums
+- **Commercial Support**: Available for enterprise customers
+
