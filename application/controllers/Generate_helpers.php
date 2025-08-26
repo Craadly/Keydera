@@ -114,9 +114,9 @@ class Generate_helpers extends CI_Controller
             );
 
             if (strip_tags(trim((string) $this->input->post('for_wordpress'))) == 'on') {
-                $data['generated_code'] = strtr(file_get_contents(FCPATH . '/application/libraries/api_helper_samples/external_api_helper_sample_wp.php'), $trans1);
+                $data['generated_code'] = strtr(file_get_contents(APPPATH . 'helpers/integration_external_api_helper_sample_wp.php'), $trans1);
             } else {
-                $data['generated_code'] = strtr(file_get_contents(FCPATH . '/application/libraries/api_helper_samples/external_api_helper_sample.php'), $trans1);
+                $data['generated_code'] = strtr(file_get_contents(APPPATH . 'helpers/integration_external_api_helper_sample.php'), $trans1);
             }
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu');
@@ -166,7 +166,7 @@ class Generate_helpers extends CI_Controller
                 "{[KEY]}" => strip_tags(trim((string) $this->input->post('key'))),
             );
 
-            $data['generated_code'] = strtr(file_get_contents(FCPATH . '/application/libraries/api_helper_samples/internal_api_helper_sample.php'), $trans1);
+            $data['generated_code'] = strtr(file_get_contents(APPPATH . 'helpers/integration_internal_api_helper_sample.php'), $trans1);
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu');

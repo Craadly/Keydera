@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |    $autoload['helper'] = array('url', 'file');
  */
-$autoload['helper'] = array('url', 'form', 'general', 'text', 'language');
+$autoload['helper'] = array('url', 'form', 'general', 'text', 'language', 'license', 'integration_external_api_helper_sample', 'integration_external_api_helper_sample_wp', 'integration_internal_api_helper_sample');
 
 /*
 | -------------------------------------------------------------------
