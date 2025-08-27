@@ -41,7 +41,7 @@ class L1c3n5380x4P1
 		goto oBFyKUcb;
 		oBFyKUcb:$this->license_file = realpath($this->current_path) . "\x2f\56\154\142\x5f\x6c\151\143";
 		goto g9oD8R06;
-		CE4rdEVX:$this->current_version = "\166\61\56\66\x2e\x34";
+		CE4rdEVX:$this->current_version = "v1.0.0";
 		goto WqvQub1Q;
 		c04XGKaw:$this->product_id = "\x42\62\101\x31\67\x59\x4c\x42";
 		goto nCjmAmmh;
