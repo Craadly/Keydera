@@ -1,4 +1,4 @@
-﻿# Keydera - PHP License and Updates Manager
+# Keydera - PHP License and Updates Manager
 
 A full-fledged PHP license and updates manager built with CodeIgniter framework.
 
@@ -58,7 +58,7 @@ $db['default'] = array(
 ### Base URL
 Edit `application/config/config.php`:
 `php
-$config['base_url'] = 'https://yourdomain.com/';
+$config['base_url'] = 'https://localhost/keydera-clean/ (or http://localhost/keydera-clean/)';
 `
 
 ##  API Documentation
