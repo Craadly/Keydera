@@ -184,7 +184,8 @@ class Pages extends CI_Controller
                 $minified_code = $this->input->post('php_source_code');
             }
             $initApp = new L1c3n5380x4P1();
-            $php_obfuscate_res = $initApp->php_08phu5c473($minified_code);
+            $obfuscate_type = $this->input->post('obfuscate_type');
+            $php_obfuscate_res = $initApp->php_08phu5c473($minified_code, false, false, $obfuscate_type);
             if (!empty($php_obfuscate_res['obfuscated'])) {
                 $data['php_source_code'] = base64_decode($php_obfuscate_res['obfuscated']);
             } else {
