@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-<?php
-=======
->>>>>>> keydera-clean
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // Simple licensing class
