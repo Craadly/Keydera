@@ -395,3 +395,76 @@ if (!function_exists('get_external_content')) {
     }
 }
 
+if (!function_exists('get_system_info')) {
+    function get_system_info($license_status = false)
+    {
+        $CI = &get_instance();
+        
+        $info = array();
+        $info[] = "PHP Version: " . PHP_VERSION;
+        $info[] = "CodeIgniter Version: " . CI_VERSION;
+        $info[] = "Server Software: " . $_SERVER['SERVER_SOFTWARE'];
+        $info[] = "Database Type: " . $CI->db->platform();
+        $info[] = "License Status: " . ($license_status ? 'Valid' : 'Invalid');
+        $info[] = "Base URL: " . base_url();
+        $info[] = "User Agent: " . $CI->input->user_agent();
+        
+        return implode(' | ', $info);
+    }
+}
+
+if (!function_exists('generate_breadcrumb')) {
+    function generate_breadcrumb()
+    {
+        $CI = &get_instance();
+        $segments = $CI->uri->segments;
+        
+        $breadcrumb = '<nav class="breadcrumb" aria-label="breadcrumbs">';
+        $breadcrumb .= '<ul>';
+        $breadcrumb .= '<li><a href="' . base_url() . '">Home</a></li>';
+        
+        $url = '';
+        foreach ($segments as $segment) {
+            $url .= '/' . $segment;
+            $title = ucfirst(str_replace('_', ' ', $segment));
+            if ($segment === end($segments)) {
+                $breadcrumb .= '<li class="is-active"><a href="#" aria-current="page">' . $title . '</a></li>';
+            } else {
+                $breadcrumb .= '<li><a href="' . base_url() . ltrim($url, '/') . '">' . $title . '</a></li>';
+            }
+        }
+        
+        $breadcrumb .= '</ul>';
+        $breadcrumb .= '</nav>';
+        
+        return $breadcrumb;
+    }
+}
+
+if (!function_exists('thousands_currency_format')) {
+    function thousands_currency_format($number, $return_array = false)
+    {
+        if (!is_numeric($number)) {
+            return $return_array ? array($number, '') : $number;
+        }
+        
+        if ($number < 1000) {
+            return $return_array ? array($number, '') : $number;
+        }
+        
+        $number = round($number);
+        $units = array('k', 'm', 'b', 't');
+        $thousands = 0;
+        
+        while ($number >= 1000 && $thousands < count($units)) {
+            $number /= 1000;
+            $thousands++;
+        }
+        
+        $formatted = round($number, 1);
+        $suffix = $units[$thousands - 1];
+        
+        return $return_array ? array($formatted, $suffix) : $formatted . $suffix;
+    }
+}
+

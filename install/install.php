@@ -655,6 +655,25 @@
             margin-bottom: 20px;
         }
 
+        .form-grid {
+            display: block;
+        }
+
+        .form-grid .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-buttons {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid .form-group {
+                margin-bottom: 16px;
+            }
+        }
+
         label {
             display: block;
             margin-bottom: 6px;
@@ -953,23 +972,28 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Success animation */
-        .success-animation {
+        /* Completion section - matches other step designs */
+        .completion-section {
             text-align: center;
-            padding: 20px 0;
+            margin-bottom: 24px;
         }
 
-        .success-checkmark {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-            border-radius: 50%;
+        .completion-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: scaleIn 0.4s ease-out;
-            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Remove old success styles that were too different */
+        .success-checkmark {
+            display: none;
+        }
+
+        .success-title, .success-subtitle {
+            display: none;
         }
 
         @keyframes scaleIn {
@@ -1005,12 +1029,19 @@
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 8px;
+            text-align: center;
         }
 
         .success-subtitle {
             color: var(--gray);
             font-size: 14px;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Center the success checkmark */
+        #finish-content .success-checkmark {
+            margin: 0 auto 20px;
         }
 		
         /* Modal Overlay */
@@ -1490,6 +1521,19 @@
                                 <div class="step-circle-outer"></div>
                                 <div class="step-circle">
                                     <span class="step-number">4</span>
+                                    <div class="step-icon">!</div>
+                                </div>
+                            </div>
+                            <div class="step-info">
+                                <div class="step-label">Admin Account</div>
+                                <div class="step-description">Create Admin</div>
+                            </div>
+                        </div>
+                        <div class="step" id="step-5" onclick="navigateToStep(5)">
+                            <div class="step-wrapper">
+                                <div class="step-circle-outer"></div>
+                                <div class="step-circle">
+                                    <span class="step-number">5</span>
                                     <div class="step-icon">🎉</div>
                                 </div>
                             </div>
@@ -1647,35 +1691,98 @@
                     <p class="help-text">First test your database connection, then proceed with installation.</p>
                 </div>
 
-                <!-- Step 4: Installation Complete -->
-                <div id="finish-content" class="step-content" style="display:none;">
-                    <div class="success-animation">
-                        <div class="success-checkmark">
-                            <div class="checkmark-icon">✓</div>
+                <!-- Step 4: Admin Account Creation -->
+                <div id="admin-content" class="step-content" style="display:none;">
+                    <h2>Create Admin Account</h2>
+                    <p>Create your administrator account to manage Keydera.</p>
+                    
+                    <form action="index.php?step=2" method="POST" id="admin-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="admin-username">Username *</label>
+                                <input type="text" id="admin-username" name="admin_username" placeholder="Enter admin username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-email">Email Address *</label>
+                                <input type="email" id="admin-email" name="admin_email" placeholder="admin@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-password">Password *</label>
+                                <input type="password" id="admin-password" name="admin_password" placeholder="Enter a secure password" required minlength="8">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-password-confirm">Confirm Password *</label>
+                                <input type="password" id="admin-password-confirm" name="admin_password_confirm" placeholder="Confirm your password" required minlength="8">
+                            </div>
                         </div>
-                        <h2 class="success-title">Installation Complete!</h2>
-                        <p class="success-subtitle">Keydera has been successfully installed.</p>
                         
                         <div class="notification info">
                             <svg class="notification-icon" fill="#1e40af" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                             </svg>
                             <div style="text-align: left;">
-                                <strong>Default Credentials:</strong><br>
-                                Username: <code style="background: #e5e7eb; padding: 2px 6px; border-radius: 4px;">Craadly</code><br>
-                                Password: <code style="background: #e5e7eb; padding: 2px 6px; border-radius: 4px;">Keydera.com</code>
+                                <strong>Password Requirements:</strong><br>
+                                • Minimum 8 characters<br>
+                                • Use a strong, unique password<br>
+                                • This will be your main admin account
                             </div>
                         </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary" id="admin-btn">
+                                Create Admin Account
+                                <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="help-text">This account will have full administrative privileges.</p>
+                </div>
 
-                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="window.location.href='../'">
+                <!-- Step 5: Installation Complete -->
+                <div id="finish-content" class="step-content" style="display:none;">
+                    <div class="completion-section">
+                        <div class="completion-icon">
+                            <svg width="48" height="48" fill="#10b981" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h2 style="color: var(--dark); font-size: 20px; font-weight: 600; margin: 16px 0 8px 0; text-align: center;">Installation Complete!</h2>
+                        <p style="color: var(--gray); font-size: 14px; margin-bottom: 24px; text-align: center;">Keydera has been successfully installed with your admin account.</p>
+                    </div>
+                    
+                    <div class="notification success">
+                        <svg class="notification-icon" fill="#059669" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <div style="text-align: left;">
+                            <strong>Next Steps:</strong><br>
+                            • Use your created admin credentials to login<br>
+                            • Configure your license settings<br>
+                            • Set up your first product
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="goToStep(4)">
+                            <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="completedInstallation()">
                             Go to Dashboard
                             <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"/>
                             </svg>
                         </button>
-                        
-                        <p class="help-text">Please change your password after first login for security.</p>
                     </div>
+
+                    <p class="help-text">
+                        Installation files will remain for troubleshooting. 
+                        <a href="index.php?reinstall=1" style="color: var(--primary);">Reinstall</a> if needed.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1864,7 +1971,7 @@
         function updateProgressBar() {
             const progressFill = document.getElementById('progress-fill');
             const progressPercent = document.getElementById('progress-percent');
-            const percentage = ((currentStep - 1) / 3) * 100;
+            const percentage = ((currentStep - 1) / 4) * 100; // 5 steps total: 0, 25, 50, 75, 100%
             
             progressFill.style.width = percentage + '%';
             
@@ -1940,13 +2047,28 @@
                     contentId = 'database-content';
                     break;
                 case 4:
+                    contentId = 'admin-content';
+                    break;
+                case 5:
                     contentId = 'finish-content';
-                    // Mark step 4 as completed when reached
-                    document.getElementById('step-4').classList.add('completed');
-                    const step4Icon = document.getElementById('step-4').querySelector('.step-icon');
-                    if (step4Icon) {
-                        step4Icon.innerHTML = '🎉';
-                        step4Icon.style.display = 'flex';
+                    // Mark step 5 as completed when reached
+                    const step5El = document.getElementById('step-5');
+                    if (step5El) {
+                        step5El.classList.add('completed');
+                        const step5Icon = step5El.querySelector('.step-icon');
+                        if (step5Icon) {
+                            step5Icon.innerHTML = '🎉';
+                            step5Icon.style.display = 'flex';
+                        }
+                    }
+                    
+                    // Update progress to 100%
+                    const progressFill = document.getElementById('progress-fill');
+                    const progressPercent = document.getElementById('progress-percent');
+                    if (progressFill && progressPercent) {
+                        progressFill.style.width = '100%';
+                        progressPercent.textContent = '100% Complete';
+                        progressPercent.classList.add('show');
                     }
                     break;
             }
@@ -1959,8 +2081,8 @@
                 }
             }
 
-            // Mark current step as active (except for step 4 which should be completed)
-            if (stepNumber < 4) {
+            // Mark current step as active (except for step 5 which should be completed)
+            if (stepNumber < 5) {
                 const currentStepEl = document.getElementById(`step-${stepNumber}`);
                 currentStepEl.classList.add('active');
                 
@@ -2302,6 +2424,47 @@
                     // Form will submit normally to PHP
                 });
             }
+
+            // Initialize admin form validation
+            const adminForm = document.getElementById('admin-form');
+            if (adminForm) {
+                adminForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const password = document.getElementById('admin-password').value;
+                    const confirmPassword = document.getElementById('admin-password-confirm').value;
+                    
+                    if (password !== confirmPassword) {
+                        showConfirmationModal({
+                            type: 'error',
+                            title: 'Password Mismatch',
+                            message: 'The passwords do not match. Please make sure both password fields contain the same value.',
+                            confirmText: 'OK',
+                            showCancel: false
+                        });
+                        return;
+                    }
+                    
+                    if (password.length < 8) {
+                        showConfirmationModal({
+                            type: 'error',
+                            title: 'Password Too Short',
+                            message: 'The password must be at least 8 characters long. Please choose a stronger password.',
+                            confirmText: 'OK',
+                            showCancel: false
+                        });
+                        return;
+                    }
+                    
+                    // If validation passes, submit the form
+                    const btn = document.getElementById('admin-btn');
+                    btn.innerHTML = 'Creating Admin Account <span class="spinner"></span>';
+                    btn.disabled = true;
+                    
+                    // Submit form to PHP
+                    adminForm.submit();
+                });
+            }
         });
 
         // Add input validation feedback
@@ -2323,6 +2486,46 @@
 
         // Initialize progress bar
         updateProgressBar();
+
+        // Handle URL hash navigation
+        function handleHashNavigation() {
+            const hash = window.location.hash;
+            if (hash) {
+                const stepMatch = hash.match(/#step-(\d+)/);
+                if (stepMatch) {
+                    const stepNum = parseInt(stepMatch[1]);
+                    if (stepNum >= 1 && stepNum <= 5) {
+                        goToStep(stepNum);
+                    }
+                }
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', handleHashNavigation);
+        
+        // Handle initial page load
+        document.addEventListener('DOMContentLoaded', function() {
+            handleHashNavigation();
+            
+            // Check for error messages in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorMessage = urlParams.get('error');
+            if (errorMessage) {
+                showConfirmationModal({
+                    type: 'error',
+                    title: 'Installation Error',
+                    message: decodeURIComponent(errorMessage),
+                    confirmText: 'OK',
+                    showCancel: false,
+                    allowClose: true
+                });
+                
+                // Clean the URL
+                const cleanUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        });
 
         // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
@@ -2587,6 +2790,51 @@
             }, 1000);
         });
 
+        // Handle installation completion
+        function completedInstallation() {
+            showConfirmationModal({
+                type: 'success',
+                title: 'Installation Complete!',
+                message: 'Keydera has been successfully installed. You will now be redirected to the dashboard where you can login with your admin credentials.',
+                confirmText: 'Go to Dashboard',
+                showCancel: false,
+                allowClose: false
+            }).then((confirmed) => {
+                if (confirmed) {
+                    // Show loading state
+                    const btn = document.querySelector('.btn-primary[onclick="completedInstallation()"]');
+                    if (btn) {
+                        const originalContent = btn.innerHTML;
+                        btn.innerHTML = 'Finalizing... <div class="btn-spinner"></div>';
+                        btn.disabled = true;
+                    }
+                    
+                    // Call step 5 completion endpoint to finalize installation
+                    fetch('index.php?step=5', {
+                        method: 'POST'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Redirect to the specified URL
+                            setTimeout(() => {
+                                window.location.href = data.redirect || '../';
+                            }, 1000);
+                        } else {
+                            throw new Error(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Installation finalization error:', error);
+                        // Still redirect as fallback
+                        setTimeout(() => {
+                            window.location.href = '../';
+                        }, 1000);
+                    });
+                }
+            });
+        }
+
         // Export functions for external use if needed
         window.KeyderaInstaller = {
             showConfirmationModal,
@@ -2595,7 +2843,7 @@
             skipActivation,
             testDatabase,
             showStepNotification,
-            completeInstallation
+            completeInstallation: completedInstallation
         };
     </script>
 </body>

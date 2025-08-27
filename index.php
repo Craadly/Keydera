@@ -17,7 +17,7 @@
  * Check if the Keydera installation file exists.
  */
 $installFile = "install/install.keydera";
-if (is_file($installFile)) {
+if (!is_file($installFile)) {
 	header('Location: install');
 	exit();
 }
@@ -307,6 +307,18 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD ESSENTIAL FUNCTIONS
+ * --------------------------------------------------------------------
+ *
+ * Load essential functions before CodeIgniter bootstrap
+ */
+if (file_exists(APPPATH.'core/core_functions.php'))
+{
+	require_once APPPATH.'core/core_functions.php';
+}
 
 /*
  * --------------------------------------------------------------------

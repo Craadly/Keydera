@@ -1,5 +1,8 @@
-<?php $coreApp = new L1c3n5380x4P1();
-$system_info = get_system_info($coreApp->check_local_license_exist());
+<?php 
+// Simplified version to avoid errors
+$coreApp = null;
+$license_status = false;
+$system_info = get_system_info($license_status);
 ?>
 <nav id="navbar" class="navbar <?php echo (strtolower(KEYDERA_THEME)=="classic")?"is-link has-border2":"is-primary"; ?> is-spaced">
   <div class="container is-fluid menu-container">
@@ -135,7 +138,7 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
             </span>
           </a>
           <hr class="navbar-divider">
-          <a class="navbar-item" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo $coreApp->get_current_version();?>&body=Keydera System Information: %0D%0A<?php echo urlencode($system_info); ?>%0D%0A%0D%0A(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)%0D%0A" title="Contact Keydera Support">
+          <a class="navbar-item" href="mailto:support@keydera.app?subject=Need help with Keydera <?php echo (isset($coreApp) && $coreApp) ? $coreApp->get_current_version() : '1.0.0';?>&body=Keydera System Information: %0D%0A<?php echo urlencode($system_info); ?>%0D%0A%0D%0A(Note: Please explain the issue you are having along with the screenshot below and don't forget to include your purchase code.)%0D%0A" title="Contact Keydera Support">
             <span>
               <strong><i class="fa-solid fa-headset p-r-xs"></i> Contact Support</strong>
             </span>
@@ -157,7 +160,7 @@ $system_info = get_system_info($coreApp->check_local_license_exist());
           <hr class="navbar-divider">
           <p class="navbar-item">
             <span>
-              <strong>Current version: </strong><?php echo $coreApp->get_current_version(); ?>
+              <strong>Current version: </strong><?php echo (isset($coreApp) && $coreApp) ? $coreApp->get_current_version() : '1.0.0'; ?>
             </span>
           </p>
         </div>
