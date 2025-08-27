@@ -111,7 +111,17 @@ class Users extends CI_Controller
                 if ($this->session->userdata('redirectToCurrent')) {
                     $redir_path = $this->session->userdata('redirectToCurrent');
                     $this->session->unset_userdata('redirectToCurrent');
-                    redirect($redir_path);
+                    
+                    // Ensure redirect stays within keydera.local domain
+                    $parsed_url = parse_url($redir_path);
+                    $current_domain = parse_url(base_url());
+                    
+                    if (isset($parsed_url['host']) && $parsed_url['host'] !== $current_domain['host']) {
+                        // External domain detected, redirect to dashboard instead
+                        redirect('dashboard');
+                    } else {
+                        redirect($redir_path);
+                    }
                 } else {
                     redirect('dashboard');
                 }

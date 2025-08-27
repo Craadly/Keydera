@@ -1,0 +1,63 @@
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+
+/*
+| -------------------------------------------------------------------
+| DATABASE CONNECTIVITY SETTINGS
+| -------------------------------------------------------------------
+| This file will contain the settings needed to access your database.
+|
+| For complete instructions please consult the 'Database Connection'
+| page of the User Guide.
+|
+| -------------------------------------------------------------------
+| EXPLANATION OF VARIABLES
+| -------------------------------------------------------------------
+|
+|['dsn']      The full DSN string describe a connection to the database.
+|['hostname'] The hostname of your database server.
+|['username'] The username used to connect to the database
+|['password'] The password used to connect to the database
+|['database'] The name of the database you want to connect to
+|['dbdriver'] The database driver. e.g.: mysqli.
+|['dbprefix'] You can add an optional prefix, which will be added
+|             to the table name when using the  Query Builder class
+|['pconnect'] TRUE/FALSE - Whether to use a persistent connection
+|['db_debug'] TRUE/FALSE - Whether database errors should be displayed.
+|['cache_on'] TRUE/FALSE - Enables/disables query caching
+|['cachedir'] The path to the folder where cache files should be stored
+|['char_set'] The character set used in communicating with the database
+|['dbcollat'] The character collation used in communicating with the database
+|['swap_pre'] A default table prefix that should be swapped with the dbprefix
+|['encrypt']  Whether or not to use an encrypted connection.
+|
+|'mysql' (deprecated), 'mysqli', 'pdo', 'postgre', 'sqlite3'
+|'cubrid', 'ibase', 'odbc', 'sqlsrv'
+|
+| The $active_group variable lets you choose which connection group to
+| make active.  By default there is only one group (the 'default' group).
+|
+*/
+$active_group = 'default';
+$query_builder = true;
+
+$db['default'] = array(
+    'dsn' => '',
+    'hostname' => 'localhost',
+    'username' => 'YOUR_DATABASE_USERNAME',
+    'password' => 'YOUR_DATABASE_PASSWORD',
+    'database' => 'YOUR_DATABASE_NAME',
+    'dbdriver' => 'mysqli',
+    'dbprefix' => '',
+    'pconnect' => false,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => false,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt' => false,
+    'compress' => false,
+    'stricton' => false,
+    'failover' => array(),
+    'save_queries' => true,
+);
