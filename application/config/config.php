@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @version 1.0.0
  */
 
-$config['base_url'] = 'http://localhost/lb/keydera';
+$config['base_url'] = 'https://localhost/keydera/';
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';
@@ -28,11 +28,24 @@ $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
 $config['directory_trigger'] = 'd';
 $config['allow_get_array'] = true;
-$config['log_threshold'] = 1;
+
+/*
+|--------------------------------------------------------------------------
+| Error Logging Threshold
+|--------------------------------------------------------------------------
+*/
+$config['log_threshold'] = 4; // Change from 0 to 4 for all errors
+
 $config['log_path'] = '';
 $config['log_file_extension'] = 'log';
 $config['log_file_permissions'] = 0644;
 $config['log_date_format'] = 'Y-m-d H:i:s';
+
+/*
+|--------------------------------------------------------------------------
+| Error Views Directory Path
+|--------------------------------------------------------------------------
+*/
 $config['error_views_path'] = '';
 $config['cache_path'] = '';
 $config['cache_query_string'] = false;

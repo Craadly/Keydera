@@ -1,17 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * Keydera
+ * keydera-clean
  *
  * Keydera is a full-fledged licenser and updates manager.
  *
- * @package Keydera
- * @author Keydera
+ * @package keydera-clean
+ * @author Craadly
  * @see https://keydera.app
- * @link https://codecanyon.net/item/keydera-php-license-and-updates-manager/22351237
- * @license https://codecanyon.net/licenses/standard (Regular or Extended License)
- * @copyright Copyright (c) 2023, Keydera. (https://www.keydera.app)
- * @version 1.6.4
+ * @copyright Copyright (c) 2025, Keydera. (https://www.keydera.app)
+ * @version 1.0.0
  */
 
 use PHPMailer\PHPMailer\Exception;
@@ -111,7 +109,17 @@ class Users extends CI_Controller
                 if ($this->session->userdata('redirectToCurrent')) {
                     $redir_path = $this->session->userdata('redirectToCurrent');
                     $this->session->unset_userdata('redirectToCurrent');
-                    redirect($redir_path);
+                    
+                    // Ensure redirect stays within keydera.local domain
+                    $parsed_url = parse_url($redir_path);
+                    $current_domain = parse_url(base_url());
+                    
+                    if (isset($parsed_url['host']) && $parsed_url['host'] !== $current_domain['host']) {
+                        // External domain detected, redirect to dashboard instead
+                        redirect('dashboard');
+                    } else {
+                        redirect($redir_path);
+                    }
                 } else {
                     redirect('dashboard');
                 }
