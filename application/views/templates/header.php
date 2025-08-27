@@ -11,6 +11,7 @@
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/favicon-16x16.png" sizes="16x16"/>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/<?php echo KEYDERA_THEME; ?>.css?v=lb152" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css?v=lb152" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/redesign.css?v=lb152" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/DataTables/css/datatables.min.css"/>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/DataTables/css/responsive.dataTables.min.css"/>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dataTables.bulma.css" />
@@ -21,4 +22,9 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/BulmaTagsInput/css/bulma-tagsinput.min.css"/>
 </head>
 <body>
+<div class="app-shell">
+    <?php $this->load->view('templates/sidebar'); ?>
+    <div class="main-content">
+        <?php $this->load->view('templates/topbar'); ?>
+        <main class="main_body">
 

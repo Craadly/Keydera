@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./docker/web
+    container_name: keydera-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+
+  playwright:
+    build: ./docker/playwright
+    container_name: keydera-playwright
+    ipc: host # Shared memory for browser performance
+    volumes:
+      - ./tests:/work/tests
+      - ./playwright-report:/work/playwright-report
+      - ./tests/ui/screenshots:/work/tests/ui/screenshots
+    depends_on:
+      - web

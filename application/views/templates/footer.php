@@ -1,5 +1,8 @@
+</main>
 <div class="content has-text-centered">
   <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app" target="_blank" rel="noopener">Keydera</a>, All rights reserved.</p>
+</div>
+</div>
 </div>
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/BulmaTagsInput/js/bulma-tagsinput.min.js"></script>
@@ -804,6 +807,21 @@ $(function(){
 </script>
 <script>
   $(document).ready(function() {
+    // Desktop sidebar toggle
+    $('.sidebar-toggle-desktop').on('click', function() {
+        $('.is-sidebar').toggleClass('is-collapsed');
+        $('.main-content').toggleClass('is-sidebar-collapsed');
+        var isCollapsed = $('.is-sidebar').hasClass('is-collapsed');
+        $(this).attr('aria-expanded', !isCollapsed);
+    });
+
+    // Mobile sidebar toggle
+    $('.sidebar-toggle-mobile').on('click', function() {
+        $('.is-sidebar').toggleClass('is-active');
+        var isActive = $('.is-sidebar').hasClass('is-active');
+        $(this).attr('aria-expanded', isActive);
+    });
+
     $('.is-select2').select2({
       placeholder: "Select an option"
     });

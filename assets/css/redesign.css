@@ -1,0 +1,214 @@
+/* General Layout */
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f5f7;
+}
+
+.is-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #dbdbdb;
+    transition: width 0.3s ease-in-out;
+    z-index: 1020;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    flex-grow: 1;
+}
+
+/* Sidebar Styles */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    height: 3.5rem;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.sidebar-logo {
+    max-height: 2rem;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-body {
+    padding: 1rem 0.75rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.sidebar-footer {
+    padding: 0.5rem 0.75rem;
+    border-top: 1px solid #dbdbdb;
+}
+
+.menu-list a {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.menu-list a:focus, .sidebar-toggle-desktop:focus, .sidebar-toggle-mobile:focus {
+    outline: 2px solid #3273dc;
+    outline-offset: 2px;
+}
+
+.menu-list a .icon {
+    margin-right: 0.75em;
+    transition: margin 0.3s ease-in-out;
+}
+
+.menu-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar-toggle-desktop-container {
+    text-align: right;
+}
+
+.sidebar-toggle-desktop {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.sidebar-toggle-desktop .icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Collapsed Sidebar */
+.is-sidebar.is-collapsed {
+    width: 70px;
+}
+
+.is-sidebar.is-collapsed .sidebar-logo {
+    opacity: 0;
+    width: 0;
+}
+
+.is-sidebar.is-collapsed .menu-text {
+    opacity: 0;
+    width: 0;
+}
+
+.is-sidebar.is-collapsed .menu-label {
+    display: none;
+}
+
+.is-sidebar.is-collapsed .menu-list a .icon {
+    margin-left: 0.25rem;
+}
+
+.is-sidebar.is-collapsed .sidebar-toggle-desktop .icon i {
+    transform: rotate(180deg);
+}
+
+.main-content.is-sidebar-collapsed {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    height: 3.5rem;
+    padding: 0 1rem;
+}
+
+.top-bar .navbar-item {
+    align-items: center;
+}
+
+.top-bar .navbar-brand {
+    align-items: stretch;
+}
+
+.sidebar-toggle-mobile {
+    color: #4a4a4a;
+    cursor: pointer;
+    display: none;
+    height: 3.25rem;
+    position: relative;
+    width: 3.25rem;
+    margin-left: -0.75rem;
+}
+
+.sidebar-toggle-mobile span {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+    left: calc(50% - 8px);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: 86ms;
+    transition-property: background-color, opacity, transform;
+    transition-timing-function: ease-out;
+    width: 16px;
+}
+
+.sidebar-toggle-mobile span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.sidebar-toggle-mobile span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.sidebar-toggle-mobile span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1023px) {
+    .is-sidebar {
+        left: -250px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .is-sidebar.is-active {
+        left: 0;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-content.is-sidebar-active {
+        /* Optional: darken main content when sidebar is open */
+        /* filter: brightness(0.5); */
+    }
+
+    .sidebar-toggle-desktop-container {
+        display: none;
+    }
+
+    .sidebar-toggle-mobile {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sidebar-toggle-mobile {
+        display: none;
+    }
+}
