@@ -13,10 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @version 1.0.0
  */
 
-
-=======
 $config['base_url'] = 'https://localhost/keydera/';
-
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';
