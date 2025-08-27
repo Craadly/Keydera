@@ -1,47 +1,32 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Keydera
- *
- * Keydera is a full-fledged licenser and updates manager.
- *
- * @package Keydera
- * @author Craadly
- * @see https://craadly.com
- * @copyright Copyright (c) 2025, Craadly. (https://www.craadly.com)
- * @version 1.0.0
- */
+// Include the db.php configuration
+if (file_exists(APPPATH . 'config/db.php')) {
+    require_once(APPPATH . 'config/db.php');
+}
 
 $active_group = 'default';
-$query_builder = true;
+$query_builder = TRUE;
 
-// DB_HOST : MySQL hostname
-// DB_NAME : The name of the database for Keydera
-// DB_USER : MySQL database username
-// DB_PASS : MySQL database password
 $db['default'] = array(
-    'dsn' => 'mysql:host=localhost;dbname=keydera',
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'database' => 'keydera',
-    'dbdriver' => 'pdo',
+    'dsn'	=> '',
+    'hostname' => isset($db_host) ? $db_host : 'localhost',
+    'username' => isset($db_username) ? $db_username : 'root',
+    'password' => isset($db_password) ? $db_password : '',
+    'database' => isset($db_database) ? $db_database : 'keydera_db',
+    'dbdriver' => 'mysqli',
     'dbprefix' => '',
-    'pconnect' => false,
+    'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
-    'cache_on' => false,
+    'cache_on' => FALSE,
     'cachedir' => '',
-    'char_set' => 'utf8mb4',
-    'dbcollat' => 'utf8mb4_unicode_ci',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
     'swap_pre' => '',
-    'encrypt' => false,
-    'compress' => false,
-    'stricton' => false,
+    'encrypt' => FALSE,
+    'compress' => FALSE,
+    'stricton' => FALSE,
     'failover' => array(),
-    'save_queries' => true,
+    'save_queries' => TRUE
 );
-
-//$db['default']['port'] = 3306;
-
-/* Cheers! */
-

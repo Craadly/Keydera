@@ -2,6 +2,10 @@
 
 DirectoryIndex index.php index.html
 
+# BEGIN Keydera
+
+DirectoryIndex index.php index.html
+
 RewriteEngine on
 
 # Uncomment the lines below to Force-HTTPS, if you wish you can also Force-HTTPS from config.php.
