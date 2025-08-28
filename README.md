@@ -38,6 +38,78 @@ CI/CD and releases:
 
 If you’re reviewing the feature branch, see the PR description for a concise change summary and screenshots.
 
+## Docker (local dev + tests)
+
+Prerequisites:
+- Docker Desktop (Windows/macOS/Linux)
+
+Quick start (Windows PowerShell):
+
+```powershell
+# Build and start web + db (and keep containers running)
+docker compose up -d --build
+
+# Follow Apache logs (optional)
+docker compose logs -f web
+```
+
+Open http://localhost:8080
+
+First run notes:
+- Database is automatically seeded from `install/database.sql` via MySQL init (see `docker-compose.yml`).
+- Inside containers, the DB host is `db` (service name). If you run the app on the host instead of in Docker, use host `127.0.0.1` and port `3307`.
+- Set your base URL to `http://localhost:8080/` in `application/config/config.php` when using Docker.
+
+Database configuration examples:
+
+```php
+// In Docker containers (web talks to db via service name)
+$db['default'] = array(
+   'hostname' => 'db',
+   'username' => 'keydera_user',
+   'password' => 'keydera_pass',
+   'database' => 'keydera_db',
+   'dbdriver' => 'mysqli',
+);
+
+// App on host talking to Docker MySQL published on 3307
+$db['default'] = array(
+   'hostname' => '127.0.0.1',
+   'port'     => 3307,
+   'username' => 'keydera_user',
+   'password' => 'keydera_pass',
+   'database' => 'keydera_db',
+   'dbdriver' => 'mysqli',
+);
+```
+
+Common commands:
+
+```powershell
+# Stop services
+docker compose down
+
+# Stop and remove volumes (resets MySQL data)
+docker compose down -v
+
+# Exec into the web container
+docker compose exec web bash
+```
+
+### Playwright UI tests in Docker
+
+```powershell
+# Run all UI tests (report written to ./playwright-report)
+docker compose run --rm playwright npx playwright test tests/ui --reporter=html
+```
+
+Then open `playwright-report/index.html` in your browser to view the results.
+
+Troubleshooting:
+- If port 8080 is in use, change the host port mapping in `docker-compose.yml` (e.g., `8090:80`).
+- XAMPP/MySQL conflict: the compose file publishes MySQL on `3307` to avoid clashes. Inside Docker use `db:3306`; from host use `127.0.0.1:3307`.
+- If routing isn’t working, ensure `.htaccess` is present and that `AllowOverride All` is enabled (it is in the provided Apache vhost config).
+
 ## Features
 
 - License key generation and validation
