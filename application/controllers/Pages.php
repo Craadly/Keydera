@@ -198,6 +198,7 @@ class Pages extends CI_Controller
         }
     }
 
+<<<<<<< HEAD
     public function contact_support()
     {
         if (!$this->session->userdata('logged_in')) {
@@ -220,6 +221,8 @@ class Pages extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+=======
+>>>>>>> origin/main
     public function render_404()
     {
         $data['title'] = 'Page not found';

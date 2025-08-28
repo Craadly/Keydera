@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OS files
 .DS_Store
 Thumbs.db
@@ -41,6 +42,9 @@ docker/*.env
 temp_hash.php
 test_db_connection.php
 install/test_db.php# Operating System Files
+=======
+# Operating System Files
+>>>>>>> origin/main
 .DS_Store
 .DS_Store?
 ._*

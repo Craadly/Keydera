@@ -186,6 +186,7 @@ class Licenses extends CI_Controller
                 $nestedData[] = "<center><span class='tag is-" . $is_activated_typ . " is-small is-rounded tooltip' data-tooltip='" . $is_activated_tooltip . "'>" . $is_activated . "</span></center>";
                 $nestedData[] = "<center><span class='tag is-" . $is_valid_typ . " is-small is-rounded tooltip' data-tooltip='" . $is_valid_tooltip . "'>" . $is_valid . "</span></center>";
 
+<<<<<<< HEAD
                 $form_buttons = '<div style="display: inline-flex; gap: 0.5rem;">';
 
                 if ($post->validity != 0) {
@@ -204,6 +205,27 @@ class Licenses extends CI_Controller
                 $js = 'id="delete_form_' . $post->id . '"';
                 $form_buttons .= form_open('/licenses/delete', $js, $hidden) . '<button type="button" data-id="' . $post->id . '" data-title="license" data-body="Please note that all of the license <b>' . $post->license_code . '</b>\'s relevant records like (activation logs) will also be permanently deleted." class="with-delete-confirmation" style="padding: 0.5rem; background: rgba(239, 68, 68, 0.1); border: none; color: #ef4444; cursor: pointer; border-radius: 6px; transition: all 0.2s;" title="Delete License"><i class="fas fa-trash"></i></button></form>';
                 $form_buttons .= '</div>';
+=======
+                $form_buttons = "<div class='buttons is-centered'>";
+                $title_or_tooltip = (strtolower(KEYDERA_THEME) == "material") ? "title" : "data-tooltip";
+
+                if ($post->validity != 0) {
+                    $hidden = array('license' => $post->license_code);
+                    $form_buttons .= form_open('/licenses/block', '', $hidden) . "<button type='submit' class='button is-warning is-small tooltip' style='padding-top: 0px;padding-bottom: 0px;' " . $title_or_tooltip . "='Block License'><i class='fa fa-lock'></i></button></form>&nbsp;&nbsp;";
+                } else {
+                    $hidden = array('license' => $post->license_code);
+                    $form_buttons .= form_open('/licenses/unblock', '', $hidden) . "<button type='submit' class='button is-warning is-small tooltip' style='padding-top: 0px;padding-bottom: 0px;' " . $title_or_tooltip . "='Unblock License'><i class='fa fa-unlock'></i></button></form>&nbsp;&nbsp;";
+                }
+                $hidden = array('license_code' => $post->license_code);
+                $form_buttons .= form_open('/licenses/edit', '', $hidden) . "<button type='submit' class='button is-success is-small tooltip' style='padding-top: 0px;padding-bottom: 0px;' " . $title_or_tooltip . "='Edit License'><i class='fa fa-edit'></i></button></form>&nbsp;&nbsp;";
+                $hidden = array('license' => $post->license_code);
+                $js = 'id="email_license_form_' . $post->id . '"';
+                $form_buttons .= form_open('/licenses/email_license', $js, $hidden) . '<button type="button" data-id="' . $post->id . '" data-license="' . $post->license_code . '" data-client="' . (($post->client) ? ('Name: <b>' . ucwords($post->client) . '</b> <br>') : null) . '" data-email="' . $post->email . '" data-product="' . $product['pd_name'] . '" data-uses="' . $licenses_left_raw . '" data-expiration="' . (($post->expiry) ? ('<br> License Expiration: <b>' . $newDateExpiration . '</b>') : null) . '" class="button with-email-confirmation is-link is-small tooltip is-tooltip-left" style="padding-top: 0px;padding-bottom: 0px;" ' . $title_or_tooltip . '="Email License Details"><i class="fa fa-envelope"></i></button></form>&nbsp;&nbsp;';
+                $hidden = array('license' => $post->license_code);
+                $js = 'id="delete_form_' . $post->id . '"';
+                $form_buttons .= form_open('/licenses/delete', $js, $hidden) . '<button type="button" data-id="' . $post->id . '" data-title="license" data-body="Please note that all of the license <b>' . $post->license_code . '</b>\'s relevant records like (activation logs) will also be permanently deleted." class="button with-delete-confirmation is-danger is-small tooltip is-tooltip-left" style="padding-top: 0px;padding-bottom: 0px;" ' . $title_or_tooltip . '="Delete License"><i class="fa fa-trash"></i></button></form>';
+                $form_buttons .= "</div>";
+>>>>>>> origin/main
 
                 $nestedData[] = $form_buttons;
 

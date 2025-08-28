@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Keydera - Auth Redesign Feature Branch
 
 This branch contains a complete redesign of the authentication experience with modern UI components and improved user experience.
@@ -41,6 +42,13 @@ git push -u origin feat/auth-redesign
 ---
 
 ## Original Keydera Features
+=======
+# Keydera - PHP License and Updates Manager
+
+A full-fledged PHP license and updates manager built with CodeIgniter framework.
+
+##  Features
+>>>>>>> origin/main
 
 - License key generation and validation
 - Product activation management  

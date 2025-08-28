@@ -1,7 +1,25 @@
+<<<<<<< HEAD
 <?php
     // Start session and output buffering at the very beginning
     session_start();
     ob_start();
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Install - Keydera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/material.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <link rel="stylesheet" href="../assets/vendor/FontAwesome/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16"/>
+</head>
+<body>
+  <?php
+    session_start(); // Start session at the beginning
+>>>>>>> origin/main
     
     // Check if already installed (only check for final installation marker)
     if (file_exists('install.keydera') && !isset($_GET['reinstall'])) {
@@ -9,7 +27,10 @@
         $showStep5 = isset($_SESSION['admin_created']) && $_SESSION['admin_created'] === true;
         
         if (!$showStep5) {
+<<<<<<< HEAD
             ob_clean(); // Clear any buffered output
+=======
+>>>>>>> origin/main
             echo "<div style='padding: 50px; text-align: center; font-family: Arial, sans-serif;'>";
             echo "<h2>Keydera is already installed!</h2>";
             echo "<p>The installation has already been completed.</p>";
@@ -230,6 +251,7 @@
         }
     }
     
+<<<<<<< HEAD
     // Include the installation UI
     ob_end_clean(); // Clean the buffer
     require "install.php";
@@ -250,3 +272,9 @@
 </body>
 </html>
 </html>
+=======
+    require "install.php";
+  ?>
+</body>
+</html>
+>>>>>>> origin/main

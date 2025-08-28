@@ -414,6 +414,7 @@ if (!function_exists('get_system_info')) {
 }
 
 if (!function_exists('generate_breadcrumb')) {
+<<<<<<< HEAD
     function generate_breadcrumb($custom = null)
     {
         $CI = &get_instance();
@@ -443,6 +444,31 @@ if (!function_exists('generate_breadcrumb')) {
         }
 
         $breadcrumb .= '</nav>';
+=======
+    function generate_breadcrumb()
+    {
+        $CI = &get_instance();
+        $segments = $CI->uri->segments;
+        
+        $breadcrumb = '<nav class="breadcrumb" aria-label="breadcrumbs">';
+        $breadcrumb .= '<ul>';
+        $breadcrumb .= '<li><a href="' . base_url() . '">Home</a></li>';
+        
+        $url = '';
+        foreach ($segments as $segment) {
+            $url .= '/' . $segment;
+            $title = ucfirst(str_replace('_', ' ', $segment));
+            if ($segment === end($segments)) {
+                $breadcrumb .= '<li class="is-active"><a href="#" aria-current="page">' . $title . '</a></li>';
+            } else {
+                $breadcrumb .= '<li><a href="' . base_url() . ltrim($url, '/') . '">' . $title . '</a></li>';
+            }
+        }
+        
+        $breadcrumb .= '</ul>';
+        $breadcrumb .= '</nav>';
+        
+>>>>>>> origin/main
         return $breadcrumb;
     }
 }
