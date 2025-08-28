@@ -1,0 +1,8 @@
+<?php
+// Database configuration template
+// Copy this file to db.php and update with your database settings
+
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_database = 'keydera_db';

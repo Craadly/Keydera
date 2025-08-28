@@ -1,0 +1,557 @@
+# This file is distributed under the same license as the Keydera package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Keydera v1.0.0\n"
+"POT-Creation-Date: 2021-04-24 21:49+0530\n"
+"PO-Revision-Date: 2023-01-15 11:20+0530\n"
+"Last-Translator: \n"
+"Language-Team: https://keydera.app\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: libraries/REST_Controller.php\n"
+"X-Poedit-SearchPath-1: controllers/Api_external.php\n"
+"X-Poedit-SearchPath-2: controllers/Api_internal.php\n"
+"X-Poedit-SearchPath-3: controllers/Generate_helpers.php\n"
+
+#: controllers/Api_external.php:70 controllers/Api_external.php:78
+#: controllers/Api_internal.php:70 controllers/Api_internal.php:78
+msgid "Required request headers are invalid or missing, please recheck."
+msgstr ""
+"Cabeçalhos de solicitações obrigatórios são inválidos ou ausentes, por "
+"favor, verifique novamente."
+
+#: controllers/Api_external.php:103 controllers/Api_internal.php:108
+msgid "Your IP is blacklisted."
+msgstr "Seu IP está na lista negra."
+
+#: controllers/Api_external.php:113 controllers/Api_internal.php:118
+msgid "Your Domain is blacklisted."
+msgstr "Seu domínio está na lista negra."
+
+#: controllers/Api_external.php:123
+msgid "Method not allowed or is invalid."
+msgstr "Método não permitido ou inválido."
+
+#: controllers/Api_external.php:130 controllers/Api_internal.php:128
+msgid "Connection successful."
+msgstr "Conexão bem sucedida."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the version name.
+#: controllers/Api_external.php:145
+#, php-format
+msgid "Latest version of %s is %s"
+msgstr "A versão mais recente de %s é %s"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:155 controllers/Api_external.php:207
+#, php-format
+msgid "%s has no versions yet."
+msgstr "%s ainda não tem versões."
+
+#: controllers/Api_external.php:165 controllers/Api_external.php:430
+msgid "Product ID specified is invalid or the product is inactive."
+msgstr "O ID do produto especificado é inválido ou o produto está inativo."
+
+#: controllers/Api_external.php:175 controllers/Api_external.php:253
+#: controllers/Api_external.php:814 controllers/Api_external.php:974
+#: controllers/Api_external.php:1065 controllers/Api_internal.php:284
+#: controllers/Api_internal.php:532 controllers/Api_internal.php:581
+#: controllers/Api_internal.php:629 controllers/Api_internal.php:706
+#: controllers/Api_internal.php:743 controllers/Api_internal.php:862
+#: controllers/Api_internal.php:896 controllers/Api_internal.php:933
+#: controllers/Api_internal.php:970 controllers/Api_internal.php:1007
+msgid "Incorrect method or missing values, please check."
+msgstr "Método incorreto ou valores ausentes, por favor, verifique."
+
+#: controllers/Api_external.php:194
+msgid "Product not found or is inactive, please contact support!"
+msgstr "Produto não encontrado ou inativo, entre em contato com o suporte!"
+
+#. TRANSLATORS: First %s will be replaced with the version name.
+#. Second %s will be replaced with the product name.
+#: controllers/Api_external.php:229
+#, php-format
+msgid "New version (%s) available for %s!"
+msgstr "Nova versão (%s) disponível para %s!"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:241
+#, php-format
+msgid "You have the latest version of %s."
+msgstr "Você tem a versão mais recente de%s."
+
+#: controllers/Api_external.php:459
+msgid ""
+"Envato purchase code is invalid or is not of the specified product, please "
+"contact support!"
+msgstr ""
+"O código de compra do Envato é inválido ou não é do produto especificado. "
+"Entre em contato com o suporte!"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:505 controllers/Api_external.php:784
+#, php-format
+msgid "Activated! Thanks for purchasing %s."
+msgstr "Ativado! Obrigado por comprar %s."
+
+#: controllers/Api_external.php:527
+msgid "Envato purchase code is invalid, please contact support!"
+msgstr ""
+"O código de compra do Envato é inválido. Entre em contato com o suporte!"
+
+#: controllers/Api_external.php:560 controllers/Api_external.php:868
+#: controllers/Api_external.php:1023
+msgid ""
+"License is incorrect or it is not licensed for your domain, please contact "
+"support!"
+msgstr ""
+"A licença está incorreta ou não está licenciada para o seu domínio. Entre em "
+"contato com o suporte!"
+
+#: controllers/Api_external.php:586 controllers/Api_external.php:878
+#: controllers/Api_external.php:1033
+msgid ""
+"License is incorrect or it is not licensed for your IP, please contact "
+"support!"
+msgstr ""
+"A licença está incorreta ou não está licenciada para seu IP, entre em "
+"contato com o suporte!"
+
+#: controllers/Api_external.php:617 controllers/Api_external.php:644
+#: controllers/Api_external.php:893 controllers/Api_external.php:904
+msgid ""
+"License is incorrect or this license has expired, please contact support!"
+msgstr ""
+"A licença está incorreta ou esta licença expirou, entre em contato com o "
+"suporte!"
+
+#: controllers/Api_external.php:669 controllers/Api_external.php:847
+#: controllers/Api_external.php:1004
+msgid ""
+"License is incorrect or this license is not assigned to you, please contact "
+"support!"
+msgstr ""
+"A licença está incorreta ou esta licença não está atribuída a você, entre em "
+"contato com o suporte!"
+
+#: controllers/Api_external.php:692 controllers/Api_external.php:854
+#: controllers/Api_external.php:1010
+msgid "License is blocked, please contact support!"
+msgstr "A licença está bloqueada, entre em contato com o suporte!"
+
+#: controllers/Api_external.php:720 controllers/Api_external.php:926
+msgid "License use limit reached, please contact support!"
+msgstr "Limite de uso da licença atingido, entre em contato com o suporte!"
+
+#: controllers/Api_external.php:750 controllers/Api_external.php:941
+msgid ""
+"License is already active on maximum allowed product instances, please "
+"deactivate this license from active instance(s) and try again!"
+msgstr ""
+"A licença já está ativa em instâncias máximas permitidas do produto, por "
+"favor desative esta licença de instâncias ativas e tente novamente!"
+
+#: controllers/Api_external.php:806
+msgid ""
+"License code specified is incorrect or is of a different product, please "
+"recheck!"
+msgstr ""
+"O código de licença especificado está incorreto ou é de um produto "
+"diferente, por favor, verifique novamente!"
+
+#: controllers/Api_external.php:913 controllers/Api_external.php:1041
+msgid "Activation not recognized or is inactive, please contact support!"
+msgstr "Ativação não reconhecida ou inativa, entre em contato com o suporte!"
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_external.php:961
+#, php-format
+msgid "Verified! Thanks for purchasing %s."
+msgstr "Verificado! Obrigado por comprar %s."
+
+#: controllers/Api_external.php:967 controllers/Api_external.php:1059
+msgid "License code specified is incorrect, please recheck!"
+msgstr ""
+"Código de licença especificado está incorreto, por favor, verifique "
+"novamente!"
+
+#: controllers/Api_external.php:1048
+msgid "License was not deactivated, please contact support!"
+msgstr "A licença não foi desativada, entre em contato com o suporte!"
+
+#: controllers/Api_external.php:1054
+msgid "License was deactivated successfully."
+msgstr "A licença foi desativada com sucesso."
+
+#: controllers/Api_internal.php:148
+msgid "Provided license code already exists, please recheck."
+msgstr "O código de licença já existe, verifique novamente."
+
+#: controllers/Api_internal.php:159 controllers/Api_internal.php:345
+msgid "Provided client email address is incorrect, please check."
+msgstr "O endereço de email do cliente está incorreto, por favor, verifique."
+
+#: controllers/Api_internal.php:171 controllers/Api_internal.php:371
+msgid "Provided licensed IPs are incorrect, please check."
+msgstr "IPs licenciados estão incorretos, por favor, verifique."
+
+#: controllers/Api_internal.php:182 controllers/Api_internal.php:389
+msgid "Provided licensed domains are incorrect, please check."
+msgstr "Os domínios licenciados estão incorretos. Verifique."
+
+#: controllers/Api_internal.php:191 controllers/Api_internal.php:405
+msgid "Provided license support end date is incorrect, please check."
+msgstr "A data de término do suporte à licença está incorreta. Verifique."
+
+#: controllers/Api_internal.php:200 controllers/Api_internal.php:421
+msgid "Provided license updates end date is incorrect, please check."
+msgstr "A data de término das atualizações está incorreta, confira."
+
+#: controllers/Api_internal.php:209 controllers/Api_internal.php:437
+msgid "Provided license expiration date is incorrect, please check."
+msgstr "Data de expiração da licença está incorreta, por favor verifique."
+
+#: controllers/Api_internal.php:218 controllers/Api_internal.php:453
+msgid "Provided license expiration days is incorrect, please check."
+msgstr "Os dias de vencimento da licença estão incorretos, verifique."
+
+#: controllers/Api_internal.php:227 controllers/Api_internal.php:469
+msgid "Provided license use limit is incorrect, please check."
+msgstr "Desde limite de uso de licença está incorreta, por favor, verifique."
+
+#: controllers/Api_internal.php:236 controllers/Api_internal.php:485
+msgid "Provided license parallel use limit is incorrect, please check."
+msgstr "Se o limite de uso paralelo da licença estiver incorreto, verifique."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:266
+#, php-format
+msgid "New %s license %s was successfully added."
+msgstr "A nova %s licence %s foi adicionada com sucesso."
+
+#: controllers/Api_internal.php:272
+msgid "An error occured, license was not added."
+msgstr "Ocorreu um erro, a licença não foi adicionada."
+
+#: controllers/Api_internal.php:278 controllers/Api_internal.php:305
+#: controllers/Api_internal.php:623 controllers/Api_internal.php:700
+#: controllers/Api_internal.php:737
+msgid "Product ID specified is incorrect, please recheck."
+msgstr ""
+"O ID do produto especificado está incorreto, por favor, verifique novamente."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:514
+#, php-format
+msgid "License %s was successfully edited."
+msgstr "A licença %s foi editada com sucesso."
+
+#: controllers/Api_internal.php:520
+msgid "An error occured, license was not edited."
+msgstr "Ocorreu um erro, a licença não foi editada."
+
+#: controllers/Api_internal.php:526
+msgid "Provided license does not exist, please recheck."
+msgstr "A licença fornecida não existe, verifique novamente."
+
+#: controllers/Api_internal.php:550
+msgid "Provided product ID already exists, please recheck."
+msgstr "Desde que o ID do produto já exista, por favor, verifique novamente."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#. Second %s will be replaced with the product ID.
+#: controllers/Api_internal.php:569
+#, php-format
+msgid "New product %s having ID %s was successfully added."
+msgstr "Novo produto %s tendo ID %s foi adicionado com sucesso."
+
+#: controllers/Api_internal.php:575
+msgid "An error occured, product was not added."
+msgstr "Ocorreu um erro, o produto não foi adicionado."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:688
+#, php-format
+msgid "Product %s marked as active."
+msgstr "Produto %s marcado como ativo."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:694
+#, php-format
+msgid "Product %s is already active."
+msgstr "O produto %s já está ativo."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:725
+#, php-format
+msgid "Product %s marked as inactive."
+msgstr "Produto %s marcado como inativo."
+
+#. TRANSLATORS: First %s will be replaced with the product name.
+#: controllers/Api_internal.php:731
+#, php-format
+msgid "Product %s is already inactive."
+msgstr "O produto %s já está inativo."
+
+#: controllers/Api_internal.php:856 controllers/Api_internal.php:890
+#: controllers/Api_internal.php:927 controllers/Api_internal.php:964
+#: controllers/Api_internal.php:1001
+msgid "License code specified is incorrect, please recheck."
+msgstr ""
+"O código de licença especificado está incorreto, por favor, verifique "
+"novamente."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:878
+#, php-format
+msgid "License %s was successfully deleted."
+msgstr "A licença %s foi excluída com sucesso."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:884
+#, php-format
+msgid "License %s was not deleted, please recheck."
+msgstr "A licença %s não foi excluída, por favor, verifique novamente."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:915
+#, php-format
+msgid "License %s was successfully deactivated."
+msgstr "A licença %s foi desativada com sucesso."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:921
+#, php-format
+msgid "License %s is already deactivated."
+msgstr "A licença %s já está desativada."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:952
+#, php-format
+msgid "License %s was successfully blocked."
+msgstr "A licença %s foi bloqueada com sucesso."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:958
+#, php-format
+msgid "License %s is already blocked."
+msgstr "A licença %s já está bloqueada."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:989
+#, php-format
+msgid "License %s was successfully unblocked."
+msgstr "A licença %s foi desbloqueada com sucesso."
+
+#. TRANSLATORS: First %s will be replaced with the license code/key.
+#: controllers/Api_internal.php:995
+#, php-format
+msgid "License %s is already unblocked."
+msgstr "A licença %s já está desbloqueada."
+
+#: controllers/Generate_helpers.php:80 controllers/Generate_helpers.php:155
+msgid "Server is unavailable at the moment, please try again."
+msgstr "O servidor não está disponível no momento. Tente novamente."
+
+#: controllers/Generate_helpers.php:81 controllers/Generate_helpers.php:156
+msgid "Server returned an invalid response, please contact support."
+msgstr ""
+"O servidor retornou uma resposta inválida. Entre em contato com o suporte."
+
+#: controllers/Generate_helpers.php:82
+msgid "Verified! Thanks for purchasing."
+msgstr "Verificado! Obrigado por comprar."
+
+#: controllers/Generate_helpers.php:83
+msgid "Preparing to download main update..."
+msgstr "Preparando para baixar a atualização principal..."
+
+#: controllers/Generate_helpers.php:84
+msgid "Main Update size:"
+msgstr "Tamanho da atualização principal:"
+
+#: controllers/Generate_helpers.php:85
+msgid "(Please do not refresh the page)."
+msgstr "(Por favor, não atualize a página)."
+
+#: controllers/Generate_helpers.php:86
+msgid "Downloading main update..."
+msgstr "Baixando a atualização principal..."
+
+#: controllers/Generate_helpers.php:87
+msgid ""
+"Your update period has ended or your license is invalid, please contact "
+"support."
+msgstr ""
+"Seu período de atualização terminou ou sua licença é inválida. Entre em "
+"contato com o suporte."
+
+#: controllers/Generate_helpers.php:88
+msgid ""
+"Folder does not have write permission or the update file path could not be "
+"resolved, please contact support."
+msgstr ""
+"A pasta não tem permissão de gravação ou o caminho do arquivo de atualização "
+"não pôde ser resolvido. Entre em contato com o suporte."
+
+#: controllers/Generate_helpers.php:89
+msgid "Main update files downloaded and extracted."
+msgstr "Principais arquivos de atualização baixados e extraídos."
+
+#: controllers/Generate_helpers.php:90
+msgid "Update zip extraction failed."
+msgstr "A atualização da extração do zip falhou."
+
+#: controllers/Generate_helpers.php:91
+msgid "Preparing to download SQL update..."
+msgstr "Herunterladen des SQL-Updates wird vorbereitet..."
+
+#: controllers/Generate_helpers.php:92
+msgid "SQL Update size:"
+msgstr "Tamanho da atualização do SQL:"
+
+#: controllers/Generate_helpers.php:93
+msgid "Downloading SQL update..."
+msgstr "Fazendo o download da atualização do SQL..."
+
+#: controllers/Generate_helpers.php:94
+msgid "SQL update files downloaded."
+msgstr "Arquivos de atualização SQL baixados."
+
+#: controllers/Generate_helpers.php:95
+msgid ""
+"Application was successfully updated but automatic SQL importing failed, "
+"please import the downloaded SQL file in your database manually."
+msgstr ""
+"O aplicativo foi atualizado com sucesso, mas a importação automática de SQL "
+"falhou, por favor importe o arquivo SQL baixado em seu banco de dados "
+"manualmente."
+
+#: controllers/Generate_helpers.php:96
+msgid ""
+"Application was successfully updated and SQL file was automatically imported."
+msgstr ""
+"O aplicativo foi atualizado com sucesso e o arquivo SQL foi importado "
+"automaticamente."
+
+#: controllers/Generate_helpers.php:97
+msgid ""
+"Application was successfully updated, please import the downloaded SQL file "
+"in your database manually."
+msgstr ""
+"O aplicativo foi atualizado com sucesso, por favor importe o arquivo SQL "
+"baixado em seu banco de dados manualmente."
+
+#: controllers/Generate_helpers.php:98
+msgid "Application was successfully updated, there were no SQL updates."
+msgstr ""
+"O aplicativo foi atualizado com sucesso, não houve atualizações de SQL."
+
+#: libraries/REST_Controller.php:589
+msgid "Only AJAX requests are allowed."
+msgstr "Apenas solicitações AJAX são permitidas."
+
+#: libraries/REST_Controller.php:695
+msgid "Unsupported protocol"
+msgstr "Protocolo não suportado"
+
+#: libraries/REST_Controller.php:732
+msgid "Provided API key is invalid."
+msgstr "A chave da API fornecida é inválida."
+
+#: libraries/REST_Controller.php:748
+msgid "This API key does not have access to the requested resource."
+msgstr "Esta chave de API não tem acesso ao recurso solicitado."
+
+#: libraries/REST_Controller.php:759
+msgid "Unknown method"
+msgstr "Método desconhecido"
+
+#: libraries/REST_Controller.php:771
+msgid ""
+"This API key has reached its maximum requests per hour limit, try again "
+"later."
+msgstr ""
+"Essa chave de API atingiu o limite máximo de solicitações por hora, tente "
+"novamente mais tarde."
+
+#: libraries/REST_Controller.php:771
+msgid ""
+"This IP Address has reached its maximum requests per hour limit, try again "
+"later."
+msgstr ""
+"Este endereço IP atingiu o limite máximo de solicitações por hora, tente "
+"novamente mais tarde."
+
+#: libraries/REST_Controller.php:790
+msgid "This API key does not have enough permissions."
+msgstr "Esta chave de API não tem permissões suficientes."
+
+#: libraries/REST_Controller.php:800
+msgid "This IP Address has reached the time limit for this method."
+msgstr "Este endereço IP atingiu o limite de tempo para este método."
+
+#: libraries/REST_Controller.php:2007 libraries/REST_Controller.php:2193
+msgid "Unauthorized"
+msgstr "Não autorizado"
+
+#: libraries/REST_Controller.php:2105
+msgid "Invalid credentials"
+msgstr "Credenciais inválidas"
+
+#: libraries/REST_Controller.php:2127
+msgid "IP denied"
+msgstr "IP negado"
+
+#: libraries/REST_Controller.php:2155
+msgid "IP unauthorized"
+msgstr "IP não autorizado"
+
+#~ msgid ""
+#~ "Update successful, there were no SQL updates. So you can run the updated "
+#~ "application directly."
+#~ msgstr ""
+#~ "Atualização bem-sucedida, não houve atualizações de SQL. Então você pode "
+#~ "executar o aplicativo atualizado diretamente."
+
+#~ msgid ""
+#~ "Connection to server failed or the server returned an error, please "
+#~ "contact support."
+#~ msgstr ""
+#~ "A conexão com o servidor falhou ou o servidor retornou um erro, entre em "
+#~ "contato com o suporte."
+
+#~ msgid ""
+#~ "Product %s %s update download attempt from URL %s was blocked as license "
+#~ "was not provided."
+#~ msgstr ""
+#~ "Der Downloadversuch zur Aktualisierung von Produkt %s %s von URL %s wurde "
+#~ "blockiert, da keine Lizenz bereitgestellt wurde."
+
+#~ msgid "Product %s %s update was downloaded from URL %s."
+#~ msgstr "Das Produkt %s %s Update wurde von URL %s heruntergeladen."
+
+#~ msgid ""
+#~ "Product %s %s update download attempt from URL %s was blocked as provided "
+#~ "license was found to be invalid."
+#~ msgstr ""
+#~ "Der Downloadversuch zur Aktualisierung von Produkt %s %s von URL %s wurde "
+#~ "blockiert, da die angegebene Lizenz als ungültig befunden wurde."
+
+#~ msgid ""
+#~ "Activation attempt blocked for client %s using Envato purchase code %s "
+#~ "for product %s on URL %s, as provided purchase code is of a different "
+#~ "envato product."
+#~ msgstr ""
+#~ "Aktivierungsversuch für Client %s mit Envato-Bestellcode %s für Produkt "
+#~ "%s unter URL %s blockiert, da der Bestellcode von einem anderen envato-"
+#~ "Produkt stammt."
+
