@@ -1,0 +1,60 @@
+name: Release Keydera Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: zip, curl
+          tools: composer
+
+      - name: Lint PHP files
+        run: find . -type f -name "*.php" -print0 | xargs -0 -n1 -P4 php -l
+
+      - name: Get project version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Create release package
+        run: |
+          mkdir -p keydera-release
+          rsync -av --progress . keydera-release --exclude .git --exclude .github --exclude keydera-release --exclude Keydera.zip
+          cd keydera-release
+          zip -r ../Keydera-${{ steps.get_version.outputs.VERSION }}.zip .
+          cd ..
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release of version ${{ steps.get_version.outputs.VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload release asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Keydera-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_name: Keydera-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_content_type: application/zip

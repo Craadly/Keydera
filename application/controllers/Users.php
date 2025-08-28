@@ -3,7 +3,15 @@
 /**
  * keydera-clean
  *
+<<<<<<< HEAD
+ * Keydera is a full-fledged licenser and u        if ($this->form_validation->run() === false) {
+            $this->load->view('templates/header_auth', $data);
+            $this->load->view('users/forgot_password', $data);
+            $this->load->view('templates/footer_auth');
+        } else {s manager.
+=======
  * Keydera is a full-fledged licenser and updates manager.
+>>>>>>> origin/main
  *
  * @package keydera-clean
  * @author Craadly
@@ -46,9 +54,15 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         if ($this->form_validation->run() === false) {
+<<<<<<< HEAD
+            $this->load->view('templates/header_auth', $data);
+            $this->load->view('users/login', $data);
+            $this->load->view('templates/footer_auth');
+=======
             $this->load->view('templates/header', $data);
             $this->load->view('users/login', $data);
             $this->load->view('templates/footer');
+>>>>>>> origin/main
         } else {
             $username = strip_tags(trim((string) $this->input->post('username')));
             $password = strip_tags(trim((string) $this->input->post('password')));
@@ -142,9 +156,15 @@ class Users extends CI_Controller
         $data['title'] = 'Forgot Password?';
         $this->form_validation->set_rules('email', 'Email', 'required');
         if ($this->form_validation->run() === false) {
+<<<<<<< HEAD
+            $this->load->view('templates/header_auth', $data);
+            $this->load->view('users/forgot_password', $data);
+            $this->load->view('templates/footer_auth');
+=======
             $this->load->view('templates/header', $data);
             $this->load->view('users/forgot_password', $data);
             $this->load->view('templates/footer');
+>>>>>>> origin/main
         } else {
             $email = $this->input->post('email');
             $user_data = $this->user_model->get_user_from_email($email);
@@ -268,9 +288,15 @@ class Users extends CI_Controller
                 $this->form_validation->set_rules('new_password', 'new password', 'required');
                 $this->form_validation->set_rules('password_confirm', 'confirm password', 'required|matches[new_password]');
                 if ($this->form_validation->run() === false) {
+<<<<<<< HEAD
+                    $this->load->view('templates/header_auth', $data);
+                    $this->load->view('users/reset_password', $data);
+                    $this->load->view('templates/footer_auth');
+=======
                     $this->load->view('templates/header', $data);
                     $this->load->view('users/reset_password', $data);
                     $this->load->view('templates/footer');
+>>>>>>> origin/main
                 } else {
                     if ($this->user_model->change_password($email)) {
                         $this->session->set_flashdata('login_status', array(

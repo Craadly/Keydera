@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<?php
+// Premium layout: legacy top navigation suppressed.
+// This view is intentionally left blank so controllers that still
+// load 'templates/menu' won't output any legacy menu HTML.
+// Keeping the file avoids touching multiple controllers.
+?>
+=======
 <?php 
 // Simplified version to avoid errors
 $coreApp = null;
@@ -184,4 +192,5 @@ $system_info = get_system_info($license_status);
   </div>
 </div>
 </nav>
+>>>>>>> origin/main
 

@@ -1,8 +1,116 @@
 # Keydera - PHP License and Updates Manager
 
-A full-fledged PHP license and updates manager built with CodeIgniter framework.
+A full‑featured PHP license and updates manager built with the CodeIgniter 3 framework. This repository currently includes a feature branch for a modern authentication UI redesign.
 
-##  Features
+## Extended Description
+
+Keydera provides everything you need to license, activate, and deliver software updates for your products:
+
+- Issue and validate license keys, manage activations, and enforce limits per product/version.
+- Serve updates and downloads securely, with analytics for visibility into usage.
+- Integrate from your applications through a clean REST-style API (see `docs/API.md`).
+- Admin UI for managing users, products, licenses, releases, and settings.
+
+Architecture and stack:
+- Backend: CodeIgniter 3 (MVC) with MySQL/MariaDB. Core app code under `application/` and `system/`.
+- Controllers expose internal/external endpoints (e.g., `Api_internal`, `Api_external`).
+- Views are PHP templates with vendor UI libraries (DataTables, Select2, CKEditor, Dropify, jQuery Validation, Font Awesome).
+- Styles: project CSS under `assets/css/` (e.g., `premium-design.css`), with Tailwind/PostCSS configs available for utility workflows (`tailwind.config.js`, `postcss.config.js`).
+- Testing: Playwright UI tests live in `tests/ui/` with Docker support under `docker/playwright/`.
+- Internationalization: language packs in `application/language/`.
+
+Feature branch – Authentication redesign:
+- Two‑column split layout for login/forgot pages with a minimal auth wrapper (no sidebar/topbar during auth flows).
+- Brand‑consistent purple gradient “branding” panel and responsive layout for all screen sizes.
+- Modernized form controls: corrected logo (`logo-white.svg`), improved input padding/focus, aligned icons, consistent button styling.
+- Footer refresh: edge‑to‑edge app footer with responsive layout and brand links.
+- New/updated templates and styles: `application/views/users/login.php`, `application/views/users/forgot_password.php`, `application/views/templates/header_auth.php`, `application/views/templates/footer_auth.php`, and `assets/css/premium-design.css`.
+
+Deployment & operations:
+- Works with Apache/Nginx/PHP-FPM; sample Dockerfiles are provided under `docker/` and a `docker-compose.yml` for local runs.
+- Keep credentials secure and use HTTPS in production.
+
+Data model highlights:
+- Users, Products, Licenses, Activations, Versions/Releases, and Downloads. See `docs/API.md` and the installer SQL under `install/` for schema details.
+
+CI/CD and releases:
+- GitHub Actions workflow under `.github/workflows/release.yml` can help with packaging and validating builds.
+
+If you’re reviewing the feature branch, see the PR description for a concise change summary and screenshots.
+
+## Docker (local dev + tests)
+
+Prerequisites:
+- Docker Desktop (Windows/macOS/Linux)
+
+Quick start (Windows PowerShell):
+
+```powershell
+# Build and start web + db (and keep containers running)
+docker compose up -d --build
+
+# Follow Apache logs (optional)
+docker compose logs -f web
+```
+
+Open http://localhost:8080
+
+First run notes:
+- Database is automatically seeded from `install/database.sql` via MySQL init (see `docker-compose.yml`).
+- Inside containers, the DB host is `db` (service name). If you run the app on the host instead of in Docker, use host `127.0.0.1` and port `3307`.
+- Set your base URL to `http://localhost:8080/` in `application/config/config.php` when using Docker.
+
+Database configuration examples:
+
+```php
+// In Docker containers (web talks to db via service name)
+$db['default'] = array(
+   'hostname' => 'db',
+   'username' => 'keydera_user',
+   'password' => 'keydera_pass',
+   'database' => 'keydera_db',
+   'dbdriver' => 'mysqli',
+);
+
+// App on host talking to Docker MySQL published on 3307
+$db['default'] = array(
+   'hostname' => '127.0.0.1',
+   'port'     => 3307,
+   'username' => 'keydera_user',
+   'password' => 'keydera_pass',
+   'database' => 'keydera_db',
+   'dbdriver' => 'mysqli',
+);
+```
+
+Common commands:
+
+```powershell
+# Stop services
+docker compose down
+
+# Stop and remove volumes (resets MySQL data)
+docker compose down -v
+
+# Exec into the web container
+docker compose exec web bash
+```
+
+### Playwright UI tests in Docker
+
+```powershell
+# Run all UI tests (report written to ./playwright-report)
+docker compose run --rm playwright npx playwright test tests/ui --reporter=html
+```
+
+Then open `playwright-report/index.html` in your browser to view the results.
+
+Troubleshooting:
+- If port 8080 is in use, change the host port mapping in `docker-compose.yml` (e.g., `8090:80`).
+- XAMPP/MySQL conflict: the compose file publishes MySQL on `3307` to avoid clashes. Inside Docker use `db:3306`; from host use `127.0.0.1:3307`.
+- If routing isn’t working, ensure `.htaccess` is present and that `AllowOverride All` is enabled (it is in the provided Apache vhost config).
+
+## Features
 
 - License key generation and validation
 - Product activation management  
@@ -12,20 +120,21 @@ A full-fledged PHP license and updates manager built with CodeIgniter framework.
 - Download tracking and analytics
 - Multi-language support
 
-##  Requirements
+## Requirements
 
 - PHP 7.4 or higher
 - MySQL 5.7 or MariaDB 10.3+
 - Apache/Nginx web server
 - CodeIgniter 3.x framework (included)
 
-##  Installation
+## Installation
 
 1. **Clone the repository**
-   `ash
-   git clone https://github.com/Craadly/keydera.git
-   cd keydera
-   `
+   
+   ```bash
+   git clone https://github.com/Craadly/Keydera.git
+   cd Keydera
+   ```
 
 2. **Configure your web server**
    - Point document root to the project folder
@@ -41,42 +150,46 @@ A full-fledged PHP license and updates manager built with CodeIgniter framework.
    - Update database credentials
    - Set your base URL in `application/config/config.php`
 
-##  Configuration
+## Configuration
 
 ### Database Configuration
 Edit `application/config/database.php`:
-`php
+
+```php
 $db['default'] = array(
-    'hostname' => 'localhost',
-    'username' => 'your_username', 
-    'password' => 'your_password',
-    'database' => 'your_database',
-    // ... other settings
+   'hostname' => 'localhost',
+   'username' => 'your_username', 
+   'password' => 'your_password',
+   'database' => 'your_database',
+   // ... other settings
 );
-`
+```
 
 ### Base URL
 Edit `application/config/config.php`:
-`php
-$config['base_url'] = 'https://localhost/keydera-clean/ (or http://localhost/keydera-clean/)';
-`
 
-##  API Documentation
+```php
+$config['base_url'] = 'http://localhost/keydera-clean/';
+// or
+$config['base_url'] = 'https://localhost/keydera-clean/';
+```
+
+## API Documentation
 
 See `docs/API.md` for detailed API documentation and integration examples.
 
-##  Security
+## Security
 
 - Change default admin credentials after installation
 - Use HTTPS in production
 - Keep the application updated
 - Secure your database credentials
 
-##  License
+## License
 
 This project is licensed under the CodeCanyon Standard License.
 
-##  Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -84,15 +197,23 @@ This project is licensed under the CodeCanyon Standard License.
 4. Push to the branch  
 5. Create a Pull Request
 
-##  Support
+## Support
 
 For support and questions:
 - Email: tagkais@gmail.com
 - GitHub Issues: [Create an issue](https://github.com/Craadly/keydera/issues)
 
-##  Version
+## Version
 
 Current version: 1.0.0
 
 ---
- 2025 Craadly. All rights reserved.
+© 2025 Craadly. All rights reserved.
+
+---
+
+### Notes for the Auth Redesign Feature Branch
+
+If you are working specifically on the authentication redesign:
+- Primary files: `application/views/users/login.php`, `application/views/users/forgot_password.php`, `application/views/templates/header_auth.php`, `application/views/templates/footer_auth.php`, and `assets/css/premium-design.css`.
+- The feature branch is `feat/auth-redesign`. A pull request is available for review at https://github.com/Craadly/Keydera/pull/3.

@@ -349,6 +349,13 @@ class Cron extends CI_Controller
         }
         if ($this->run_type != 'cli') {
             $data['title'] = 'Run Cron';
+<<<<<<< HEAD
+            $data['cr_response'] = $cr_response;
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/menu');
+            $this->load->view('cron/run', $data);
+            $this->load->view('templates/footer');
+=======
             echo $this->load->view('templates/header', $data, true);
             echo $this->load->view('templates/menu', '', true);
             $generate_breadcrumb = 'generate_breadcrumb';
@@ -372,6 +379,7 @@ class Cron extends CI_Controller
 </div>
 EOT;
             echo $this->load->view('templates/footer', '', true);
+>>>>>>> origin/main
         } else {
             echo $cr_response;
         }

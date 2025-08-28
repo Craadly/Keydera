@@ -93,3 +93,16 @@ defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatic
 |
 */
 defined('KEYDERA_THEME') or define('KEYDERA_THEME', 'material');
+<<<<<<< HEAD
+
+/*
+|--------------------------------------------------------------------------
+| Keydera Application Version
+|--------------------------------------------------------------------------
+|
+| Current version of the Keydera application
+|
+*/
+defined('KEYDERA_VERSION') or define('KEYDERA_VERSION', '1.0.0');
+=======
+>>>>>>> origin/main

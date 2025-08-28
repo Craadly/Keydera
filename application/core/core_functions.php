@@ -76,6 +76,34 @@ if (!function_exists('generate_breadcrumb')) {
         $CI = &get_instance();
         $index = 1;
         $uri_segment = $CI->uri->segment($index);
+<<<<<<< HEAD
+
+        // Start new breadcrumb markup
+        $breadcrumb = '<nav class="breadcrumb">';
+        $breadcrumb .= '<a href="' . base_url() . '" class="breadcrumb-item"><i class="fas fa-home"></i> Keydera</a>';
+
+        $built = '';
+        $segments = array();
+        while ($uri_segment != '') {
+            $segments[] = $uri_segment;
+            $index++;
+            $uri_segment = $CI->uri->segment($index);
+        }
+
+        $total = count($segments);
+        foreach ($segments as $i => $seg) {
+            $built .= $seg . '/';
+            $title = ($custom && $i === $total - 1) ? ucfirst($custom) : ucfirst($seg);
+            $breadcrumb .= '<span class="breadcrumb-separator">›</span>';
+            if ($i === $total - 1) {
+                $breadcrumb .= '<span class="breadcrumb-current">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</span>';
+            } else {
+                $breadcrumb .= '<a href="' . site_url($built) . '" class="breadcrumb-item">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</a>';
+            }
+        }
+
+        $breadcrumb .= '</nav>';
+=======
         $breadcrumb = '<nav class="breadcrumb" aria-label="breadcrumbs">
             <ul><li><a href="' . base_url() . '">Home</a></li>';
         
@@ -105,6 +133,7 @@ if (!function_exists('generate_breadcrumb')) {
         }
         
         $breadcrumb .= '</ul></nav>';
+>>>>>>> origin/main
         return $breadcrumb;
     }
 }

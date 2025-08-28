@@ -1,4 +1,50 @@
+<<<<<<< HEAD
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Logs
+*.log
+php_server.log
+application/logs/*
+!application/logs/index.html
+
+# Vendor/Composer (if present)
+vendor/
+composer.lock
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# Cache
+application/cache/*
+!application/cache/index.html
+
+# Playwright / testing artifacts
+playwright-report/
+screenshots/
+
+# Docker and local configs
+docker/*.env
+
+# Misc
+temp_hash.php
+test_db_connection.php
+install/test_db.php# Operating System Files
+=======
 # Operating System Files
+>>>>>>> origin/main
 .DS_Store
 .DS_Store?
 ._*

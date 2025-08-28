@@ -1,6 +1,28 @@
+<<<<<<< HEAD
+<!-- Inspired Footer Design -->
+<footer class="app-footer-inspired">
+  <div class="footer-container">
+    <div class="footer-left">
+      <a href="<?php echo base_url(); ?>" class="footer-logo">K</a>
+      <p class="footer-copyright">© <?php echo date('Y'); ?> Keydera. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <nav class="footer-nav-links">
+        <a href="https://www.keydera.app/privacy" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://www.keydera.app/terms" target="_blank" rel="noopener">Terms</a>
+        <a href="https://www.keydera.app/support" target="_blank" rel="noopener">Support</a>
+      </nav>
+      <div class="footer-version">
+        Version <?php echo defined('KEYDERA_VERSION') ? KEYDERA_VERSION : '2.0.1'; ?>
+      </div>
+    </div>
+  </div>
+</footer>
+=======
 <div class="content has-text-centered">
   <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app" target="_blank" rel="noopener">Keydera</a>, All rights reserved.</p>
 </div>
+>>>>>>> origin/main
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/BulmaTagsInput/js/bulma-tagsinput.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/DataTables/js/datatables.min.js"></script>
@@ -250,6 +272,14 @@ $(document).on('click', '.with-email-confirmation', function(){
   });
 });
 </script>
+<<<<<<< HEAD
+<script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
+<script src="<?php echo base_url(); ?>assets/js/pages/licenses.js?v=<?php echo time(); ?>"></script>
+<?php endif; ?>
+<?php if(($this->router->fetch_class()=='activations')&&($this->router->fetch_method()=='index')): ?>
+<script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
+<script src="<?php echo base_url(); ?>assets/js/pages/activations.js?v=<?php echo time(); ?>"></script>
+=======
 <script>
 $(document).ready(function(){
   var licenses_table = $('#licenses_table').DataTable({
@@ -485,6 +515,7 @@ $(document).ready(function () {
   });
 });
 </script>
+>>>>>>> origin/main
 <?php endif; ?>
 <?php if(($this->router->fetch_class()=='users')&&($this->router->fetch_method()=='activities')): ?>
 <script>
@@ -602,10 +633,32 @@ $(document).ready(function(){
       }).show();
     }
   });
+<<<<<<< HEAD
+
+  // Hide footer (info + pagination) when there are no records OR only a single page
+  function updateActivitiesFooter(){
+    var info = activities_table.page ? activities_table.page.info() : null;
+    var hasAny = (info && info.recordsDisplay && info.recordsDisplay > 0);
+    var hasMultiplePages = (info && info.pages && info.pages > 1);
+    var wrapper = $('#activities_table').closest('.dataTables_wrapper');
+    if (hasAny && hasMultiplePages) {
+      wrapper.find('.dataTables_info, .dataTables_paginate').css('display', '');
+    } else {
+      wrapper.find('.dataTables_info, .dataTables_paginate').css('display', 'none');
+    }
+  }
+  activities_table.on('draw', updateActivitiesFooter);
+  updateActivitiesFooter();
+=======
+>>>>>>> origin/main
 });
 </script>
 <?php endif; ?>
 <?php if(($this->router->fetch_class()=='downloads')&&($this->router->fetch_method()=='index')): ?>
+<<<<<<< HEAD
+<script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
+<script src="<?php echo base_url(); ?>assets/js/pages/downloads.js?v=<?php echo time(); ?>"></script>
+=======
 <script>
 $(document).ready(function(){
   var downloads_table = $('#downloads_table').DataTable({
@@ -722,14 +775,21 @@ $(document).ready(function(){
   });
 });
 </script>
+>>>>>>> origin/main
 <?php endif; ?>
 <script>
 const bulmaTagsInputInstances = BulmaTagsInput.attach();
 bulmaTagsInputInstances.forEach(bulmaTagsInputInstance => {
   bulmaTagsInputInstance.input.onblur = function () {
+<<<<<<< HEAD
+    bulmaTagsInputInstance.add(bulmaTagsInputInstance.input.value);
+    bulmaTagsInputInstance.input.value = "";
+  };
+=======
   bulmaTagsInputInstance.add(bulmaTagsInputInstance.input.value);
   bulmaTagsInputInstance.input.value = "";
 };
+>>>>>>> origin/main
 });
 var clip = new ClipboardJS('.copy_to_clipboard');
 document.addEventListener('DOMContentLoaded', function () {
@@ -757,6 +817,25 @@ $(document).ready( function(){
     responsive: true,
     "order": []
   });
+<<<<<<< HEAD
+  // Hide info/pagination on single-page simple tables
+  $('.ts').each(function(){
+    var table = $(this).DataTable();
+    function updateSimpleTableFooter(){
+      var info = table.page ? table.page.info() : null;
+      var hasMultiple = (info && info.pages && info.pages > 1);
+      var wrapper = $(table.table().container()).closest('.dataTables_wrapper');
+      if (hasMultiple) {
+        wrapper.find('.dataTables_info, .dataTables_paginate').css('display','');
+      } else {
+        wrapper.find('.dataTables_info, .dataTables_paginate').css('display','none');
+      }
+    }
+    table.on('draw', updateSimpleTableFooter);
+    updateSimpleTableFooter();
+  });
+=======
+>>>>>>> origin/main
   $('.ts').wrap('<div class="dataTables_scroll" />');
   $('.nots').wrap('<div class="dataTables_scroll" />');
   $('.dropify').dropify();
@@ -812,6 +891,100 @@ $(function(){
     });
   });
 </script>
+<<<<<<< HEAD
+<script>
+// Modern sidebar interactions: collapse, mobile overlay, submenu a11y, and persistence
+(function(){
+  const appContainer = document.querySelector('.app-container');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const body = document.body;
+
+  function applyCollapsedState(collapsed){
+    const shouldCollapse = !!collapsed;
+    if(shouldCollapse){
+      appContainer.classList.add('collapsed');
+      localStorage.setItem('sidebar-collapsed','1');
+    }else{
+      appContainer.classList.remove('collapsed');
+      localStorage.removeItem('sidebar-collapsed');
+    }
+  }
+
+  function setMobileOpen(open){
+    if(open){
+      sidebar.classList.add('mobile-open');
+      overlay.classList.add('visible');
+      body.style.overflow = 'hidden';
+    }else{
+      sidebar.classList.remove('mobile-open');
+      overlay.classList.remove('visible');
+      body.style.overflow = '';
+    }
+  }
+
+  // Public toggle for buttons
+  window.toggleSidebar = function(){
+    const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+    if(isDesktop){
+      const isCollapsed = appContainer.classList.contains('collapsed');
+      applyCollapsedState(!isCollapsed);
+    }else{
+      const isOpen = sidebar.classList.contains('mobile-open');
+      setMobileOpen(!isOpen);
+    }
+  }
+
+  // Overlay click closes on mobile
+  if(overlay){
+    overlay.addEventListener('click', ()=> setMobileOpen(false));
+  }
+
+  // Restore persisted collapsed state on desktop
+  if(localStorage.getItem('sidebar-collapsed') === '1'){
+    applyCollapsedState(true);
+  }
+
+  // Close mobile sidebar on resize to desktop
+  window.addEventListener('resize', function(){
+    if(window.matchMedia('(min-width: 769px)').matches){
+      setMobileOpen(false);
+    }
+  });
+
+  // Keyboard access for submenu toggle buttons
+  document.querySelectorAll('.nav-submenu-toggle').forEach(btn=>{
+    btn.setAttribute('role','button');
+    btn.setAttribute('tabindex','0');
+    btn.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+
+  // Topbar Help dropdown
+  const helpBtn = document.getElementById('helpMenuButton');
+  const helpWrap = helpBtn ? helpBtn.closest('.topbar-dropdown') : null;
+  if(helpBtn && helpWrap){
+    helpBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const isOpen = helpWrap.classList.contains('open');
+      helpWrap.classList.toggle('open', !isOpen);
+      helpBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', ()=>{
+      if(helpWrap.classList.contains('open')){
+        helpWrap.classList.remove('open');
+        helpBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+})();
+</script>
+=======
+>>>>>>> origin/main
 <?php 
 if(($this->router->fetch_class()=='users')&&($this->router->fetch_method()=='login')){
   echo generate_form_validation_js($this->router->fetch_method());
@@ -918,6 +1091,179 @@ $(document).ready(function(){
     }
   });
 });
+<<<<<<< HEAD
+
+// Premium Design System JavaScript
+$(document).ready(function() {
+  // Legacy sidebar functionality (only if old markup exists)
+  if ($('.nav-sidebar').length) {
+    window.toggleSidebar = function() {
+      const sidebar = $('.nav-sidebar');
+      const mainContent = $('.main-content');
+      const isCollapsed = sidebar.hasClass('nav-sidebar-collapsed');
+      if (isCollapsed) {
+        sidebar.removeClass('nav-sidebar-collapsed');
+        mainContent.removeClass('main-content-expanded');
+      } else {
+        sidebar.addClass('nav-sidebar-collapsed');
+        mainContent.addClass('main-content-expanded');
+      }
+      localStorage.setItem('sidebarCollapsed', !isCollapsed);
+    };
+    // Mobile sidebar toggle
+    window.toggleMobileSidebar = function() {
+      const sidebar = $('.nav-sidebar');
+      const overlay = $('.sidebar-overlay');
+      const isVisible = sidebar.hasClass('mobile-visible');
+      if (isVisible) {
+        sidebar.removeClass('mobile-visible');
+        overlay.removeClass('active');
+        $('body').removeClass('sidebar-open');
+      } else {
+        sidebar.addClass('mobile-visible');
+        overlay.addClass('active');
+        $('body').addClass('sidebar-open');
+      }
+    };
+    // Close sidebar when clicking overlay
+    $(document).on('click', '.sidebar-overlay', function() {
+      toggleMobileSidebar();
+    });
+    // Load saved sidebar state
+    const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+    if (sidebarCollapsed && window.innerWidth >= 768) {
+      $('.nav-sidebar').addClass('nav-sidebar-collapsed');
+      $('.main-content').addClass('main-content-expanded');
+    }
+    // Handle window resize cleanup
+    $(window).on('resize', function() {
+      const isMobile = window.innerWidth < 768;
+      const sidebar = $('.nav-sidebar');
+      if (!isMobile && sidebar.hasClass('mobile-visible')) {
+        sidebar.removeClass('mobile-visible');
+        $('.sidebar-overlay').removeClass('active');
+        $('body').removeClass('sidebar-open');
+      }
+    });
+  }
+    
+    // User menu toggle
+    window.toggleUserMenu = function() {
+        const dropdown = $('.user-dropdown-menu');
+        dropdown.toggleClass('show');
+    };
+    
+    // Close user menu when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.user-dropdown').length) {
+            $('.user-dropdown-menu').removeClass('show');
+        }
+    });
+    
+    // Theme toggle
+    window.toggleTheme = function() {
+        const body = $('body');
+        const isDark = body.hasClass('dark-theme');
+        
+        if (isDark) {
+            body.removeClass('dark-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.addClass('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        }
+    };
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        $('body').addClass('dark-theme');
+    }
+    
+    // Initialize notification toasts
+    function showNotification(message, type = 'info') {
+        const toast = $(`
+            <div class="notification-toast ${type}">
+                ${message}
+                <button onclick="$(this).parent().fadeOut(300)" style="background:none; border:none; color:inherit; float:right; cursor:pointer;">&times;</button>
+            </div>
+        `);
+        
+        $('body').append(toast);
+        setTimeout(() => toast.fadeOut(300), 4000);
+    }
+    
+    // Enhanced hover effects for action buttons
+    $('.action-btn').hover(
+        function() {
+            $(this).css('transform', 'scale(1.05)');
+        },
+        function() {
+            $(this).css('transform', 'scale(1)');
+        }
+    );
+    
+    // Smooth scrolling for better UX
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        const target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 600);
+        }
+    });
+    
+    // Auto-hide notifications
+    $('.notification-toast').each(function() {
+        const notification = $(this);
+        setTimeout(() => {
+            notification.fadeOut(300);
+        }, 5000);
+    });
+    
+  // Submenu toggle functionality (robust)
+  window.toggleSubmenu = function(btn, sectionKey) {
+    const toggle = btn;
+    const content = document.getElementById('submenu-' + sectionKey);
+    const arrow = toggle.querySelector('.submenu-arrow');
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      content.classList.remove('expanded');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    } else {
+      content.classList.add('expanded');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+    }
+    localStorage.setItem('submenu-' + sectionKey, !isExpanded);
+  };
+
+  // Load saved submenu states and auto-open active section
+  document.querySelectorAll('.nav-submenu-toggle').forEach(function(toggle){
+    const sectionKey = toggle.dataset.section;
+    if(!sectionKey) return;
+    const content = document.getElementById('submenu-' + sectionKey);
+    const arrow = toggle.querySelector('.submenu-arrow');
+    const header = toggle.querySelector('.submenu-header');
+    const saved = localStorage.getItem('submenu-' + sectionKey) === 'true';
+    const hasActiveChild = !!(content && content.querySelector('.submenu-link.active'));
+  const container = document.querySelector('.app-container');
+  const isCollapsed = container && container.classList.contains('collapsed');
+  if(!isCollapsed && (saved || hasActiveChild) && content){
+          content.classList.add('expanded');
+          toggle.setAttribute('aria-expanded', 'true');
+          if (arrow) arrow.style.transform = 'rotate(180deg)';
+          if (header && hasActiveChild) header.classList.add('active');
+        }
+  });
+});
 </script>
+	</main>
+</div>
+=======
+</script>
+>>>>>>> origin/main
 </body>
 </html>

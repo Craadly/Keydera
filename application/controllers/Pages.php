@@ -198,6 +198,31 @@ class Pages extends CI_Controller
         }
     }
 
+<<<<<<< HEAD
+    public function contact_support()
+    {
+        if (!$this->session->userdata('logged_in')) {
+            $this->session->set_userdata('redirectToCurrent', current_url());
+            redirect('users/login');
+        }
+
+        $data['title'] = 'Contact Support';
+        // Get current app version if available
+        try {
+            $api = new L1c3n5380x4P1();
+            $data['lb_version'] = $api->get_current_version();
+        } catch (Exception $e) {
+            $data['lb_version'] = '';
+        }
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/menu');
+        $this->load->view('pages/contact_support', $data);
+        $this->load->view('templates/footer');
+    }
+
+=======
+>>>>>>> origin/main
     public function render_404()
     {
         $data['title'] = 'Page not found';

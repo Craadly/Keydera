@@ -414,6 +414,37 @@ if (!function_exists('get_system_info')) {
 }
 
 if (!function_exists('generate_breadcrumb')) {
+<<<<<<< HEAD
+    function generate_breadcrumb($custom = null)
+    {
+        $CI = &get_instance();
+        $segments = $CI->uri->segments;
+
+        // Start new breadcrumb markup without aria-label and without list elements
+        $breadcrumb = '<nav class="breadcrumb">';
+
+        // Home item
+        $breadcrumb .= '<a href="' . base_url() . '" class="breadcrumb-item"><i class="fas fa-home"></i> Keydera</a>';
+
+        // Build path progressively
+        $url = '';
+        $total = count($segments);
+        $index = 0;
+        foreach ($segments as $segment) {
+            $index++;
+            $url .= $segment . '/';
+            $title = ($custom && $index === $total) ? ucfirst($custom) : ucfirst(str_replace('_', ' ', $segment));
+
+            $breadcrumb .= '<span class="breadcrumb-separator">›</span>';
+            if ($index === $total) {
+                $breadcrumb .= '<span class="breadcrumb-current">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</span>';
+            } else {
+                $breadcrumb .= '<a href="' . site_url($url) . '" class="breadcrumb-item">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</a>';
+            }
+        }
+
+        $breadcrumb .= '</nav>';
+=======
     function generate_breadcrumb()
     {
         $CI = &get_instance();
@@ -437,6 +468,7 @@ if (!function_exists('generate_breadcrumb')) {
         $breadcrumb .= '</ul>';
         $breadcrumb .= '</nav>';
         
+>>>>>>> origin/main
         return $breadcrumb;
     }
 }

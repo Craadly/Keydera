@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./docker/web
+    container_name: keydera-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=keydera_db
+      - DB_USERNAME=keydera_user
+      - DB_PASSWORD=keydera_pass
+
+  db:
+    image: mysql:8.0
+    container_name: keydera-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: keydera_db
+      MYSQL_USER: keydera_user
+      MYSQL_PASSWORD: keydera_pass
+    ports:
+      - "3307:3306"  # Use different external port to avoid conflict with XAMPP MySQL
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./install/database.sql:/docker-entrypoint-initdb.d/database.sql
+
+  playwright:
+    build:
+      context: .
+      dockerfile: ./docker/playwright/Dockerfile
+    container_name: keydera-playwright
+    ipc: host # Shared memory for browser performance
+    volumes:
+      - ./tests:/work/tests
+      - ./playwright-report:/work/playwright-report
+      - ./tests/ui/screenshots:/work/tests/ui/screenshots
+    depends_on:
+      - web
+
+volumes:
+  db_data:
