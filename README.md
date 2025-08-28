@@ -1,8 +1,46 @@
-# Keydera - PHP License and Updates Manager
+# Keydera - Auth Redesign Feature Branch
 
-A full-fledged PHP license and updates manager built with CodeIgniter framework.
+This branch contains a complete redesign of the authentication experience with modern UI components and improved user experience.
 
-##  Features
+## 🚀 New Features in This Branch
+
+### Authentication Layout Redesign
+- **Two-column split layout** for login and forgot password pages
+- **Minimal auth wrapper** (no sidebar/topbar during auth flows)
+- **Brand-consistent purple gradient** branding panel
+- **Responsive design** that adapts to mobile screens
+
+### UI/UX Improvements
+- **Fixed logo references** - now uses correct `logo-white.svg`
+- **Polished form inputs** with proper padding, focus states, and icon alignment
+- **Modern button styling** with hover effects and consistent sizing
+- **Improved spacing** throughout auth forms
+- **Clean notification styling** for success/error messages
+
+### Footer Enhancement
+- **Modern app footer** with brand links and version display
+- **Edge-to-edge design** (removed max-width constraint)
+- **Responsive layout** for mobile devices
+
+## 🚀 GitHub Setup Instructions
+
+**To push this branch to GitHub:**
+
+1. **Create a new repository** on GitHub.com
+2. **Copy the repository URL** (HTTPS or SSH)
+3. **Run these commands:**
+
+```bash
+# Add your GitHub repo as origin
+git remote add origin YOUR_GITHUB_REPO_URL
+
+# Push this feature branch
+git push -u origin feat/auth-redesign
+```
+
+---
+
+## Original Keydera Features
 
 - License key generation and validation
 - Product activation management  
