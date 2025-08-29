@@ -101,9 +101,6 @@ $route['dashboard'] = 'pages/dashboard';
 $route['updates'] = 'pages/check_updates';
 $route['php_obfuscator'] = 'pages/php_obfuscator';
 $route['verify_license'] = 'pages/verify_license';
-<<<<<<< HEAD
 $route['contact_support'] = 'pages/contact_support';
-=======
->>>>>>> origin/main
 
 $route['(:any)'] = 'pages/view/$1';

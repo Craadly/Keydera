@@ -349,37 +349,11 @@ class Cron extends CI_Controller
         }
         if ($this->run_type != 'cli') {
             $data['title'] = 'Run Cron';
-<<<<<<< HEAD
             $data['cr_response'] = $cr_response;
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu');
             $this->load->view('cron/run', $data);
             $this->load->view('templates/footer');
-=======
-            echo $this->load->view('templates/header', $data, true);
-            echo $this->load->view('templates/menu', '', true);
-            $generate_breadcrumb = 'generate_breadcrumb';
-            echo <<<EOT
-<div class="container is-fluid main_body">
-<div class="section" >
-  <h1 class="title">
-    Manual Cron
-  </h1>
-{$generate_breadcrumb('Run Cron')}
-	<div class="columns">
-		<div class="column">
-			<div class="box">
-				<h5 class="title is-5" style="margin-bottom: 0px;">Output</h5>
-				<pre class="lb_cron_output" style="background-color: #fff;">$cr_response</pre>
-				<p class="help has-text-centered is-hidden-smobile">Note: Manual cron will only run when you visit this page, to make the cron run automatically add it in your crontab (check documentation).</p>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-EOT;
-            echo $this->load->view('templates/footer', '', true);
->>>>>>> origin/main
         } else {
             echo $cr_response;
         }

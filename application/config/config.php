@@ -13,11 +13,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @version 1.0.0
  */
 
-<<<<<<< HEAD
+// Production
+//$config['base_url'] = 'https://licensing.craadly.com/';
+
+// Development (when needed)
 $config['base_url'] = 'http://localhost:8080/';
-=======
-$config['base_url'] = 'https://localhost/keydera/';
->>>>>>> origin/main
+
+// Staging (when needed)  
+// $config['base_url'] = 'https://staging.craadly.com/';
+
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- Inspired Footer Design -->
 <footer class="app-footer-inspired">
   <div class="footer-container">
@@ -18,11 +17,6 @@
     </div>
   </div>
 </footer>
-=======
-<div class="content has-text-centered">
-  <p>Copyright <?php echo date('Y'); ?> <a style="color: inherit;" href="https://www.keydera.app" target="_blank" rel="noopener">Keydera</a>, All rights reserved.</p>
-</div>
->>>>>>> origin/main
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/BulmaTagsInput/js/bulma-tagsinput.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/DataTables/js/datatables.min.js"></script>
@@ -272,250 +266,12 @@ $(document).on('click', '.with-email-confirmation', function(){
   });
 });
 </script>
-<<<<<<< HEAD
 <script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
 <script src="<?php echo base_url(); ?>assets/js/pages/licenses.js?v=<?php echo time(); ?>"></script>
 <?php endif; ?>
 <?php if(($this->router->fetch_class()=='activations')&&($this->router->fetch_method()=='index')): ?>
 <script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
 <script src="<?php echo base_url(); ?>assets/js/pages/activations.js?v=<?php echo time(); ?>"></script>
-=======
-<script>
-$(document).ready(function(){
-  var licenses_table = $('#licenses_table').DataTable({
-      "processing": true,
-      "responsive": true,
-      "serverSide": true,
-      "aLengthMenu": [[10, 25, 50, 100, 500], [10, 25, 50, 100, 500]],
-      "iDisplayLength": 25,
-      "order": [[ 4, "desc" ]],
-      "dom": 'l<"table_custom_buttons">ftipr',
-            initComplete: function(){
-            $("div.table_custom_buttons").html('<button type="button" class="button is-small is-danger is-rounded" name="delete_selected_license" id="delete_selected_license">Delete Selected</button>');           
-            },  
-      "ajax":{
-        "url": "<?php echo base_url('licenses/get_licenses') ?>",
-        "dataType": "json",
-        "type": "POST",
-        "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
-      },
-      error: function(){ 
-        $("#licenses_table").html("");
-        $("#licenses_table_processing").hide();
-      },
-      "columnDefs": [
-        { "orderable": false, "width": 150, "targets": [8] },
-        { "orderable": false, "width": 20, "targets": [0] }
-      ],
-      language: {
-        "processing": "<i class='fas fa-sync-alt fa-spin'></i> Loading. Please wait..."
-      },
-      "deferRender": true   
-
-  });
-  $('#licenses_table').wrap('<div class="dataTables_scroll" />');
-  $.fn.dataTable.ext.errMode = 'throw';
-  $('body').on('click', '#delete_license_select_all', function(){
-    if(this.checked){
-      $('.delete_license_checkbox').each(function(){
-        this.checked = true;
-        $(this).closest('tr').addClass('removeRow');
-      });
-    }else{
-      $('.delete_license_checkbox').each(function(){
-        this.checked = false;
-        $(this).closest('tr').removeClass('removeRow');
-      });
-    }
-  });
-  $('body').on('click', '.delete_license_checkbox', function(){
-    if($('.delete_license_checkbox:checked').length == $('.delete_license_checkbox').length){
-        $('#delete_license_select_all').prop('checked', true);
-    }else{
-        $('#delete_license_select_all').prop('checked', false);
-    }
-    if($(this).is(':checked')){
-     $(this).closest('tr').addClass('removeRow');
-    }
-    else{
-     $(this).closest('tr').removeClass('removeRow');
-    }
-  });
-  $('body').on('click', '#delete_selected_license', function(){
-    var checkbox = $('.delete_license_checkbox:checked');
-    if(checkbox.length > 0)
-    {
-      Bulma.create('alert', {
-        type: 'danger',
-        title: 'Are you sure to delete selected licenses?',
-        body: 'Please note that all of the relevant records like (activation logs) for each license will also be permanently deleted.',
-        confirm: {
-          label: 'Confirm',
-          classes: ['modal-button-small', 'modal-button-confirm'],
-          onClick: function() {
-          var checkbox_value = [];
-          $(checkbox).each(function(){
-            checkbox_value.push($(this).val());
-          });
-          $.ajax({
-            url:"<?php echo base_url(); ?>licenses/delete_selected",
-            method:"POST",
-            data:{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>', 'delete_licenses_checkbox':checkbox_value},
-            success:function(){
-              $('.removeRow').fadeOut(1500);
-              setTimeout( function(){ 
-                licenses_table.ajax.reload();
-                Bulma.create('notification', {
-                  body: 'Selected licenses were successfully deleted.',
-                  dismissInterval: 4000,
-                  isDismissable: true,
-                  color: 'success',
-                  parent: document.getElementById('delete_notification')
-                }).show();
-              }, 1500);
-            }
-           });
-          }
-        },
-        cancel: {
-          label: 'Cancel',
-          classes: ['modal-button-small', 'modal-button-cancel'],
-          onClick: function() {
-              return false;
-          }
-        }
-      });
-    }else{
-      Bulma.create('notification', {
-        body: 'Please select at least one license for bulk deleting.',
-        dismissInterval: 4000,
-        isDismissable: true,
-        color: 'danger',
-        parent: document.getElementById('delete_notification')
-      }).show();
-    }
-  });
-});
-</script>
-<?php endif; ?>
-<?php if(($this->router->fetch_class()=='activations')&&($this->router->fetch_method()=='index')): ?>
-<script>
-$(document).ready(function () {
-  var activations_table = $('#activations_table').DataTable({
-      "processing": true,
-      "responsive": true,
-      "serverSide": true,
-      "aLengthMenu": [[10, 25, 50, 100, 500], [10, 25, 50, 100, 500]],
-      "iDisplayLength": 25,
-      "order": [[ 6, "desc" ]],
-      "dom": 'l<"table_custom_buttons">ftipr',
-            initComplete: function(){
-            $("div.table_custom_buttons").html('<button type="button" class="button is-small is-danger is-rounded" name="delete_selected_activation" id="delete_selected_activation">Delete Selected</button>');           
-            },
-      "ajax":{
-        "url": "<?php echo base_url('activations/get_activations') ?>",
-        "dataType": "json",
-        "type": "POST",
-        "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
-      },
-      error: function(){ 
-        $("#activations_table").html("");
-        $("#activations_table_processing").hide();
-      },
-      "columnDefs": [
-        { "orderable": false, "targets": [7] },
-        { "orderable": false, "width": 20, "targets": [0] }
-      ],
-      language: {
-        "processing": "<i class='fas fa-sync-alt  fa-spin'></i> Loading. Please wait..."
-      },
-      "deferRender": true   
-  });
-  $('#activations_table').wrap('<div class="dataTables_scroll" />');
-  $.fn.dataTable.ext.errMode = 'throw';
-  $('body').on('click', '#delete_activation_select_all', function(){
-    if(this.checked){
-      $('.delete_activation_checkbox').each(function(){
-        this.checked = true;
-        $(this).closest('tr').addClass('removeRow');
-      });
-    }else{
-      $('.delete_activation_checkbox').each(function(){
-        this.checked = false;
-        $(this).closest('tr').removeClass('removeRow');
-      });
-    }
-  });
-  $('body').on('click', '.delete_activation_checkbox', function(){
-    if($('.delete_activation_checkbox:checked').length == $('.delete_activation_checkbox').length){
-        $('#delete_activation_select_all').prop('checked', true);
-    }else{
-        $('#delete_activation_select_all').prop('checked', false);
-    }
-    if($(this).is(':checked')){
-     $(this).closest('tr').addClass('removeRow');
-    }
-    else{
-     $(this).closest('tr').removeClass('removeRow');
-    }
-  });
-  $('body').on('click', '#delete_selected_activation', function(){
-    var checkbox = $('.delete_activation_checkbox:checked');
-    if(checkbox.length > 0)
-    {
-      Bulma.create('alert', {
-        type: 'danger',
-        title: 'Are you sure to delete selected activations?',
-        body: 'Please note that this action cannot be undone.',
-        confirm: {
-          label: 'Confirm',
-          classes: ['modal-button-small', 'modal-button-confirm'],
-          onClick: function() {
-          var checkbox_value = [];
-          $(checkbox).each(function(){
-            checkbox_value.push($(this).val());
-          });
-          $.ajax({
-            url:"<?php echo base_url(); ?>activations/delete_selected",
-            method:"POST",
-            data:{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>', 'delete_activations_checkbox':checkbox_value},
-            success:function(){
-              $('.removeRow').fadeOut(1500);
-              setTimeout( function(){ 
-                activations_table.ajax.reload();
-                Bulma.create('notification', {
-                  body: 'Selected activations were successfully deleted.',
-                  dismissInterval: 4000,
-                  isDismissable: true,
-                  color: 'success',
-                  parent: document.getElementById('delete_notification')
-                }).show();
-              }, 1500);
-            }
-           });
-          }
-        },
-        cancel: {
-          label: 'Cancel',
-          classes: ['modal-button-small', 'modal-button-cancel'],
-          onClick: function() {
-              return false;
-          }
-        }
-      });
-    }else{
-      Bulma.create('notification', {
-        body: 'Please select at least one activation for bulk deleting.',
-        dismissInterval: 4000,
-        isDismissable: true,
-        color: 'danger',
-        parent: document.getElementById('delete_notification')
-      }).show();
-    }
-  });
-});
-</script>
->>>>>>> origin/main
 <?php endif; ?>
 <?php if(($this->router->fetch_class()=='users')&&($this->router->fetch_method()=='activities')): ?>
 <script>
@@ -633,7 +389,6 @@ $(document).ready(function(){
       }).show();
     }
   });
-<<<<<<< HEAD
 
   // Hide footer (info + pagination) when there are no records OR only a single page
   function updateActivitiesFooter(){
@@ -649,147 +404,20 @@ $(document).ready(function(){
   }
   activities_table.on('draw', updateActivitiesFooter);
   updateActivitiesFooter();
-=======
->>>>>>> origin/main
 });
 </script>
 <?php endif; ?>
 <?php if(($this->router->fetch_class()=='downloads')&&($this->router->fetch_method()=='index')): ?>
-<<<<<<< HEAD
 <script src="<?php echo base_url(); ?>assets/js/common.js?v=<?php echo time(); ?>"></script>
 <script src="<?php echo base_url(); ?>assets/js/pages/downloads.js?v=<?php echo time(); ?>"></script>
-=======
-<script>
-$(document).ready(function(){
-  var downloads_table = $('#downloads_table').DataTable({
-      "processing": true,
-      "responsive": true,
-      "serverSide": true,
-      "aLengthMenu": [[10, 25, 50, 100, 500], [10, 25, 50, 100, 500]],
-      "iDisplayLength": 25,
-      "order": [[ 5, "desc" ]],
-      "dom": 'l<"table_custom_buttons">ftipr',
-            initComplete: function(){
-            $("div.table_custom_buttons").html('<button type="button" class="button is-small is-danger is-rounded" name="delete_selected_download" id="delete_selected_download">Delete Selected</button>');           
-            },
-      "ajax":{
-        "url": "<?php echo base_url('downloads/get_update_downloads') ?>",
-        "dataType": "json",
-        "type": "POST",
-        "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
-      },
-      error: function(){ 
-        $("#downloads_table").html("");
-        $("#downloads_table_processing").hide();
-      },
-      "columnDefs": [
-        { "orderable": false, "targets": [7] },
-        { "orderable": false, "width": 20, "targets": [0] }
-      ],
-      language: {
-        "processing": "<i class='fas fa-sync-alt  fa-spin'></i> Loading. Please wait..."
-      },
-      "deferRender": true   
-  });
-  $('#downloads_table').wrap('<div class="dataTables_scroll" />');
-  $.fn.dataTable.ext.errMode = 'throw';
-  $('body').on('click', '#delete_download_select_all', function(){
-    if(this.checked){
-      $('.delete_download_checkbox').each(function(){
-        this.checked = true;
-        $(this).closest('tr').addClass('removeRow');
-      });
-    }else{
-      $('.delete_download_checkbox').each(function(){
-        this.checked = false;
-        $(this).closest('tr').removeClass('removeRow');
-      });
-    }
-  });
-  $('body').on('click', '.delete_download_checkbox', function(){
-    if($('.delete_download_checkbox:checked').length == $('.delete_download_checkbox').length){
-        $('#delete_download_select_all').prop('checked', true);
-    }else{
-        $('#delete_download_select_all').prop('checked', false);
-    }
-    if($(this).is(':checked')){
-     $(this).closest('tr').addClass('removeRow');
-    }
-    else{
-     $(this).closest('tr').removeClass('removeRow');
-    }
-  });
-  $('body').on('click', '#delete_selected_download', function(){
-    var checkbox = $('.delete_download_checkbox:checked');
-    if(checkbox.length > 0)
-    {
-      Bulma.create('alert', {
-        type: 'danger',
-        title: 'Are you sure to delete selected download logs?',
-        body: 'Please note that this action cannot be undone.',
-        confirm: {
-          label: 'Confirm',
-          classes: ['modal-button-small', 'modal-button-confirm'],
-          onClick: function() {
-          var checkbox_value = [];
-          $(checkbox).each(function(){
-            checkbox_value.push($(this).val());
-          });
-          $.ajax({
-            url:"<?php echo base_url(); ?>update_downloads/delete_selected",
-            method:"POST",
-            data:{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>', 'delete_downloads_checkbox':checkbox_value},
-            success:function(){
-              $('.removeRow').fadeOut(1500);
-              setTimeout( function(){ 
-                downloads_table.ajax.reload();
-                Bulma.create('notification', {
-                  body: 'Selected update download logs were successfully deleted.',
-                  dismissInterval: 4000,
-                  isDismissable: true,
-                  color: 'success',
-                  parent: document.getElementById('delete_notification')
-                }).show();
-              }, 1500);
-            }
-           });
-          }
-        },
-        cancel: {
-          label: 'Cancel',
-          classes: ['modal-button-small', 'modal-button-cancel'],
-          onClick: function() {
-              return false;
-          }
-        }
-      });
-    }else{
-      Bulma.create('notification', {
-        body: 'Please select at least one update download log for bulk deleting.',
-        dismissInterval: 4000,
-        isDismissable: true,
-        color: 'danger',
-        parent: document.getElementById('delete_notification')
-      }).show();
-    }
-  });
-});
-</script>
->>>>>>> origin/main
 <?php endif; ?>
 <script>
 const bulmaTagsInputInstances = BulmaTagsInput.attach();
 bulmaTagsInputInstances.forEach(bulmaTagsInputInstance => {
   bulmaTagsInputInstance.input.onblur = function () {
-<<<<<<< HEAD
     bulmaTagsInputInstance.add(bulmaTagsInputInstance.input.value);
     bulmaTagsInputInstance.input.value = "";
   };
-=======
-  bulmaTagsInputInstance.add(bulmaTagsInputInstance.input.value);
-  bulmaTagsInputInstance.input.value = "";
-};
->>>>>>> origin/main
 });
 var clip = new ClipboardJS('.copy_to_clipboard');
 document.addEventListener('DOMContentLoaded', function () {
@@ -817,7 +445,6 @@ $(document).ready( function(){
     responsive: true,
     "order": []
   });
-<<<<<<< HEAD
   // Hide info/pagination on single-page simple tables
   $('.ts').each(function(){
     var table = $(this).DataTable();
@@ -834,8 +461,6 @@ $(document).ready( function(){
     table.on('draw', updateSimpleTableFooter);
     updateSimpleTableFooter();
   });
-=======
->>>>>>> origin/main
   $('.ts').wrap('<div class="dataTables_scroll" />');
   $('.nots').wrap('<div class="dataTables_scroll" />');
   $('.dropify').dropify();
@@ -891,7 +516,6 @@ $(function(){
     });
   });
 </script>
-<<<<<<< HEAD
 <script>
 // Modern sidebar interactions: collapse, mobile overlay, submenu a11y, and persistence
 (function(){
@@ -983,8 +607,6 @@ $(function(){
   }
 })();
 </script>
-=======
->>>>>>> origin/main
 <?php 
 if(($this->router->fetch_class()=='users')&&($this->router->fetch_method()=='login')){
   echo generate_form_validation_js($this->router->fetch_method());
@@ -1091,7 +713,6 @@ $(document).ready(function(){
     }
   });
 });
-<<<<<<< HEAD
 
 // Premium Design System JavaScript
 $(document).ready(function() {
@@ -1262,8 +883,5 @@ $(document).ready(function() {
 </script>
 	</main>
 </div>
-=======
-</script>
->>>>>>> origin/main
 </body>
 </html>

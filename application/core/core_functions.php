@@ -76,7 +76,6 @@ if (!function_exists('generate_breadcrumb')) {
         $CI = &get_instance();
         $index = 1;
         $uri_segment = $CI->uri->segment($index);
-<<<<<<< HEAD
 
         // Start new breadcrumb markup
         $breadcrumb = '<nav class="breadcrumb">';
@@ -103,37 +102,6 @@ if (!function_exists('generate_breadcrumb')) {
         }
 
         $breadcrumb .= '</nav>';
-=======
-        $breadcrumb = '<nav class="breadcrumb" aria-label="breadcrumbs">
-            <ul><li><a href="' . base_url() . '">Home</a></li>';
-        
-        while ($uri_segment != '') {
-            $breadcrumb_uri = '';
-            $count = 1;
-            while ($count <= $index) {
-                $breadcrumb_uri .= $CI->uri->segment($count) . '/';
-                $count++;
-            }
-            
-            if ($CI->uri->segment($index + 1) == '') {
-                if ($custom) {
-                    $breadcrumb .= '<li class="is-active"><a href="' . site_url($breadcrumb_uri) . '">';
-                    $breadcrumb .= ucfirst($custom) . '</a></li>';
-                } else {
-                    $breadcrumb .= '<li class="is-active"><a href="' . site_url($breadcrumb_uri) . '">';
-                    $breadcrumb .= ucfirst($CI->uri->segment($index)) . '</a></li>';
-                }
-            } else {
-                $breadcrumb .= '<li><a href="' . site_url($breadcrumb_uri) . '">';
-                $breadcrumb .= ucfirst($CI->uri->segment($index)) . '</a><span class="divider"></span></li>';
-            }
-            
-            $index++;
-            $uri_segment = $CI->uri->segment($index);
-        }
-        
-        $breadcrumb .= '</ul></nav>';
->>>>>>> origin/main
         return $breadcrumb;
     }
 }

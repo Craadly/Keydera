@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 <div class="main-content main-content-expanded"> 
-=======
-<div class="container is-fluid main_body"> 
->>>>>>> origin/main
 <div class="section">
   <h1 class="title">
     <?php echo $title; ?>
  </h1>
-<<<<<<< HEAD
  
-=======
- <?php echo generate_breadcrumb(); ?>
->>>>>>> origin/main
  <?php if($this->session->flashdata('activity_status')){
    $flash = $this->session->flashdata('activity_status');
    echo '<div class="notification is-'.$flash['type'].'"><button class="delete"></button>'.$flash['message'].'</div>'; 
