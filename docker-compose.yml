@@ -32,18 +32,7 @@ services:
       - db_data:/var/lib/mysql
       - ./install/database.sql:/docker-entrypoint-initdb.d/database.sql
 
-  playwright:
-    build:
-      context: .
-      dockerfile: ./docker/playwright/Dockerfile
-    container_name: keydera-playwright
-    ipc: host # Shared memory for browser performance
-    volumes:
-      - ./tests:/work/tests
-      - ./playwright-report:/work/playwright-report
-      - ./tests/ui/screenshots:/work/tests/ui/screenshots
-    depends_on:
-      - web
+  # Playwright service removed; UI tests folder was deleted.
 
 volumes:
   db_data:

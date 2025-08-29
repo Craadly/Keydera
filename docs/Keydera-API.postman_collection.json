@@ -1,0 +1,1174 @@
+{
+	"info": {
+		"_postman_id": "keydera-api-collection",
+		"name": "Keydera API",
+		"description": "Complete Keydera API collection for licensing and update management endpoints. Includes both External API (client-facing) and Internal Admin API (server-to-server) endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "keydera"
+	},
+	"item": [
+		{
+			"name": "External API",
+			"item": [
+				{
+					"name": "1) Check connection",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/check_connection_ext",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"check_connection_ext"
+							]
+						},
+						"description": "Quick health probe to validate headers and reachability."
+					}
+				},
+				{
+					"name": "2) Latest version info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"E7C1D9E7\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/latest_version",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"latest_version"
+							]
+						},
+						"description": "Get the latest version information for a product."
+					}
+				},
+				{
+					"name": "3) Check update availability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"E7C1D9E7\",\n    \"current_version\": \"v0.0.0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/check_update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"check_update"
+							]
+						},
+						"description": "Check if updates are available for the current version."
+					}
+				},
+				{
+					"name": "4) Get update file size",
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/get_update_size/main/c47d2873d07ad2451d74",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get_update_size",
+								"main",
+								"c47d2873d07ad2451d74"
+							]
+						},
+						"description": "Get the file size of an update before downloading."
+					}
+				},
+				{
+					"name": "5) Download update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"AFDB-6368-E711-D1F8\",\n    \"client_name\": \"john\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/download_update/main/c47d2873d07ad2451d74",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"download_update",
+								"main",
+								"c47d2873d07ad2451d74"
+							]
+						},
+						"description": "Download the update file (ZIP for main, SQL for sql)."
+					}
+				},
+				{
+					"name": "6) Activate license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verify_type\": \"non_envato\",\n    \"product_id\": \"E7C1D9E7\",\n    \"license_code\": \"AFDB-6368-E711-D1F8\",\n    \"client_name\": \"john\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/activate_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"activate_license"
+							]
+						},
+						"description": "Activate a license for a client installation."
+					}
+				},
+				{
+					"name": "7) Verify license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"E7C1D9E7\",\n    \"license_code\": \"AFDB-6368-E711-D1F8\",\n    \"client_name\": \"john\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/verify_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"verify_license"
+							]
+						},
+						"description": "Verify if a license is valid and active."
+					}
+				},
+				{
+					"name": "8) Deactivate license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{external_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{client_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{client_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"E7C1D9E7\",\n    \"license_code\": \"AFDB-6368-E711-D1F8\",\n    \"client_name\": \"john\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deactivate_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"deactivate_license"
+							]
+						},
+						"description": "Deactivate a license activation."
+					}
+				}
+			],
+			"description": "Client-facing API endpoints for licensing and updates"
+		},
+		{
+			"name": "Internal Admin API",
+			"item": [
+				{
+					"name": "1) Check connection (internal)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/check_connection_int",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"check_connection_int"
+							]
+						},
+						"description": "Check internal API connection for admin operations."
+					}
+				},
+				{
+					"name": "2) Add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"ABC Software\",\n    \"product_id\": \"7EX821PQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/add_product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"add_product"
+							]
+						},
+						"description": "Add a new product to the system."
+					}
+				},
+				{
+					"name": "3) Get product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"7EX821PQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/get_product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get_product"
+							]
+						},
+						"description": "Get details of a specific product."
+					}
+				},
+				{
+					"name": "4) List products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/get_products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get_products"
+							]
+						},
+						"description": "Get a list of all products."
+					}
+				},
+				{
+					"name": "5) Mark product active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"7EX821PQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/mark_product_active",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"mark_product_active"
+							]
+						},
+						"description": "Mark a product as active."
+					}
+				},
+				{
+					"name": "6) Mark product inactive",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"7EX821PQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/mark_product_inactive",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"mark_product_inactive"
+							]
+						},
+						"description": "Mark a product as inactive."
+					}
+				},
+				{
+					"name": "7) Create license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"7EX821PQ\",\n    \"invoice_number\": \"#JG-3744\",\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\",\n    \"license_type\": \"Regular\",\n    \"client_name\": \"john\",\n    \"client_email\": \"john@example.com\",\n    \"licensed_ips\": \"127.0.0.1,192.168.1.1\",\n    \"licensed_domains\": \"localhost,test.example.com\",\n    \"support_end_date\": \"2023-06-08 12:00:00\",\n    \"updates_end_date\": \"2024-04-06 02:00:00\",\n    \"expiry_date\": \"2025-02-02 12:00:00\",\n    \"expiry_days\": 30,\n    \"license_uses\": 3,\n    \"license_parallel_uses\": 1,\n    \"comments\": \"Lead converted from SalesForce CRM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"create_license"
+							]
+						},
+						"description": "Create a new license with comprehensive configuration options."
+					}
+				},
+				{
+					"name": "8) Edit license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"7EX821PQ\",\n    \"invoice_number\": \"#AF-744\",\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\",\n    \"license_type\": \"Extended\",\n    \"client_name\": \"john\",\n    \"client_email\": \"john@example.com\",\n    \"licensed_ips\": \"127.0.0.1,192.168.1.1,192.168.1.2\",\n    \"licensed_domains\": \"localhost,test.example.com\",\n    \"support_end_date\": \"\",\n    \"updates_end_date\": \"2025-02-02 12:00:00\",\n    \"expiry_date\": \"2025-02-02 12:00:00\",\n    \"expiry_days\": \"\",\n    \"license_uses\": 5,\n    \"license_parallel_uses\": 3,\n    \"comments\": \"User upgraded to Extended license\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/edit_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"edit_license"
+							]
+						},
+						"description": "Edit an existing license (empty strings set fields to null)."
+					}
+				},
+				{
+					"name": "9) Get license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/get_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get_license"
+							]
+						},
+						"description": "Get comprehensive details of a license."
+					}
+				},
+				{
+					"name": "10) Search license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"180PM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/search_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"search_license"
+							]
+						},
+						"description": "Search for licenses by keyword."
+					}
+				},
+				{
+					"name": "11) Delete license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/delete_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"delete_license"
+							]
+						},
+						"description": "Permanently delete a license and all associated data."
+					}
+				},
+				{
+					"name": "12) Deactivate license activations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/deactivate_license_activations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"deactivate_license_activations"
+							]
+						},
+						"description": "Deactivate all active instances of a license."
+					}
+				},
+				{
+					"name": "13) Block license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/block_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"block_license"
+							]
+						},
+						"description": "Block a license from being used for new activations."
+					}
+				},
+				{
+					"name": "14) Unblock license",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "LB-API-KEY",
+								"value": "{{internal_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-URL",
+								"value": "{{admin_url}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-IP",
+								"value": "{{admin_ip}}",
+								"type": "text"
+							},
+							{
+								"key": "LB-LANG",
+								"value": "english",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"license_code\": \"180PM-XE2I-4YIX-ZVBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/unblock_license",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"unblock_license"
+							]
+						},
+						"description": "Unblock a previously blocked license."
+					}
+				}
+			],
+			"description": "Server-to-server API endpoints for product and license management"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://your-keydera-server",
+			"type": "string"
+		},
+		{
+			"key": "external_api_key",
+			"value": "your_external_api_key",
+			"type": "string"
+		},
+		{
+			"key": "internal_api_key",
+			"value": "your_internal_api_key",
+			"type": "string"
+		},
+		{
+			"key": "client_url",
+			"value": "https://example.org",
+			"type": "string"
+		},
+		{
+			"key": "admin_url",
+			"value": "https://example.org",
+			"type": "string"
+		},
+		{
+			"key": "client_ip",
+			"value": "127.0.0.1",
+			"type": "string"
+		},
+		{
+			"key": "admin_ip",
+			"value": "127.0.0.1",
+			"type": "string"
+		}
+	]
+}

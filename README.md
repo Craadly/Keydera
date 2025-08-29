@@ -16,7 +16,7 @@ Architecture and stack:
 - Controllers expose internal/external endpoints (e.g., `Api_internal`, `Api_external`).
 - Views are PHP templates with vendor UI libraries (DataTables, Select2, CKEditor, Dropify, jQuery Validation, Font Awesome).
 - Styles: project CSS under `assets/css/` (e.g., `premium-design.css`), with Tailwind/PostCSS configs available for utility workflows (`tailwind.config.js`, `postcss.config.js`).
-- Testing: Playwright UI tests live in `tests/ui/` with Docker support under `docker/playwright/`.
+ 
 - Internationalization: language packs in `application/language/`.
 
 Feature branch – Authentication redesign:
@@ -96,14 +96,7 @@ docker compose down -v
 docker compose exec web bash
 ```
 
-### Playwright UI tests in Docker
-
-```powershell
-# Run all UI tests (report written to ./playwright-report)
-docker compose run --rm playwright npx playwright test tests/ui --reporter=html
-```
-
-Then open `playwright-report/index.html` in your browser to view the results.
+ 
 
 Troubleshooting:
 - If port 8080 is in use, change the host port mapping in `docker-compose.yml` (e.g., `8090:80`).
