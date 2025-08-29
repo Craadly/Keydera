@@ -105,31 +105,64 @@ Troubleshooting:
 
 ## Features
 
-- License key generation and validation
-- Product activation management  
-- Update distribution system
-- API integration for external applications
-- User management and authentication
-- Download tracking and analytics
-- Multi-language support
+- **🔐 License Management**: Generate, validate, and manage license keys with expiration dates
+- **📱 Product Activation**: Control software activations with domain/IP restrictions  
+- **🔄 Update Distribution**: Secure update delivery with version control and SQL migrations
+- **🌐 REST API Integration**: 22 endpoints for client apps and server management
+- **👥 User Management**: Multi-role authentication and user administration
+- **📊 Analytics & Tracking**: Download statistics and activation monitoring
+- **🌍 Multi-language Support**: English, Chinese, German, and Portuguese
+- **📮 Postman Ready**: Complete API collection for instant testing
+- **🐳 Docker Support**: Containerized development environment
+- **🎨 Modern UI**: Responsive admin interface with authentication redesign
+
+## Project Structure
+
+```
+keydera/
+├── application/              # CodeIgniter application
+│   ├── controllers/         # API and web controllers
+│   │   ├── Api_external.php # Client-facing API endpoints
+│   │   ├── Api_internal.php # Admin API endpoints  
+│   │   ├── Users.php        # Authentication & user management
+│   │   └── ...
+│   ├── models/              # Database models
+│   ├── views/               # PHP templates & UI
+│   ├── config/              # Application configuration
+│   └── language/            # Multi-language support
+├── assets/                  # Frontend assets
+│   ├── css/                # Custom stylesheets
+│   ├── js/                 # JavaScript files
+│   └── images/             # Image assets
+├── docs/                   # Documentation
+│   ├── API.md              # Complete API documentation
+│   └── Keydera-API.postman_collection.json # Postman collection
+├── docker/                 # Docker configuration
+├── install/                # Installation files
+│   ├── database.sql        # Database schema
+│   └── install.php         # Web installer
+└── system/                 # CodeIgniter framework
+```
 
 ## Requirements
 
-- PHP 7.4 or higher
-- MySQL 5.7 or MariaDB 10.3+
-- Apache/Nginx web server
-- CodeIgniter 3.x framework (included)
+- **PHP**: 7.4 or higher
+- **Database**: MySQL 5.7+ or MariaDB 10.3+
+- **Web Server**: Apache/Nginx with mod_rewrite enabled
+- **Framework**: CodeIgniter 3.x (included)
+- **Optional**: Docker Desktop for containerized development
 
 ## Installation
 
+### Option 1: Traditional Setup
+
 1. **Clone the repository**
-   
    ```bash
    git clone https://github.com/Craadly/Keydera.git
    cd Keydera
    ```
 
-2. **Configure your web server**
+2. **Configure web server**
    - Point document root to the project folder
    - Ensure mod_rewrite is enabled (Apache)
 
@@ -143,6 +176,52 @@ Troubleshooting:
    - Update database credentials
    - Set your base URL in `application/config/config.php`
 
+### Option 2: Docker Setup (Recommended for Development)
+
+1. **Prerequisites**: Docker Desktop installed
+
+2. **Quick start**:
+   ```bash
+   git clone https://github.com/Craadly/Keydera.git
+   cd Keydera
+   docker compose up -d --build
+   ```
+
+3. **Access application**: http://localhost:8080
+
+4. **Database auto-setup**: Automatically seeded from `install/database.sql`
+
+## API Documentation
+
+Keydera provides comprehensive REST APIs for both client applications and server-to-server management:
+
+- **📖 Complete API Documentation**: See `docs/API.md` for detailed endpoint documentation with cURL examples
+- **📮 Postman Collection**: Import `docs/Keydera-API.postman_collection.json` into Postman for instant API testing
+- **🔌 External API**: 8 endpoints for client licensing, updates, and activations  
+- **⚙️ Internal Admin API**: 14 endpoints for product and license management
+- **🌐 Multi-language Support**: API responses in English, Chinese, German, and Portuguese
+- **🔑 Authentication**: Uses LB-API-KEY headers with URL/IP validation
+
+### Quick API Setup
+
+1. **Import Postman Collection**:
+   ```bash
+   # Import the collection file into Postman
+   docs/Keydera-API.postman_collection.json
+   ```
+
+2. **Configure API Variables**:
+   - `base_url`: Your Keydera server URL
+   - `external_api_key`: For client-facing operations  
+   - `internal_api_key`: For admin operations
+   - `client_url`, `client_ip`: Client installation details
+
+3. **Test Connection**:
+   ```bash
+   POST /api/check_connection_ext  # External API
+   POST /api/check_connection_int  # Internal Admin API
+   ```
+
 ## Configuration
 
 ### Database Configuration
@@ -154,46 +233,84 @@ $db['default'] = array(
    'username' => 'your_username', 
    'password' => 'your_password',
    'database' => 'your_database',
+   'dbdriver' => 'mysqli',
    // ... other settings
 );
 ```
 
-### Base URL
+### Base URL Configuration
 Edit `application/config/config.php`:
 
 ```php
-$config['base_url'] = 'http://localhost/keydera-clean/';
-// or
-$config['base_url'] = 'https://localhost/keydera-clean/';
+// For traditional setup
+$config['base_url'] = 'https://your-domain.com/';
+
+// For Docker development  
+$config['base_url'] = 'http://localhost:8080/';
 ```
 
-## API Documentation
+### API Configuration
+Generate API keys in Settings → API Settings:
+- **External API Key**: For client applications
+- **Internal API Key**: For server-to-server operations
 
-See `docs/API.md` for detailed API documentation and integration examples.
+### API Integration Examples
+
+**External API** (Client Applications):
+- License activation and verification
+- Software update checking and downloading
+- Version management
+
+**Internal Admin API** (Server Management):
+- Product creation and management
+- License generation and control
+- Bulk license operations
+
+## Getting Started
+
+1. **Install and configure** using one of the methods above
+2. **Access admin panel** at your-domain.com/admin (default: admin/admin)
+3. **Generate API keys** in Settings → API Settings
+4. **Import Postman collection** from `docs/Keydera-API.postman_collection.json`
+5. **Test API endpoints** using the provided examples
+6. **Integrate with your applications** using the REST API
 
 ## Security
 
-- Change default admin credentials after installation
-- Use HTTPS in production
-- Keep the application updated
-- Secure your database credentials
+- **🔑 Change default credentials**: Update admin/admin after installation
+- **🔒 Use HTTPS in production**: Secure API communications
+- **📱 API key management**: Regenerate keys regularly
+- **🛡️ Database security**: Use strong credentials and restrict access
+- **🔐 Environment separation**: Different keys for staging/production
+- **📊 Monitor activations**: Watch for suspicious license usage
 
 ## License
 
-This project is licensed under the CodeCanyon Standard License.
+This project is proprietary software owned by Craadly.
 
-## Contributing
+## Development
 
+### Contributing
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch  
-5. Create a Pull Request
+2. Create a feature branch (`git checkout -b feat/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feat/amazing-feature`)
+5. Open a Pull Request
+
+### Testing API Changes
+- Use the provided Postman collection for API testing
+- Test both External and Internal API endpoints
+- Verify multi-language responses (english, chinese, german, portuguese)
+
+### Development Tools
+- **API Documentation**: Always update `docs/API.md` when adding endpoints
+- **Postman Collection**: Update collection when API changes
+- **Docker**: Use `docker compose up -d` for consistent development environment
 
 ## Support
 
 For support and questions:
-- Email: tagkais@gmail.com
+- Email: sales@craadly.com
 - GitHub Issues: [Create an issue](https://github.com/Craadly/keydera/issues)
 
 ## Version
